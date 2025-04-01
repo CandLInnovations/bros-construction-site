@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <div className="container section">
-      <h1>Welcome to Bro's Construction</h1>
+      <h1>Welcome to Bro&apos;s Construction</h1>
       <p style={{ marginTop: '1rem' }}>
         We provide top-quality construction services for residential and commercial projects.
       </p>

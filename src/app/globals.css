@@ -58,7 +58,7 @@ h6 {
 
 h1 {
   font-size: 2.5rem; /* 40px */
-  color: #1e3a8a; /* Deep blue */
+  color: #1e2761; /* Deep blue */
 }
 
 p {
@@ -88,7 +88,7 @@ a:hover {
 
 /* Components */
 .btn-primary {
-  background-color: #1e3a8a; /* Deep blue */
+  background-color: #1e2761; /* Deep blue */
   color: #ffffff;
   font-weight: 600;
   padding: 0.5rem 1rem;
@@ -102,12 +102,14 @@ a:hover {
 
 /* Navbar Styles */
 .navbar {
-  background-color: #4664CA; /* Deep blue */
+  background: linear-gradient(to bottom, #4f4f4f, #1e2761);
   color: #ffffff;
   padding: 1rem 0;
   position: sticky;
   top: 0;
   z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .navbar-container {
@@ -117,13 +119,18 @@ a:hover {
 }
 
 .navbar-logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #ffffff;
+  display: flex;
+  align-items: center;
 }
 
-.navbar-logo:hover {
-  color: #d97706; /* Construction yellow */
+.navbar-logo img {
+  width: 155px;
+  height: auto;
+  transition: opacity 0.2s ease;
+}
+
+.navbar-logo:hover img {
+  opacity: 0.8;
 }
 
 .navbar-menu {
@@ -140,24 +147,46 @@ a:hover {
 .navbar-link {
   color: #ffffff;
   font-size: 1.125rem;
-  transition: color 0.2s ease;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  position: relative;
+  padding: 0.2rem 0;
 }
 
 .navbar-link:hover {
-  color: #FE8B02; /* Construction yellow */
+  color: #f5a623;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #f5a623;
+  transition: width 0.3s ease;
+}
+
+.navbar-link:hover::after {
+  width: 100%;
+}
+
 .navbar-cta {
-  background-color: #d97706; /* Construction yellow */
+  background-color: #d97706;
   color: #ffffff;
   font-size: 1.125rem;
   font-weight: 600;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
-  transition: background-color 0.2s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-cta:hover {
-  background-color: #b35f00; /* Darker yellow on hover */
+  background-color: #b35f00;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-toggle {

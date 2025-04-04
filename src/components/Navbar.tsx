@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Navbar() {
   console.log("Navbar component is rendering"); // Debug
@@ -16,7 +17,13 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="container navbar-container">
         <Link href="/" className="navbar-logo">
-          Bro’s Construction
+        <Image
+            src="/bros-logo-orig-small-final.webp"
+            alt="Bro's Construction Roofing and Siding"
+            width={155}
+            height={123} 
+            priority
+          />
         </Link>
         <button className="navbar-toggle" onClick={toggleMenu}>
           <span className="navbar-toggle-icon">{isOpen ? '✕' : '☰'}</span>

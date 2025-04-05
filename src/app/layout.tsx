@@ -1,15 +1,13 @@
-import './globals.css';
+import './globals.css'; // Correct path since globals.css is in src/app/
 import type { Metadata } from 'next';
-import Navbar from '../components/Navbar';
-
-// Import Montserrat from Google Fonts
+import Navbar from '../components/Navbar'; // Adjusted path
+import Footer from '../components/Footer'; // Adjusted path
 import { Montserrat } from 'next/font/google';
 
-// Configure the font
 const montserrat = Montserrat({
   subsets: ['latin'],
-  weight: ['400', '500', '700'], // Regular, Medium, Bold
-  display: 'swap', // Ensure font loads quickly
+  weight: ['400', '500', '700'],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -27,6 +25,7 @@ export default function RootLayout({
       <body>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

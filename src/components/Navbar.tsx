@@ -5,7 +5,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Navbar() {
-  console.log("Navbar component is rendering"); // Debug
 
   const [isOpen, setIsOpen] = useState(false);
 

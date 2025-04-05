@@ -40,8 +40,8 @@ select {
 
 /* Global Styles */
 body {
-  background-color: #f9fafb; /* Light gray background */
-  color: #111827; /* Dark gray text */
+  background-color: #d0d2d5;
+  color: #111827;
   line-height: 1.6;
 }
 
@@ -57,12 +57,18 @@ h6 {
 }
 
 h1 {
-  font-size: 2.5rem; /* 40px */
-  color: #1e2761; /* Deep blue */
+  font-size: 2.5rem;
+  color: #1e2761;
+  text-align: center;
 }
 
 p {
-  font-size: 1.125rem; /* 18px */
+  font-size: 1.125rem;
+  max-width: 70%;
+  margin: 1rem auto; /* Added vertical margin */
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  /* background-color: #f0f0f0; /* Remove if not needed */
 }
 
 a {
@@ -71,7 +77,7 @@ a {
 }
 
 a:hover {
-  color: #d97706; /* Construction yellow */
+  color: #d97706;
 }
 
 /* Layout */
@@ -79,25 +85,44 @@ a:hover {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 1.5rem;
-  text-align: center; /* Added previously to center text */
 }
 
 .section {
   padding: 3rem 0;
+  background-color: #ffffff; /* White base */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  border-radius: 0.5rem; /* Optional rounding */
+  margin: 1rem 0; /* Space between sections */
+}
+
+.section h1 {
+  font-size: 2.5rem;
+  color: #1e2761;
+  text-align: center;
+  margin: 1.5rem 0;
 }
 
 /* Components */
 .btn-primary {
-  background-color: #1e2761; /* Deep blue */
+  background-color: #1e2761;
   color: #ffffff;
   font-weight: 600;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
-  transition: background-color 0.2s ease;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
 }
 
 .btn-primary:hover {
+  border-color: #f5a623; /* Yellow outline */
   background-color: rgba(30, 58, 138, 0.9);
+  box-shadow: 0 2px 8px rgba(245, 166, 35, 0.3); /* Glow */
+  color: #f5a623;
+  transform: scale(1.1);
 }
 
 /* Navbar Styles */
@@ -124,7 +149,7 @@ a:hover {
 }
 
 .navbar-logo img {
-  width: 155px;
+  width: 155px; /* Default width */
   height: auto;
   transition: opacity 0.2s ease;
 }
@@ -138,6 +163,7 @@ a:hover {
   list-style: none;
   margin: 0;
   padding: 0;
+  align-items: center;
 }
 
 .navbar-item {
@@ -173,20 +199,38 @@ a:hover {
 }
 
 .navbar-cta {
-  background-color: #d97706;
-  color: #ffffff;
+  background-color: transparent; /* No fill */
+  color: #d97706;
   font-size: 1.125rem;
   font-weight: 600;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: color 0.3s ease;
+  width: fit-content;
+  align-self: center;
+}
+
+.navbar-cta::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #d97706;
+  transition: transform 0.3s ease;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+
+.navbar-cta:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 .navbar-cta:hover {
-  background-color: #b35f00;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #f5a623; /* Brighter yellow */
 }
 
 .navbar-toggle {
@@ -214,9 +258,11 @@ a:hover {
     top: 100%;
     left: 0;
     right: 0;
-    background-color: #1e3a8a;
+    background: linear-gradient(to bottom, #1e2761, #4f4f4f);
     flex-direction: column;
     padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    align-items: center; /* Center items on mobile */
   }
 
   .navbar-menu.active {
@@ -226,4 +272,28 @@ a:hover {
   .navbar-item {
     margin: 0.5rem 0;
   }
+
+  .navbar-logo img {
+    height: auto;
+  }
+}
+/* Footer Styles */
+.footer {
+  background: linear-gradient(to bottom, #1e2761, #4f4f4f); /* Reversed gradient */
+  color: #ffffff;
+  padding: 1rem 0;
+  position: sticky;
+  bottom: 0; /* Sticks to bottom */
+  z-index: 1000;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Shadow up instead of down */
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Top border instead of bottom */
+}
+
+.footer-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

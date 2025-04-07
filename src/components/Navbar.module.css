@@ -1,0 +1,229 @@
+.header {
+    position: relative;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  .phoneArea {
+    background-color: #0e122d; /* Match navbar gradient end color */
+    text-align: right;
+    color: white;
+    padding: 0;
+    font-size: 0.6rem;
+    line-height: 2;
+  }
+  
+  @media (max-width: 768px) {
+    .navbarMenu.navbarMenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to bottom, #1e2761, #4f4f4f);
+      flex-direction: column;
+      padding: 1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      align-items: flex-end;
+    }
+  }
+
+  .phoneArea p {
+    margin: 0;
+  }
+  
+  .phoneLink {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .phoneLink:hover {
+    text-decoration: underline;
+  }
+  
+  .navbar {
+    background: linear-gradient(to bottom, #4f4f4f, #1e2761);
+    color: #ffffff;
+    padding: 2rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    position: relative;
+  }
+  
+  .navbarLogo {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 2px;
+    left: 1.5rem;
+    z-index: 1001;
+  }
+  
+  .logoImage {
+    width: 155px;
+    height: auto;
+    transition: opacity 0.2s ease;
+  }
+  
+  .navbarLogo:hover .logoImage {
+    opacity: 0.8;
+  }
+  
+  .navbarToggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .navbarToggleIcon {
+    display: block;
+  }
+  
+  .navbarMenu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+  
+  .navbarItem {
+    margin-left: 1.5rem;
+  }
+  
+  .navbarLink {
+    color: #ffffff;
+    font-size: 1.125rem;
+    line-height: 1;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    position: relative;
+    padding: 0.2rem 0;
+  }
+  
+  .navbarLink:hover {
+    color: #f5a623;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .navbarLink::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #f5a623;
+    transition: width 0.3s ease;
+  }
+  
+  .navbarLink:hover::after {
+    width: 100%;
+  }
+  
+  .navbarCta {
+    background-color: transparent;
+    color: #d97706;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 0.2rem 0;
+    border-radius: 0.5rem;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+    width: fit-content;
+    display: inline-block;
+    align-self: flex-end;
+  }
+  
+  .navbarCta::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #d97706;
+    transition: transform 0.3s ease 0.1s;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+  }
+  
+  .navbarCta:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  .navbarCta:hover {
+    color: #f5a623;
+    transform: scaleX(1.1);
+  }
+  
+  @media (max-width: 768px) {
+    .phoneArea {
+    font-size: 0.5rem;
+    padding: 0;
+    line-height: 2;
+    text-align: right;
+    }
+  
+    .container {
+      padding: 0 1.5rem;
+    }
+  
+    .navbarLogo {
+      top: 9px;
+      left: 1.5rem;
+    }
+  
+    .logoImage {
+      width: 123px;
+      height: auto;
+    }
+  
+    .navbarToggle {
+      display: block;
+    }
+  
+    .navbarMenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to bottom, #1e2761, #4f4f4f);
+      flex-direction: column;
+      padding: 1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      align-items: center;
+    }
+  
+    .navbarMenu.active {
+      display: flex;
+    }
+  
+    .navbarItem {
+      margin: 0.5rem 0;
+      width: auto;
+    }
+
+    .navbarLink,
+  .navbarCta {
+    text-align: right;
+  }
+  }

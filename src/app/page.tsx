@@ -22,7 +22,7 @@ export default function Home() {
         <div className={styles.heroOverlay}>
           <h1>Welcome to Bro's Construction</h1>
           <p>
-            We provide top-quality roofing and siding services for residential and commercial projects.
+            Providing top-quality roofing and siding services for residential and commercial projects since 2001.
           </p>
         </div>
       </section>

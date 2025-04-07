@@ -55,3 +55,20 @@
       font-size: 1rem;
     }
   }
+
+.heroOverlay h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease-out forwards; /* Apply the animation */
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px); /* Start 20px below */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* End at its natural position */
+    }
+  }

@@ -57,10 +57,10 @@
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
-    animation: shineFade 9s infinite; /* 9s total duration (3s per phrase) */
+    animation: shineFade 9s infinite;
     width: 100%;
     text-align: center;
-    color: #f5a623; /* Fallback color for browsers that don't support background-clip: text */
+    color: #f5a623;
     background: linear-gradient(
       to right,
       #ffffff 0,
@@ -70,7 +70,7 @@
     background-size: 200% 100%;
     background-position: 0;
     -webkit-background-clip: text;
-    background-clip: text; /* Standard property for compatibility */
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-text-size-adjust: none;
     white-space: nowrap;
@@ -100,6 +100,17 @@
   
     .heroTitle {
       font-size: 1.75rem;
+    }
+  
+    .textContainer {
+      max-width: 90vw;
+      padding: 0 1rem; /* Increase padding for more space on the sides */
+      overflow: visible; /* Ensure text isn't clipped */
+    }
+  
+    .shineText {
+      font-size: clamp(1rem, 4vw, 1.5rem); /* Dynamically scale font size based on viewport width */
+      transform: translateX(-50%); /* Remove scale() to avoid distortion */
     }
   }
   

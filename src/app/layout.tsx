@@ -12,7 +12,7 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: "Bro's Construction",
-  description: "Professional construction services for residential and commercial projects.",
+  description: "Professional roofing and siding services for residential and commercial projects.",
 };
 
 export default function RootLayout({

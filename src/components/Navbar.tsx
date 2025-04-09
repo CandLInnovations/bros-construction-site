@@ -13,22 +13,24 @@ export default function Navbar() {
   };
 
   return (
-    <header className={styles.header}>
-      <Link href="/" className={styles.navbarLogo}>
-        <Image
-          src="/bros-logo-orig-small-white.webp"
-          alt="Bro's Construction Roofing and Siding"
-          width={155}
-          height={123}
-          priority
-          className={styles.logoImage}
-        />
-      </Link>
-      <div className={styles.phoneArea}>
-        <p>
-        <a href="tel:+8018670576" className={styles.phoneLink}>(801) 867-0576</a>
-        </p>
-      </div>
+    <>
+      <header className={styles.header}>
+        <Link href="/" className={styles.navbarLogo}>
+          <Image
+            src="/bros-logo-orig-small-white.webp"
+            alt="Bro's Construction Roofing and Siding"
+            width={155}
+            height={123}
+            priority
+            className={styles.logoImage}
+          />
+        </Link>
+        <div className={styles.phoneArea}>
+          <p>
+            <a href="tel:+8018670576" className={styles.phoneLink}>(801) 867-0576</a>
+          </p>
+        </div>
+      </header>
       <nav className={styles.navbar}>
         <div className={styles.container}>
           <button className={styles.navbarToggle} onClick={toggleMenu}>
@@ -36,38 +38,26 @@ export default function Navbar() {
           </button>
           <ul className={`${styles.navbarMenu} ${isOpen ? styles.active : ''}`}>
             <li className={styles.navbarItem}>
-              <Link href="/" className={styles.navbarLink}>
-                Home
-              </Link>
+              <Link href="/" className={styles.navbarLink}>Home</Link>
             </li>
             <li className={styles.navbarItem}>
-              <Link href="/about" className={styles.navbarLink}>
-                About
-              </Link>
+              <Link href="/about" className={styles.navbarLink}>About</Link>
             </li>
             <li className={styles.navbarItem}>
-              <Link href="/services" className={styles.navbarLink}>
-                Services
-              </Link>
+              <Link href="/services" className={styles.navbarLink}>Services</Link>
             </li>
             <li className={styles.navbarItem}>
-              <Link href="/portfolio" className={styles.navbarLink}>
-                Portfolio
-              </Link>
+              <Link href="/portfolio" className={styles.navbarLink}>Portfolio</Link>
             </li>
             <li className={styles.navbarItem}>
-              <Link href="/contact" className={styles.navbarLink}>
-                Contact
-              </Link>
+              <Link href="/contact" className={styles.navbarLink}>Contact</Link>
             </li>
             <li className={styles.navbarItem}>
-              <Link href="/contact" className={styles.navbarCta}>
-                Get a Quote
-              </Link>
+              <Link href="/contact" className={styles.navbarCta}>Get a Quote</Link>
             </li>
           </ul>
         </div>
       </nav>
-    </header>
+    </>
   );
 }

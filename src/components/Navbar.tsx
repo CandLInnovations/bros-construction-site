@@ -16,7 +16,7 @@ export default function Navbar() {
     <header className={styles.header}>
       <Link href="/" className={styles.navbarLogo}>
         <Image
-          src="/bros-logo-orig-small-final.webp"
+          src="/bros-logo-orig-small-white.webp"
           alt="Bro's Construction Roofing and Siding"
           width={155}
           height={123}

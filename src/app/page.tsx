@@ -3,29 +3,31 @@ import styles from './page.module.css'; // Import CSS module for styling
 
 export default function Home() {
   return (
-    <div>
-      {/* Hero Section with Video Background */}
-      <section className={styles.hero}>
+    <>
+      <div className={styles.hero}>
         <video
+          className={styles.heroVideo}
           autoPlay
           loop
           muted
           playsInline
           preload="metadata"
           poster="/Bros-roofing-hero-poster.jpg"
-          className={styles.heroVideo}
         >
           <source src="/Bros-construction-hero-video.mp4" type="video/mp4" />
           {/* Fallback for browsers that don't support video */}
           Your browser does not support the video tag.
         </video>
         <div className={styles.heroOverlay}>
-          <h1>Welcome to Bro's Construction</h1>
-          <p>
-            Providing top-quality roofing and siding services for residential and commercial projects since 2001.
-          </p>
+          <div className={styles.textContainer}>
+            <h1 className={styles.heroTitle}>
+              <span className={styles.shineText}>Welcome to Bro’s Construction</span>
+              <span className={styles.shineText}>Best Quality Roofing & Siding</span>
+              <span className={styles.shineText}>Salt Lake City & Utah County</span>
+            </h1>
+          </div>
         </div>
-      </section>
+      </div>
 
       {/* Main Content */}
       <main className="container section">
@@ -33,6 +35,6 @@ export default function Home() {
           Get a Quote
         </button>
       </main>
-    </div>
+    </>
   );
 }

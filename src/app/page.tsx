@@ -30,13 +30,21 @@ export default function Home() {
       </div>
 
       <main className="container section">
-        <h2>Expert Roofing & Siding Contractors in Salt Lake City and Utah County</h2>
+        <h2 className={styles.sectionTitle}>Expert Roofing & Siding Contractors in Salt Lake City and Utah County</h2>
         <section className={styles.contentSection}>
+        <p>Looking for durable, high-quality roofing or siding in Utah? At Bro’s Construction, we specialize in metal and steel roofing, delivering top-tier repair, replacement, maintenance and inspection services for both residential and commercial properties. Based in the heart of Salt Lake City, we proudly serve homeowners and businesses throughout Utah County and beyond.</p>
+        <h3 className={styles.sectionTitle}>Why Choose Us?</h3>
+        <ul><li>Bro’s Construction has more than 20 years of experience, roofing homes and cabins throughout Utah</li>
+        <li>Bro’s are specialists in Metal & Steel Roofing: Built to withstand Utah’s tough weather, from snowy winters to scorching summers, and the freezing and thawing in between. Bro’s has done it’s share of storm damage repair in the Valley.</li>
+        <li>Local Expertise: Bro’s knows SLC and Utah County like the back of our hands—your project is in trusted, local hands. Heated roofing and snow retention roofs are a common task we perform throughout Salt Lake and Utah counties.</li>
+        <li>Roofing Materials Expertise: 24 years of commercial and residential roofing, siding, and gutters. Bro’s Construction has installed and repaired it all; from flat roofing, TPO (Thermoplastic Polyolefin), EPDM (Ethylene Propylene Diene Monomer), and PVC, to metal roofing and traditional shingles or shake.</li>
+        <li>Full-Service Care: From free estimates to seamless repairs and full replacements, we’ve got you covered.</li>
+        </ul>
           <div className={styles.contentRow}>
             <Image
               src="/roofing-exterior-home.webp"
               alt="Roofing Project"
-              width={618} // Adjust to your image dimensions
+              width={618}
               height={363}
               className={styles.contentImage}
             />
@@ -47,7 +55,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-
+          
           <div className={styles.contentRow}>
             <Image
               src="/roofing-exterior-home.webp"

@@ -140,6 +140,15 @@
   .contentSection {
     padding: 2rem 0;
   }
+
+  .sectionTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e2761;
+    text-align: center;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+  }
   
   .contentRow {
     display: flex;
@@ -164,17 +173,51 @@
   .contentText {
     width: 50%;
     padding: 1rem;
+    margin: 0;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   
   .contentText h2 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     color: #1e2761;
+    margin: 0 0 1rem 0;
     margin-bottom: 1rem;
+    text-align: center;
+    padding-left: 0;
   }
   
   .contentText p {
-    font-size: 1.125rem;
+    font-size: 1rem;
     color: #111827;
+    text-align: left;
+    margin: 0 auto;
+    max-width: 80%;
+  }
+
+  .contentText ul {
+    list-style: none;
+    margin: 0 auto;
+    max-width: 80%; /* Match p */
+    padding-left: 1.5rem;
+
+  .contentText ul li {
+    position: relative;
+    padding-left: 1rem; /* Offset text from bullet */
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    color: #111827;
+  }
+  
+  .contentText ul li::before {
+    content: '\2022'; /* Bullet • */
+    position: absolute;
+    left: 0;
+    color: #1e2761;
+    font-size: 1.25rem;
+    line-height: 1;
   }
   
   /* Mobile: Image then text for all rows */
@@ -193,9 +236,17 @@
       width: 100%;
     }
   
-    .contentText {
-      padding: 0;
+    .contentText p {
+      max-width: 90%;
+    }
+  
+    .contentText ul {
+      max-width: 90%; /* Match p on mobile */
+    }
+
+    .sectionTitle {
+      font-size: 2rem; /* Slightly smaller on mobile */
     }
   }
-  
+} 
   

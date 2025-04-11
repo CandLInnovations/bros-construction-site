@@ -55,18 +55,32 @@ h6 {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #1e2761;
   text-align: center;
 }
 
+h2 {
+  font-size: 1,75rem; /* Base size, overridden in page.module.css */
+  color: #1e2761;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: #1e2761;
+}
+
+h4 {
+  font-size: 1rem;
+  color: #1e2761;
+}
+
 p {
-  font-size: 1.125rem;
+  font-size: 1rem;
   max-width: 90%;
   margin: 1rem auto; /* Added vertical margin */
   padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  /* background-color: #f0f0f0; /* Remove if not needed */
+  padding-right: 1.5rem; 
 }
 
 a {
@@ -83,14 +97,32 @@ a:hover {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  width: 90%;
 }
 
 .section {
   padding: 3rem 0;
-  background-color: #ffffff; /* White base */
+  background: linear-gradient(to bottom right, #9ca4bf, #e6e9f0);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
   border-radius: 0.5rem; /* Optional rounding */
   margin: 1rem 0; /* Space between sections */
+}
+
+main.container {
+  display: block; /* Ensure it behaves as a block */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e2761;
+  text-align: center !important; /* Override any conflicting styles */
+  margin: 0 auto 2rem auto; /* Explicit centering */
+  line-height: 1.2;
+  padding: 0; /* Remove any inherited padding */
+  max-width: 90%; /* Match p styling for consistency */
 }
 
 .section h1 {

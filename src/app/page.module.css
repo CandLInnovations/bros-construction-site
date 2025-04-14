@@ -59,26 +59,27 @@
   padding: 0;
 }
 
-/* Remove .imageWrapper::before */
 .imageWrapper::before {
   display: none;
 }
 
 .yellowAccent {
   position: absolute;
-  top: 2rem;
-  left: -1.5rem;
-  width: calc(100%);
-  height: calc(100%);
+  top: 1rem; /* Offset from the top */
+  left: -1.5rem; /* Offset to the left for odd rows */
+  width: 100%; /* Match the image width */
+  padding-bottom: 58.74%; /* Maintain image aspect ratio (363/618) */
+  height: 0; /* Use padding-bottom to control height */
   background-color: #f5a623;
   border-radius: 0.5rem;
   z-index: 1;
+  transform: translateY(1rem); /* Move it below the image */
 }
 
 .contentRow:nth-child(even) .yellowAccent {
   left: auto;
   right: -1.5rem;
-  border-radius: 0 0.5rem;
+  border-radius: 0.5rem;
 }
 
 .contentImage {
@@ -106,7 +107,7 @@
 .contentText h2 {
   font-size: 1.5rem;
   color: #1e2761;
-  margin: 0 0 1rem 0;
+  margin: 1rem;
   text-align: center;
 }
 
@@ -165,6 +166,8 @@
   .imageContainer {
     margin-bottom: 2rem; /* Add space below image container in mobile */
     position: relative;
+    overflow: visible !important;
+    min-height: auto;
   }
 
   .imageWrapper,
@@ -174,19 +177,20 @@
 
   .yellowAccent {
     left: -0.75rem;
-    width: 0.75rem;
+    width: 100%; /* Match the image width */
+    padding-bottom: 58.74%; /* Maintain aspect ratio */
+    height: 0;
+    border-radius: 0.25rem;
     top: 1rem;
-    height: calc(100%);
-    border-radius: 0.25rem 0 0 0.25rem;
+    transform: translateY(1rem); /* Move it below the image */
   }
 
   .contentRow:nth-child(even) .yellowAccent {
     left: auto;
     right: -0.75rem;
-    width: 0.75rem;
-    border-radius: 0 0.25rem 0.25rem 0;
-    top: 2rem;
-    height: calc(100%);
+    border-radius: 0.25rem;
+    top: 1rem;
+    transform: translateY(1rem);
   }
 
   .contentText {
@@ -203,6 +207,8 @@
 
   .sectionTitle {
     font-size: 1.75rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
   }
 }
 
@@ -223,7 +229,8 @@
   font-weight: 700;
   color: #1e2761;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
   line-height: 1.2;
 }
 

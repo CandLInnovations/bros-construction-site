@@ -97,7 +97,7 @@ a:hover {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 1.5rem;
-  width: 95%;
+  width: 100%;
   overflow-y: visible;
   overflow: visible !important;
 }
@@ -139,7 +139,7 @@ main.container {
   margin: 0 auto 2rem auto; /* Explicit centering */
   line-height: 1.2;
   padding: 0; /* Remove any inherited padding */
-  max-width: 95%; /* Match p styling for consistency */
+  max-width: 100%; /* Match p styling for consistency */
 }
 
 .section h1 {

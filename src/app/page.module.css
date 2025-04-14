@@ -1,252 +1,361 @@
-.hero {
-    position: relative;
-    width: 100%;
-    height: 60vh;
-    overflow: hidden;
-  }
-  
-  .heroVideo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-  }
-  
-  .heroOverlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    text-align: center;
-    z-index: 2;
-    padding: 1rem;
-  }
-  
-  .textContainer {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    height: 3rem;
-  }
-  
-  .heroTitle {
-    margin: 0;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    font-size: 2.5rem;
-    font-weight: 700;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  .shineText {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    animation: shineFade 9s infinite;
-    width: 100%;
-    text-align: center;
-    color: #f5a623;
-    background: linear-gradient(
-      to right,
-      #ffffff 0,
-      #f5a623 50%,
-      #ffffff 100%
-    );
-    background-size: 200% 100%;
-    background-position: 0;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-size-adjust: none;
-    white-space: nowrap;
-  }
-  
-  /* Stagger the animations for each phrase */
-  .shineText:nth-child(1) {
-    animation-delay: 0s;
-  }
-  
-  .shineText:nth-child(2) {
-    animation-delay: 3s;
-  }
-  
-  .shineText:nth-child(3) {
-    animation-delay: 6s;
-  }
-  
-  @media (max-width: 768px) {
-    .hero {
-      height: 50vh;
-    }
-  
-    .heroVideo {
-      filter: brightness(1.2);
-    }
-  
-    .heroTitle {
-      font-size: 1.75rem;
-    }
-  
-    .textContainer {
-      max-width: 90vw;
-      padding: 0 1rem; /* Increase padding for more space on the sides */
-      overflow: visible; /* Ensure text isn't clipped */
-    }
-  
-    .shineText {
-      font-size: clamp(1rem, 4vw, 1.5rem); /* Dynamically scale font size based on viewport width */
-      transform: translateX(-50%); /* Remove scale() to avoid distortion */
-    }
-  }
-  
-  @keyframes shineFade {
-    0% {
-      opacity: 0;
-      background-position: 0;
-    }
-    5% {
-      opacity: 1;
-    }
-    20% {
-      background-position: 200%;
-    }
-    25% {
-      opacity: 1;
-    }
-    30% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 0;
-      background-position: 200%;
-    }
-  }
+.overflowWrapper {
+  overflow-x: visible;
+  overflow-y: visible;
+  overflow: visible !important;
+  width: 100%;
+}
 
-  .contentSection {
-    padding: 2rem 0;
-  }
+.container {
+  overflow-y: visible;
+  overflow: visible !important;
+}
 
-  .sectionTitle {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #1e2761;
-    text-align: center;
-    margin-bottom: 2rem;
-    line-height: 1.2;
-  }
-  
+.contentSection {
+  padding: 2rem 0;
+  position: relative;
+  z-index: 0;
+  overflow-y: visible;
+  overflow: visible !important;
+}
+
+.contentRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  gap: 2rem;
+  overflow-y: visible;
+  position: relative;
+  overflow: visible !important;
+}
+
+.contentRow:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  display: block;
+  flex-direction: column;
+  align-items: flex-start; /* Odd rows: yellow on left */
+  overflow: visible !important;
+  margin: 0;
+  padding: 0;
+}
+
+.contentRow:nth-child(even) .imageContainer {
+  align-items: flex-end; /* Even rows: yellow on right */
+}
+
+.imageWrapper {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  display: block;
+  flex-direction: column;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove .imageWrapper::before */
+.imageWrapper::before {
+  display: none;
+}
+
+.yellowAccent {
+  position: absolute;
+  top: 2rem;
+  left: -1.5rem;
+  width: calc(100%);
+  height: calc(100%);
+  background-color: #f5a623;
+  border-radius: 0.5rem;
+  z-index: 1;
+}
+
+.contentRow:nth-child(even) .yellowAccent {
+  left: auto;
+  right: -1.5rem;
+  border-radius: 0 0.5rem;
+}
+
+.contentImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  padding: 0;
+}
+
+.contentText {
+  width: 100%;
+  padding: 1rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1280px;
+}
+
+.contentText h2 {
+  font-size: 1.5rem;
+  color: #1e2761;
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
+
+.contentText h3 {
+  font-size: 1.25rem;
+  color: #1e2761;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.contentText p {
+  font-size: 1rem;
+  color: #111827;
+  text-align: left;
+  margin: 0 auto;
+  max-width: 80%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.contentText ul {
+  list-style: none;
+  margin: 0 auto;
+  max-width: 80%;
+  padding-left: 1rem;
+}
+
+.contentText ul li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  color: #111827;
+}
+
+.contentText ul li::before {
+  content: '\25A0';
+  position: absolute;
+  left: 0;
+  color: #1e2761;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
   .contentRow {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 2rem;
-    gap: 2rem;
-  }
-  
-  /* Alternate image position on desktop */
-  .contentRow:nth-child(even) {
-    flex-direction: row-reverse; /* Image on right for even rows */
-  }
-  
-  .contentImage {
-    width: 50%;
-    height: auto;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  
-  .contentText {
-    width: 50%;
-    padding: 1rem;
-    margin: 0;
-    text-align: left;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
+    margin-bottom: 1.5rem;
+    align-items: flex-start;
   }
-  
-  .contentText h2 {
-    font-size: 1.5rem;
-    color: #1e2761;
-    margin: 0 0 1rem 0;
-    margin-bottom: 1rem;
-    text-align: center;
-    padding-left: 0;
+
+  .contentRow:nth-child(even) {
+    flex-direction: column;
   }
-  
+
+  .imageContainer {
+    margin-bottom: 2rem; /* Add space below image container in mobile */
+    position: relative;
+  }
+
+  .imageWrapper,
+  .contentText {
+    width: 100%;
+  }
+
+  .yellowAccent {
+    left: -0.75rem;
+    width: 0.75rem;
+    top: 1rem;
+    height: calc(100%);
+    border-radius: 0.25rem 0 0 0.25rem;
+  }
+
+  .contentRow:nth-child(even) .yellowAccent {
+    left: auto;
+    right: -0.75rem;
+    width: 0.75rem;
+    border-radius: 0 0.25rem 0.25rem 0;
+    top: 2rem;
+    height: calc(100%);
+  }
+
+  .contentText {
+    padding: 0;
+  }
+
   .contentText p {
-    font-size: 1rem;
-    color: #111827;
-    text-align: left;
-    margin: 0 auto;
-    max-width: 80%;
+    max-width: 95%;
   }
 
   .contentText ul {
-    list-style: none;
-    margin: 0 auto;
-    max-width: 80%; /* Match p */
-    padding-left: 1.5rem;
+    max-width: 95%;
+  }
 
-  .contentText ul li {
-    position: relative;
-    padding-left: 1rem; /* Offset text from bullet */
-    margin-bottom: 0.75rem;
-    font-size: 1rem;
-    color: #111827;
+  .sectionTitle {
+    font-size: 1.75rem;
   }
-  
-  .contentText ul li::before {
-    content: '\2022'; /* Bullet • */
-    position: absolute;
-    left: 0;
-    color: #1e2761;
-    font-size: 1.25rem;
-    line-height: 1;
-  }
-  
-  /* Mobile: Image then text for all rows */
-  @media (max-width: 768px) {
-    .contentRow {
-      flex-direction: column; /* Stack vertically */
-      margin-bottom: 1.5rem;
-    }
-  
-    .contentRow:nth-child(even) {
-      flex-direction: column; /* Override row-reverse, keep image-text order */
-    }
-  
-    .contentImage,
-    .contentText {
-      width: 100%;
-    }
-  
-    .contentText p {
-      max-width: 90%;
-    }
-  
-    .contentText ul {
-      max-width: 90%; /* Match p on mobile */
-    }
+}
 
-    .sectionTitle {
-      font-size: 2rem; /* Slightly smaller on mobile */
-    }
+/* Rest of your styles (hero, gradientBackground, etc.) remain unchanged */
+.gradientBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 2rem);
+  background: linear-gradient(to bottom right, #9ca4bf, #e6e9f0);
+  border-radius: 0.5rem;
+  z-index: -1;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e2761;
+  text-align: center;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.heroVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  z-index: 2;
+  padding: 1rem;
+}
+
+.textContainer {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 3rem;
+}
+
+.heroTitle {
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.shineText {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: shineFade 9s infinite;
+  width: 100%;
+  text-align: center;
+  color: #f5a623;
+  background: linear-gradient(to right, #ffffff 0, #f5a623 50%, #ffffff 100%);
+  background-size: 200% 100%;
+  background-position: 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-size-adjust: none;
+  white-space: nowrap;
+}
+
+.shineText:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.shineText:nth-child(2) {
+  animation-delay: 3s;
+}
+
+.shineText:nth-child(3) {
+  animation-delay: 6s;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 50vh;
   }
-} 
-  
+
+  .heroVideo {
+    filter: brightness(1.2);
+  }
+
+  .heroTitle {
+    font-size: 1.75rem;
+  }
+
+  .textContainer {
+    max-width: 95vw;
+    padding: 0 1rem;
+    overflow: visible;
+  }
+
+  .shineText {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes shineFade {
+  0% {
+    opacity: 0;
+    background-position: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  20% {
+    background-position: 200%;
+  }
+  25% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    background-position: 200%;
+  }
+}

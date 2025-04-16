@@ -1,7 +1,7 @@
-import './globals.css'; // Correct path since globals.css is in src/app/
+import './globals.css';
 import type { Metadata } from 'next';
-import Navbar from '../components/Navbar'; // Adjusted path
-import Footer from '../components/Footer'; // Adjusted path
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import { Montserrat } from 'next/font/google';
 
 const montserrat = Montserrat({

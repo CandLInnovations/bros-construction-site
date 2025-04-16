@@ -1,8 +1,28 @@
-import React from 'react';
+"use client";
+
+import React, { useEffect } from 'react';
 import Image from 'next/image';
 import styles from './page.module.css';
 
 export default function Home() {
+  useEffect(() => {
+    const handleScroll = () => {
+      const navbar = document.querySelector('.navbar');
+      if (navbar) {
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <div className={styles.hero}>
@@ -65,7 +85,7 @@ export default function Home() {
                   <div className={styles.yellowAccent}></div>
                   <div className={styles.imageWrapper}>
                     <Image
-                      src="/roofing-exterior-home.webp"
+                      src="/Bros-home-kamas-metal-roof.webp"
                       alt="Roofing Project, Park City Utah"
                       width={618}
                       height={363}
@@ -80,16 +100,15 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-
               <div className={styles.contentRow}>
                 <div className={styles.imageContainer}>
                   <div className={styles.yellowAccent}></div>
                   <div className={styles.imageWrapper}>
                     <Image
-                      src="/roofing-exterior-home.webp"
+                      src="/cabin-kamas-utah-metal-roof.webp"
                       alt="Trusted Local Experts"
                       width={618}
-                      height={363}
+                      height={360}
                       className={styles.contentImage}
                     />
                   </div>
@@ -101,6 +120,10 @@ export default function Home() {
                 </div>
               </div>
             </section>
+            <h2 className={styles.sectionTitle}>Protecting Your Property, One Roof at a Time</h2>
+            <div className={styles.contentText}>
+              <p>Whether it’s a leaky roof, storm damage, or a siding upgrade, our skilled team brings precision and reliability to every job. We’re committed to quality craftsmanship, using premium steel, metal, wood, synthetic shake or shingles that stand the test of time in Utah’s unique climate.</p>
+            </div>
           </main>
         </div>
       </div>

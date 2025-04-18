@@ -1,21 +1,19 @@
 .overflowWrapper {
-  overflow-x: visible;
-  overflow-y: visible;
-  overflow: visible !important;
   width: 100%;
+  min-height: 100vh;
 }
 
 .container {
-  overflow-y: visible;
-  overflow: visible !important;
+  max-width: 1280px;
+ /* overflow-y: visible; */
+ /* overflow: visible !important; */
 }
 
 .contentSection {
   padding: 2rem 0;
   position: relative;
   z-index: 0;
-  overflow-y: visible;
-  overflow: visible !important;
+  
 }
 
 .contentRow {
@@ -24,8 +22,8 @@
   justify-content: space-between;
   margin-bottom: 2rem;
   gap: 2rem;
-  overflow-y: visible;
-  position: relative;
+  /* overflow-y: visible; */
+  /* position: relative; */
   overflow: visible !important;
 }
 
@@ -39,7 +37,7 @@
   display: block;
   flex-direction: column;
   align-items: flex-start; /* Odd rows: yellow on left */
-  overflow: visible !important;
+  /* overflow: visible !important; */
   margin: 0;
   padding: 0;
 }
@@ -167,7 +165,7 @@
   .imageContainer {
     margin-bottom: 2rem; /* Add space below image container in mobile */
     position: relative;
-    overflow: visible !important;
+    /* overflow: visible !important; */
     min-height: auto;
   }
 
@@ -322,8 +320,12 @@
 }
 
 @media (max-width: 768px) {
+  .overflowWrapper {
+    padding-top: 80px; /* Smaller padding for mobile */
+  }
+  
   .hero {
-    height: 50vh;
+    margin-top: -80px;
   }
 
   .heroVideo {

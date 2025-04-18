@@ -12,6 +12,7 @@ body {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
+  overflow-y: auto;
   scroll-behavior: smooth;
 }
 
@@ -275,6 +276,21 @@ main.container {
 
 .navbar-toggle-icon {
   display: block;
+}
+
+header.scrolled {
+  padding-top: 0 !important;
+  background: #1e2761 !important;
+  height: 60px !important;
+}
+
+header.scrolled .phoneArea {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+header.scrolled nav {
+  padding: 0.5rem 0 !important;
 }
 
 @media (max-width: 768px) {

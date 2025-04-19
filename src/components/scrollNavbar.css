@@ -1,0 +1,73 @@
+/* Navigation scroll effects - Fixed version */
+
+/* Apply smooth transitions to all relevant elements */
+header > div, /* All divs in header including phone area */
+header > nav,
+header .navbarLogo,
+header .logoImage {
+  transition: all 0.3s ease !important;
+}
+
+/* Make sure header itself doesn't have unexpected styles */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: transparent; /* Ensure no background on the header element itself */
+}
+
+/* Fix for the transparent block issue */
+header:before {
+  content: none; /* Remove any pseudo-elements */
+  display: none;
+}
+
+/* Phone area - second div in header */
+header > div:nth-child(2) {
+  background-color: #0e122d;
+  max-height: 30px;
+  overflow: hidden;
+}
+
+/* Base styles for navbar */
+header > nav {
+  background: linear-gradient(to bottom, #4f4f4f, #1e2761);
+  padding: 2.2rem 0;
+}
+
+/* Data attribute selector for scrolled state */
+header[data-scrolled="true"] > div:nth-child(2) {
+  max-height: 0 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+header[data-scrolled="true"] > nav {
+  padding: 0.8rem 0 !important;
+  background: #1e2761 !important;
+}
+
+header[data-scrolled="true"] .navbarLogo {
+  transform: scale(0.8) !important;
+  top: 0 !important;
+}
+
+header[data-scrolled="true"] .logoImage {
+  width: 125px !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  header[data-scrolled="true"] > nav {
+    padding: 0.6rem 0 !important;
+  }
+  
+  header[data-scrolled="true"] .navbarLogo {
+    top: 5px !important;
+  }
+  
+  header[data-scrolled="true"] .logoImage {
+    width: 100px !important;
+  }
+}

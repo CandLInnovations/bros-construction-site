@@ -11,8 +11,7 @@ html,
 body {
   height: 100%;
   width: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: visible;
   scroll-behavior: smooth;
 }
 
@@ -43,6 +42,7 @@ body {
   background-color: #d0d2d5;
   color: #111827;
   line-height: 1.6;
+  position: relative;
 }
 
 h1,
@@ -173,112 +173,21 @@ main.container {
   transform: scale(1.1);
 }
 
-.navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.navbar-logo {
-  display: flex;
-  align-items: center;
-}
-
-.navbar-logo:hover img {
-  opacity: 0.8;
-}
-
-.navbar-menu {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  align-items: center;
-}
-
-.navbar-item {
-  margin-left: 1.5rem;
-}
-
-.navbar-link {
-  color: #ffffff;
-  font-size: 1.125rem;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-  position: relative;
-  padding: 0.2rem 0;
-}
-
-.navbar-link:hover {
-  color: #f5a623;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.navbar-link::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #f5a623;
-  transition: width 0.3s ease;
-}
-
-.navbar-link:hover::after {
-  width: 100%;
-}
-
-.navbar-cta {
-  background-color: transparent;
-  color: #d97706;
-  font-size: 1.125rem;
-  font-weight: 600;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  position: relative;
-  transition: color 0.3s ease, transform 0.3s ease;
-  width: fit-content;
-  align-self: center;
-  display: inline-block;
-}
-
-.navbar-cta::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #d97706;
-  transition: transform 0.3s ease;
-  transform: scaleX(0);
-  transform-origin: bottom right;
-}
-
-.navbar-cta:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
-.navbar-cta:hover {
-  color: #f5a623;
-  transform: scale(1.1);
-}
-
-.navbar-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: #ffffff;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
+/* Remove any global navbar/header styling to avoid conflicts */
+.navbar-container,
+.navbar-logo,
+.navbar-menu,
+.navbar-item,
+.navbar-link,
+.navbar-cta,
+.navbar-toggle,
 .navbar-toggle-icon {
-  display: block;
+  /* Reset any global styles that might interfere with module styles */
+  all: initial;
 }
 
-header.scrolled {
+/* These styles were causing problems - ensure they're removed/commented out */
+/* header.scrolled {
   padding-top: 0 !important;
   background: #1e2761 !important;
   height: 60px !important;
@@ -291,7 +200,7 @@ header.scrolled .phoneArea {
 
 header.scrolled nav {
   padding: 0.5rem 0 !important;
-}
+} */
 
 @media (max-width: 768px) {
   .navbar-toggle {

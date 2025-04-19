@@ -217,7 +217,7 @@
 }
 
 /* Add spacing to compensate for fixed header */
-body {
+:global(body) {
   padding-top: calc(30px + 2.2rem); /* Phone area + navbar padding */
 }
 

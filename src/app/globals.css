@@ -43,6 +43,7 @@ body {
   color: #111827;
   line-height: 1.6;
   position: relative;
+  padding-top: calc(30px + 2.2rem); /* Phone area + navbar padding */
 }
 
 h1,

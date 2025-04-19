@@ -216,11 +216,6 @@
   width: 125px;
 }
 
-/* Add spacing to compensate for fixed header */
-:global(body) {
-  padding-top: calc(30px + 2.2rem); /* Phone area + navbar padding */
-}
-
 /* Mobile styles */
 @media (max-width: 768px) {
   .navbarLogo {

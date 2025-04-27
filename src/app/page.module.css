@@ -212,7 +212,6 @@
   }
 }
 
-/* Rest of your styles (hero, gradientBackground, etc.) remain unchanged */
 .gradientBackground {
   position: absolute;
   top: 0;
@@ -237,18 +236,20 @@
 .hero {
   position: relative;
   width: 100%;
-  height: 60vh;
+  height: 80vh;
   overflow: hidden;
+  margin-top: 0;
+  z-index: 0;
 }
 
 .heroVideo {
   width: 100%;
-  height: 100%;
+  height: calc(100% + 30px + 2.2rem);
   object-fit: cover;
   position: absolute;
-  top: 0;
+  top: calc(-30px - 2.2rem);
   left: 0;
-  z-index: 1;
+  z-index: 0;
 }
 
 .heroOverlay {
@@ -266,6 +267,7 @@
   text-align: center;
   z-index: 2;
   padding: 1rem;
+  padding-top: calc(30px + 2.5rem + 2rem);
 }
 
 .textContainer {
@@ -325,11 +327,15 @@
   }
   
   .hero {
-    margin-top: -80px;
+    margin-top: calc(-30px - 1.1rem);
   }
 
   .heroVideo {
     filter: brightness(1.2);
+  }
+
+  .heroOverlay {
+    padding-top: calc(30px + 1.1rem + 1rem); /* Mobile header height + extra space */
   }
 
   .heroTitle {
@@ -345,6 +351,17 @@
   .shineText {
     font-size: clamp(1rem, 4vw, 1.5rem);
     transform: translateX(-50%);
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero {
+    /* For very large screens, you might need even more adjustment */
+    margin-top: calc(-30px - 2.8rem);
+  }
+  
+  .heroOverlay {
+    padding-top: calc(30px + 2.8rem + 2rem);
   }
 }
 

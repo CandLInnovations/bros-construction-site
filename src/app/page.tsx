@@ -157,10 +157,16 @@ export default function Home() {
             </div>
           </section>
           
-          <h2 className={styles.sectionTitle}>Protecting Your Property, One Roof at a Time</h2>
+          {/* Section with background image */}
+          <div className={styles.bgImageSection}>
+            <h2 className={styles.sectionTitle}>Protecting Your Property, One Roof at a Time</h2>
+            <div className={styles.contentText}>
+              <p>Whether it's a leaky roof, storm damage, or a siding upgrade, our skilled team brings precision and reliability to every job. We're committed to quality craftsmanship, using premium steel, metal, wood, synthetic shake or shingles that stand the test of time in Utah's unique climate.</p>
+            </div>
+          </div>
+          
+          <h2 className={styles.sectionTitle}>Space for scroll</h2>
           <div className={styles.contentText}>
-            <p>Whether it's a leaky roof, storm damage, or a siding upgrade, our skilled team brings precision and reliability to every job. We're committed to quality craftsmanship, using premium steel, metal, wood, synthetic shake or shingles that stand the test of time in Utah's unique climate.</p>
-            <h2 className={styles.sectionTitle}>Space for scroll</h2>
             <p>Looking for durable, high-quality roofing or siding in Utah? At Bro's Construction, we specialize in metal and steel roofing, delivering top-tier repair, replacement, maintenance and inspection services for both residential and commercial properties. Based in the heart of Salt Lake City, we proudly serve homeowners and businesses throughout Utah County and beyond.</p>
           </div>
         </div>

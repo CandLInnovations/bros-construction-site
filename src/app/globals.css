@@ -340,3 +340,27 @@ header.scrolled nav {
     order: -1;
   }
 }
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.25rem !important;
+    margin-bottom: 1rem;
+  }
+
+  .contentText h2 {
+    font-size: 1.25rem !important;
+    margin: 0.75rem 0;
+  }
+}

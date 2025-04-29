@@ -3,6 +3,39 @@
   min-height: 100vh;
 }
 
+.mainWrapper {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(to bottom, #1e2761, #9ca4bf);
+  padding: 2rem 0;
+  margin-top: -10px;
+  overflow: visible !important;
+  min-height: 100px;
+}
+
+.mainContainer {
+  position: relative;
+  z-index: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  overflow: visible !important;
+}
+
+.mainContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom right, #9ca4bf, #e6e9f0);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: -1;
+  overflow: visible;
+}
+
 .container {
   max-width: 1280px;
  /* overflow-y: visible; */
@@ -10,9 +43,10 @@
 }
 
 .contentSection {
-  padding: 2rem 0;
+  margin-bottom: 3rem;
   position: relative;
-  z-index: 0;
+  overflow: visible !important;
+  z-index: 1;
   
 }
 
@@ -22,9 +56,8 @@
   justify-content: space-between;
   margin-bottom: 2rem;
   gap: 2rem;
-  /* overflow-y: visible; */
-  /* position: relative; */
   overflow: visible !important;
+  position: relative;
 }
 
 .contentRow:nth-child(even) {
@@ -37,9 +70,9 @@
   display: block;
   flex-direction: column;
   align-items: flex-start; /* Odd rows: yellow on left */
-  /* overflow: visible !important; */
   margin: 0;
   padding: 0;
+  overflow: visible !important;
 }
 
 .contentRow:nth-child(even) .imageContainer {
@@ -63,21 +96,22 @@
 
 .yellowAccent {
   position: absolute;
-  top: 1rem; /* Offset from the top */
-  left: -1.5rem; /* Offset to the left for odd rows */
-  width: 100%; /* Match the image width */
-  padding-bottom: 58.74%; /* Maintain image aspect ratio (363/618) */
-  height: 0; /* Use padding-bottom to control height */
+  top: 1rem;
+  left: -2.5rem; /* Increased to bleed more */
+  width: 100%;
+  padding-bottom: 58.74%;
+  height: 0;
   background-color: #f5a623;
   border-radius: 0.5rem;
   z-index: 1;
-  transform: translateY(1rem); /* Move it below the image */
+  transform: translateY(1rem);
+  box-shadow: 0 4px 12px rgba(245, 166, 35, 0.4);
+  pointer-events: none;
 }
 
 .contentRow:nth-child(even) .yellowAccent {
   left: auto;
-  right: -1.5rem;
-  border-radius: 0.5rem;
+  right: -2.5rem;
 }
 
 .contentImage {
@@ -238,21 +272,30 @@
   }
 
   .yellowAccent {
-    left: -0.75rem;
-    width: 100%; /* Match the image width */
-    padding-bottom: 58.74%; /* Maintain aspect ratio */
-    height: 0;
-    border-radius: 0.25rem;
-    top: 1rem;
-    transform: translateY(1rem); /* Move it below the image */
+    position: absolute;
+  top: 1rem;
+  left: -1.5rem;
+  width: 100%;
+  padding-bottom: 58.74%;
+  height: 0;
+  background-color: #f5a623;
+  border-radius: 0.5rem;
+  z-index: 1;
+  transform: translateY(1rem);
+  overflow: visible; /* Add this to ensure the bleed effect */
+  box-shadow: 0 4px 12px rgba(245, 166, 35, 0.4);
   }
 
   .contentRow:nth-child(even) .yellowAccent {
     left: auto;
-    right: -0.75rem;
+    right: -1.5rem;
     border-radius: 0.25rem;
     top: 1rem;
     transform: translateY(1rem);
+  }
+
+  .contentSection {
+    margin-bottom: 2rem;
   }
 
   .contentText {
@@ -299,6 +342,7 @@
   background: linear-gradient(to bottom right, #9ca4bf, #e6e9f0);
   border-radius: 0.5rem;
   z-index: -1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .sectionTitle {

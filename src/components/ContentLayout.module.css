@@ -1,0 +1,55 @@
+.backgroundGradient {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(to bottom, #1e2761, #9ca4bf);
+    margin-top: -15px;
+    padding: 15px 20px 30px 20px;
+  }
+  
+  .contentContainer {
+    width: 98%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: linear-gradient(to bottom right, #9ca4bf, #e6e9f0);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    position: relative;
+    z-index: 1;
+    overflow: visible;
+  }
+  
+  @media (max-width: 768px) {
+    .backgroundGradient {
+      padding: 15px 10px 30px 10px;
+    }
+    
+    .contentContainer {
+      width: 95%;
+    }
+    
+    /* Mobile heading styles - these will have high specificity 
+       since they're in a module file */
+    .contentContainer h2 {
+        font-size: 1.5rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 0.75rem !important;
+    }
+    
+    .contentContainer .contentText h2 {
+      font-size: 1.1rem !important;
+      margin: 0.75rem 0 !important;
+    }
+
+    .contentContainer h2[class*="sectionTitle"],
+  .contentContainer h2[class]:not([class=""]) {
+    font-size: 1.5rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  /* Target content h2 elements */
+  .contentContainer div[class*="contentText"] h2 {
+    font-size: 1.2rem !important;
+    line-height: 1.2 !important;
+  }
+  }

@@ -351,6 +351,7 @@
   line-height: 1.7;
   margin-bottom: 1.5rem;
   color: #ffffff;
+  max-width: 100%;
 }
 
 .roofFeatures {
@@ -847,9 +848,15 @@
     gap: 0.75rem;
   }
   
-  .featuredDetails,
-  .compareText {
+  .featuredDetails {
     padding: 1.5rem;
+    width: 100%;
+  }
+
+  .featuredDetails p {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%; /* Explicitly set width to 100% on mobile */
   }
   
   .featuredOverlay h3 {

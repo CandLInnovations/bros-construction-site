@@ -171,7 +171,7 @@ const RoofTypes: React.FC = () => {
         {/* Alternative roof types - 2x2 grid on right (desktop) or hidden on mobile */}
         <div className={styles.alternativeRoofs}>
           <div className={styles.roofGrid}>
-            {alternativeRoofs.slice(0, 4).map((roof, index) => (
+            {alternativeRoofs.slice(0, 4).map((roof, _index) => (
               <div 
                 key={roof.id}
                 className={styles.roofGridItem}
@@ -195,7 +195,7 @@ const RoofTypes: React.FC = () => {
           
           <div className={styles.compareText}>
             <p>Compare our premium roofing solutions to find the perfect match for your property&apos;s style and requirements.</p>
-            <a href="/roofing-options" className={styles.compareLink}>Visit Photo Gallery</a>
+            <a href="/roofing-options" className={styles.compareLink}>Visit Our Photo Gallery</a>
           </div>
         </div>
       </div>

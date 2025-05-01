@@ -160,8 +160,8 @@ const RoofTypes: React.FC = () => {
             <h3>{featuredRoof.title}</h3>
             <p>{featuredRoof.description}</p>
             <ul className={styles.roofFeatures}>
-              {featuredRoof.features.map((feature, index) => (
-                <li key={index}>{feature}</li>
+              {featuredRoof.features.map((feature, _index) => (
+                <li key={_index}>{feature}</li>
               ))}
             </ul>
             <button className={styles.btnPrimary}>Explore {featuredRoof.name}</button>

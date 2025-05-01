@@ -160,8 +160,8 @@ const RoofTypes: React.FC = () => {
             <h3>{featuredRoof.title}</h3>
             <p>{featuredRoof.description}</p>
             <ul className={styles.roofFeatures}>
-              {featuredRoof.features.map((feature, _index) => (
-                <li key={_index}>{feature}</li>
+              {featuredRoof.features.map((feature, index) => (
+                <li key={index}>{feature}</li>
               ))}
             </ul>
             <button className={styles.btnPrimary}>Explore {featuredRoof.name}</button>
@@ -171,7 +171,7 @@ const RoofTypes: React.FC = () => {
         {/* Alternative roof types - 2x2 grid on right (desktop) or hidden on mobile */}
         <div className={styles.alternativeRoofs}>
           <div className={styles.roofGrid}>
-            {alternativeRoofs.slice(0, 4).map((roof, _index) => (
+            {alternativeRoofs.slice(0, 4).map((roof) => (
               <div 
                 key={roof.id}
                 className={styles.roofGridItem}

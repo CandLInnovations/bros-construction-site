@@ -1,3 +1,5 @@
+/* Reset and Base Styles are assumed to be in globals.css */
+
 .overflowWrapper {
   width: 100%;
   min-height: 100vh;
@@ -38,8 +40,6 @@
 
 .container {
   max-width: 1280px;
- /* overflow-y: visible; */
- /* overflow: visible !important; */
 }
 
 .contentSection {
@@ -47,7 +47,6 @@
   position: relative;
   overflow: visible !important;
   z-index: 1;
-  
 }
 
 .contentRow {
@@ -212,8 +211,8 @@
 }
 
 .bgImageSection .sectionTitle {
-  color: #ffffff;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  color: #f5a623; /* Make title gold to match site accent color */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
   position: relative;
   z-index: 2;
 }
@@ -229,13 +228,6 @@
   border: 2px solid #f5a623; /* Add golden border to match site accent color */
 }
 
-.bgImageSection .sectionTitle {
-  color: #f5a623; /* Make title gold to match site accent color */
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
-  position: relative;
-  z-index: 2;
-}
-
 .bgImageSection .contentText p {
   color: #ffffff;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -248,89 +240,371 @@
   z-index: 2;
 }
 
-@media (max-width: 768px) {
-  .contentRow {
-    flex-direction: column;
-    margin-bottom: 1.5rem;
-    align-items: flex-start;
-  }
+/* Roof Comparison Section Styles */
+.roofComparisonSection {
+  margin: 4rem auto;
+  max-width: 1280px;
+  position: relative;
+}
 
-  .contentRow:nth-child(even) {
-    flex-direction: column;
-  }
+.splitScreenDisplay {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 2rem 0;
+}
 
-  .imageContainer {
-    margin-bottom: 2rem; /* Add space below image container in mobile */
-    position: relative;
-    /* overflow: visible !important; */
-    min-height: auto;
-  }
+/* Featured Roof Styles */
+.featuredRoof {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+}
 
-  .imageWrapper,
-  .contentText {
-    width: 100%;
-  }
-
-  .yellowAccent {
-    position: absolute;
-  top: 1rem;
-  left: -1.5rem;
+.featuredImageContainer {
+  position: relative;
   width: 100%;
-  padding-bottom: 58.74%;
-  height: 0;
-  background-color: #f5a623;
+  overflow: visible !important;
+}
+
+.featuredImageWrapper {
+  position: relative;
+  width: 100%;
   border-radius: 0.5rem;
-  z-index: 1;
-  transform: translateY(1rem);
-  overflow: visible; /* Add this to ensure the bleed effect */
-  box-shadow: 0 4px 12px rgba(245, 166, 35, 0.4);
-  }
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
 
-  .contentRow:nth-child(even) .yellowAccent {
-    left: auto;
-    right: -1.5rem;
-    border-radius: 0.25rem;
-    top: 1rem;
-    transform: translateY(1rem);
-  }
+.featuredImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.7s ease;
+}
 
-  .contentSection {
-    margin-bottom: 2rem;
-  }
+.featuredImageWrapper:hover .featuredImage {
+  transform: scale(1.05);
+}
 
-  .contentText {
-    padding: 0;
-    margin-top: 0;
-  }
+.featuredOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(30, 39, 97, 0.9), transparent);
+  color: white;
+  transition: all 0.3s ease;
+}
 
-  .contentText p {
-    max-width: 95%;
-  }
+.featuredImageWrapper:hover .featuredOverlay {
+  padding-bottom: 2.5rem;
+}
 
-  .contentText ul {
-    max-width: 95%;
-  }
+.premiumBadge {
+  display: inline-block;
+  background-color: #f5a623;
+  color: #1e2761;
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 2rem;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 
-  .sectionTitle {
-    font-size: 1.75rem;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  /* Mobile styles for background image section */
-  .bgImageSection {
-    padding: 2rem 1rem;
-    margin: 1.5rem -1rem;
-  }
-  
-  .bgImageSection::before {
-    background-attachment: scroll; /* Better performance on mobile */
-  }
-  
-  .bgImageSection .contentText p {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
+.featuredOverlay h3 {
+  font-size: 1.8rem;
+  margin: 0.5rem 0;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.featuredOverlay p {
+  font-size: 1rem;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.featuredDetails {
+  background: linear-gradient(to bottom right, #1e2761, #2a3578);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  color: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #f5a623;
+}
+
+.featuredDetails h3 {
+  color: #f5a623;
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.featuredDetails p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+.roofFeatures {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+  padding: 0;
+}
+
+.roofFeatures li {
+  position: relative;
+  padding-left: 1.5rem;
+  list-style-type: none;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.roofFeatures li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #f5a623;
+  font-weight: bold;
+}
+
+/* Alternative Roofs Grid */
+.alternativeRoofs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.roofGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.roofGridItem {
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.roofGridItem:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.gridImageWrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.gridImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.roofGridItem:hover .gridImage {
+  transform: scale(1.1);
+}
+
+.gridOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(30, 39, 97, 0.9), transparent);
+  transition: padding 0.3s ease;
+}
+
+.roofGridItem:hover .gridOverlay {
+  padding-bottom: 1.5rem;
+}
+
+.gridOverlay h4 {
+  color: white;
+  margin: 0;
+  font-size: 1.1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.compareText {
+  background-color: #f2f3f7;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  border-top: 3px solid #f5a623;
+  margin-top: auto;
+}
+
+.compareText p {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.compareLink {
+  display: inline-block;
+  color: #1e2761;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.compareLink::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #f5a623;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.compareLink:hover {
+  color: #f5a623;
+}
+
+.compareLink:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Button styling for consistency */
+.btnPrimary {
+  background-color: #f5a623;
+  color: #1e2761;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+}
+
+.btnPrimary:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  background-color: #ffb340;
+}
+
+/* Mobile Roof Selector Styles */
+.mobileRoofSelector {
+  display: none;
+  margin-bottom: 2rem;
+  background: linear-gradient(to bottom right, #1e2761, #2a3578);
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  border-top: 3px solid #f5a623;
+}
+
+.selectorLabel {
+  color: white;
+  font-size: 0.9rem;
+  margin: 0 0 0.75rem 0;
+  text-align: center;
+  font-weight: 600;
+}
+
+.thumbnailStrip {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.5rem 0;
+  scrollbar-width: thin;
+  scrollbar-color: #f5a623 rgba(255, 255, 255, 0.2);
+  -webkit-overflow-scrolling: touch;
+}
+
+.thumbnailStrip::-webkit-scrollbar {
+  height: 4px;
+}
+
+.thumbnailStrip::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+}
+
+.thumbnailStrip::-webkit-scrollbar-thumb {
+  background-color: #f5a623;
+  border-radius: 2px;
+}
+
+.roofThumbnail {
+  flex: 0 0 auto;
+  width: 80px;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.2s ease;
+  padding-bottom: 1.5rem;
+}
+
+.roofThumbnail:hover {
+  opacity: 0.9;
+}
+
+.activeThumbnail {
+  opacity: 1;
+}
+
+.activeThumbnail::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 3px;
+  background-color: #f5a623;
+  border-radius: 1px;
+}
+
+.thumbnailImage {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.activeThumbnail .thumbnailImage {
+  border-color: #f5a623;
+  box-shadow: 0 3px 10px rgba(245, 166, 35, 0.4);
+}
+
+.thumbnailName {
+  display: block;
+  font-size: 0.75rem;
+  color: white;
+  margin-top: 0.5rem;
+  white-space: nowrap;
 }
 
 .gradientBackground {
@@ -355,6 +629,7 @@
   line-height: 1.2;
 }
 
+/* Hero Section Styles */
 .hero {
   position: relative;
   width: 100%;
@@ -443,6 +718,153 @@
   animation-delay: 6s;
 }
 
+/* Animations */
+@keyframes shineFade {
+  0% {
+    opacity: 0;
+    background-position: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  20% {
+    background-position: 200%;
+  }
+  25% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    background-position: 200%;
+  }
+}
+
+/* Media Queries - Desktop First Approach */
+@media (min-width: 1200px) {
+  .hero {
+    /* For very large screens, you might need even more adjustment */
+    margin-top: calc(-30px - 2.8rem);
+  }
+  
+  .heroOverlay {
+    padding-top: calc(30px + 2.8rem + 2rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .mobileRoofSelector {
+    display: none;
+  }
+  
+  .splitScreenDisplay {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+  
+  .alternativeRoofs {
+    display: block;
+    gap: 0.75rem;
+  }
+  
+  .compareText {
+    max-height: none;
+    height: auto;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .mobileRoofSelector {
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+  
+  .roofThumbnail {
+    width: 100px;
+  }
+  
+  .thumbnailImage {
+    width: 100px;
+    height: 75px;
+  }
+  
+  .thumbnailName {
+    font-size: 0.8rem;
+  }
+  
+  .roofGridItem {
+    max-height: 220px;
+  }
+}
+
+@media (min-width: 768px) {
+  .splitScreenDisplay {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  
+  .featuredRoof {
+    width: 60%;
+    margin-right: 2rem;
+  }
+  
+  .alternativeRoofs {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+  
+  .roofGrid {
+    height: auto;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .mobileRoofSelector {
+    display: block;
+  }
+  
+  .alternativeRoofs {
+    display: none;
+  }
+  
+  .splitScreenDisplay {
+    flex-direction: column;
+  }
+  
+  .featuredRoof {
+    width: 100%;
+    margin-right: 0;
+  }
+  
+  .roofGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  
+  .featuredDetails,
+  .compareText {
+    padding: 1.5rem;
+  }
+  
+  .featuredOverlay h3 {
+    font-size: 1.4rem;
+  }
+  
+  .gridOverlay h4 {
+    font-size: 0.9rem;
+  }
+  
+  .roofFeatures {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 768px) {
   .overflowWrapper {
     padding-top: 80px; /* Smaller padding for mobile */
@@ -474,38 +896,102 @@
     font-size: clamp(1rem, 4vw, 1.5rem);
     transform: translateX(-50%);
   }
-}
+  
+  .contentRow {
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+    align-items: flex-start;
+  }
 
-@media (min-width: 1200px) {
-  .hero {
-    /* For very large screens, you might need even more adjustment */
-    margin-top: calc(-30px - 2.8rem);
+  .contentRow:nth-child(even) {
+    flex-direction: column;
+  }
+
+  .imageContainer {
+    margin-bottom: 2rem; /* Add space below image container in mobile */
+    position: relative;
+    min-height: auto;
+  }
+
+  .imageWrapper,
+  .contentText {
+    width: 100%;
+  }
+
+  .yellowAccent {
+    position: absolute;
+    top: 1rem;
+    left: -1.5rem;
+    width: 100%;
+    padding-bottom: 58.74%;
+    height: 0;
+    background-color: #f5a623;
+    border-radius: 0.5rem;
+    z-index: 1;
+    transform: translateY(1rem);
+    overflow: visible; /* Add this to ensure the bleed effect */
+    box-shadow: 0 4px 12px rgba(245, 166, 35, 0.4);
+  }
+
+  .contentRow:nth-child(even) .yellowAccent {
+    left: auto;
+    right: -1.5rem;
+    border-radius: 0.25rem;
+    top: 1rem;
+    transform: translateY(1rem);
+  }
+
+  .contentSection {
+    margin-bottom: 2rem;
+  }
+
+  .contentText {
+    padding: 0;
+    margin-top: 0;
+  }
+
+  .contentText p {
+    max-width: 95%;
+  }
+
+  .contentText ul {
+    max-width: 95%;
+  }
+
+  .sectionTitle {
+    font-size: 1.75rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
   }
   
-  .heroOverlay {
-    padding-top: calc(30px + 2.8rem + 2rem);
+  /* Mobile styles for background image section */
+  .bgImageSection {
+    padding: 2rem 1rem;
+    margin: 1.5rem -1rem;
+  }
+  
+  .bgImageSection::before {
+    background-attachment: scroll; /* Better performance on mobile */
+  }
+  
+  .bgImageSection .contentText p {
+    font-size: 1rem;
+    line-height: 1.6;
   }
 }
 
-@keyframes shineFade {
-  0% {
-    opacity: 0;
-    background-position: 0;
+@media (max-width: 480px) {
+  .roofGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
-  5% {
-    opacity: 1;
+  
+  .featuredOverlay {
+    padding: 1rem;
   }
-  20% {
-    background-position: 200%;
-  }
-  25% {
-    opacity: 1;
-  }
-  30% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-    background-position: 200%;
+  
+  .premiumBadge {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
   }
 }

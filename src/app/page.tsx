@@ -5,6 +5,7 @@ import Image from 'next/image';
 import styles from './page.module.css';
 import ContentLayout from '../components/ContentLayout';
 import YellowAccent from '../components/YellowAccent';
+import RoofTypes from '../components/RoofTypes';
 
 export default function Home() {
   return (
@@ -123,10 +124,8 @@ export default function Home() {
           </div>
         </div>
           
-        <h2 className={styles.sectionTitle} style={{ fontSize: 'clamp(1.1rem, 4vw, 1.75rem)' }}>Space for scroll</h2>
-        <div className={styles.contentText}>
-          <p>Looking for durable, high-quality roofing or siding in Utah? At Bro's Construction, we specialize in metal and steel roofing, delivering top-tier repair, replacement, maintenance and inspection services for both residential and commercial properties. Based in the heart of Salt Lake City, we proudly serve homeowners and businesses throughout Utah County and beyond.</p>
-        </div>
+        <RoofTypes />
+        
       </ContentLayout>
     </div>
   );

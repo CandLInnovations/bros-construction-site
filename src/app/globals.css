@@ -187,22 +187,6 @@ main.container {
   all: initial;
 }
 
-/* These styles were causing problems - ensure they're removed/commented out */
-/* header.scrolled {
-  padding-top: 0 !important;
-  background: #1e2761 !important;
-  height: 60px !important;
-}
-
-header.scrolled .phoneArea {
-  opacity: 0 !important;
-  pointer-events: none !important;
-}
-
-header.scrolled nav {
-  padding: 0.5rem 0 !important;
-} */
-
 @media (max-width: 768px) {
   .navbar-toggle {
     display: block;

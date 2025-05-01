@@ -70,7 +70,7 @@ export default function Navbar() {
               <Link href="/services" className={styles.navbarLink}>Services</Link>
             </li>
             <li className={styles.navbarItem}>
-              <Link href="/portfolio" className={styles.navbarLink}>Portfolio</Link>
+              <Link href="/gallery" className={styles.navbarLink}>Gallery</Link>
             </li>
             <li className={styles.navbarItem}>
               <Link href="/contact" className={styles.navbarLink}>Contact</Link>

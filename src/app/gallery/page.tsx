@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 // Define interface for gallery items
 interface GalleryItem {
@@ -161,7 +162,7 @@ export default function Gallery() {
     }
   };
 
-  // Handle keyboard navigation
+  // Handle keyboard navigation - fixed missing dependency
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!lightboxOpen) return;
@@ -177,7 +178,7 @@ export default function Gallery() {
     
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [lightboxOpen, currentImage]);
+  }, [lightboxOpen, currentImage, navigateLightbox]); // Added missing dependency
 
   return (
     <div className="overflowWrapper" style={{ width: '100%', minHeight: '100vh' }}>
@@ -362,9 +363,12 @@ export default function Gallery() {
                         zIndex: 2,
                         boxShadow: '0 4px 15px rgba(0, 0, 0, 0.15)'
                       }}>
-                        <img
+                        {/* Replaced <img> with Next.js <Image> component */}
+                        <Image
                           src={item.image}
                           alt={item.alt}
+                          width={600}
+                          height={400}
                           className="galleryImage"
                           style={{
                             display: 'block',
@@ -405,7 +409,7 @@ export default function Gallery() {
                 padding: '2.5rem',
                 background: 'linear-gradient(to bottom, #1e2761, #2a3578)',
                 borderRadius: '0.5rem',
-                textAlign: 'center' as 'center',
+                textAlign: 'center',
                 color: 'white',
                 boxShadow: '0 4px 15px rgba(0, 0, 0, 0.15)',
                 borderLeft: '5px solid #f5a623'
@@ -438,7 +442,7 @@ export default function Gallery() {
                   cursor: 'pointer',
                   transition: 'all 0.3s ease',
                   boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
-                  textTransform: 'uppercase' as 'uppercase',
+                  textTransform: 'uppercase',
                   letterSpacing: '1px',
                   display: 'inline-block'
                 }}
@@ -463,7 +467,7 @@ export default function Gallery() {
             backgroundColor: 'rgba(0, 0, 0, 0.9)',
             zIndex: 9999999, // Ultra high z-index to ensure it's above everything
             display: 'flex',
-            flexDirection: 'column' as 'column',
+            flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
             padding: '20px'
@@ -474,7 +478,7 @@ export default function Gallery() {
           <button
             onClick={closeLightbox}
             style={{
-              position: 'fixed' as 'fixed',
+              position: 'fixed',
               top: '20px',
               right: '20px',
               width: '45px',
@@ -536,9 +540,12 @@ export default function Gallery() {
               ‹
             </button>
             
-            <img
+            {/* Replaced <img> with Next.js <Image> component */}
+            <Image
               src={currentImage.image}
               alt={currentImage.alt}
+              width={800}
+              height={600}
               style={{
                 maxWidth: '100%',
                 maxHeight: '70vh',

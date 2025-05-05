@@ -1,30 +1,43 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 
-// Define interface for gallery items
+// Define interfaces for gallery items
 interface GalleryItem {
   id: number;
-  image: string;
+  images: string[];
   alt: string;
   title: string;
   description: string;
   category: 'residential' | 'commercial';
 }
 
+// Dynamically import LightboxComponent with SSR disabled
+const LightboxComponent = dynamic(() => import('@/components/LightboxComponent'), {
+  ssr: false,
+  loading: () => <div className="loading">Loading...</div>
+});
+
 export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState<'residential' | 'commercial'>('residential');
   const [lightboxOpen, setLightboxOpen] = useState<boolean>(false);
-  const [currentImage, setCurrentImage] = useState<GalleryItem | null>(null);
+  const [currentItem, setCurrentItem] = useState<GalleryItem | null>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
-  // Sample gallery items - replace with your actual images
+  // Sample gallery items with multiple images per property
   const galleryItems: GalleryItem[] = [
     // Residential Projects
     { 
       id: 1, 
-      image: '/roofing-exterior-home.webp', 
+      images: [
+        '/roofing-exterior-home.webp',
+        '/custom-metal-roof-project.webp',
+        '/custom-metal-roof-project3.webp',
+        '/custom-metal-roof-project4.webp'
+      ], 
       alt: 'Residential Roof Project 1', 
       title: 'Custom Home Roof', 
       description: 'Metal roofing installation for a modern family home in Salt Lake City with custom snow retention system.', 
@@ -32,7 +45,9 @@ export default function Gallery() {
     },
     { 
       id: 2, 
-      image: '/Bros-home-kamas-metal-roof.webp', 
+      images: [
+        '/Bros-home-kamas-metal-roof.webp'
+      ], 
       alt: 'Residential Roof Project 2', 
       title: 'Mountain Retreat', 
       description: 'Premium architectural shingles designed to withstand the harsh Utah winter conditions.', 
@@ -40,7 +55,14 @@ export default function Gallery() {
     },
     { 
       id: 3, 
-      image: '/cabin-kamas-utah-metal-roof.webp', 
+      images: [
+        '/cabin-kamas-utah-metal-roof.webp',
+        '/mountain-cabin-roof-project.webp',
+        '/mountain-cabin-roof-project3.webp',
+        '/mountain-cabin-roof-project4.webp',
+        '/mountain-cabin-roof-project5.webp',
+        '/mountain-cabin-roof-project6.webp'
+      ], 
       alt: 'Residential Roof Project 3', 
       title: 'Mountain Cabin', 
       description: 'Weather-resistant metal roofing solution for this beautiful vacation property in Kamas.', 
@@ -48,7 +70,9 @@ export default function Gallery() {
     },
     { 
       id: 4, 
-      image: '/roofing-silhouette-construction-project.webp', 
+      images: [
+        '/roofing-silhouette-construction-project.webp'
+      ], 
       alt: 'Residential Roof Project 4', 
       title: 'Custom Siding', 
       description: 'Premium metal siding installation with complementary roofing materials for a cohesive look.', 
@@ -56,7 +80,10 @@ export default function Gallery() {
     },
     { 
       id: 5, 
-      image: '/Bros-roofing-hero-poster.jpg', 
+      images: [
+        '/Bros-roofing-hero-poster.jpg',
+        '/Bros-roofing-hero-poster-detail.jpg'
+      ], 
       alt: 'Residential Roof Project 5', 
       title: 'Complete Exterior', 
       description: 'Full roofing and gutters upgrade with custom snow retention system for this Wasatch Front home.', 
@@ -64,7 +91,9 @@ export default function Gallery() {
     },
     { 
       id: 6, 
-      image: '/roofing-exterior-home.webp', 
+      images: [
+        '/roofing-exterior-home.webp'
+      ], 
       alt: 'Residential Roof Project 6', 
       title: 'Classic Design', 
       description: 'Traditional shingle roofing with modern materials for enhanced durability and curb appeal.', 
@@ -74,7 +103,9 @@ export default function Gallery() {
     // Commercial Projects
     { 
       id: 7, 
-      image: '/roofing-exterior-home.webp', 
+      images: [
+        '/roofing-exterior-home.webp'
+      ], 
       alt: 'Commercial Roof Project 1', 
       title: 'Office Building', 
       description: 'Flat TPO roofing system installed for this commercial property in downtown Salt Lake City.', 
@@ -82,7 +113,10 @@ export default function Gallery() {
     },
     { 
       id: 8, 
-      image: '/Bros-home-kamas-metal-roof.webp', 
+      images: [
+        '/Bros-home-kamas-metal-roof.webp',
+        '/Bros-home-kamas-metal-roof-side.webp'
+      ], 
       alt: 'Commercial Roof Project 2', 
       title: 'Retail Complex', 
       description: 'Large-scale commercial roofing project featuring our premium EPDM membrane system.', 
@@ -90,7 +124,9 @@ export default function Gallery() {
     },
     { 
       id: 9, 
-      image: '/cabin-kamas-utah-metal-roof.webp', 
+      images: [
+        '/cabin-kamas-utah-metal-roof.webp'
+      ], 
       alt: 'Commercial Roof Project 3', 
       title: 'Warehouse Facility', 
       description: 'Industrial metal roofing solution designed for maximum durability and minimal maintenance.', 
@@ -98,7 +134,9 @@ export default function Gallery() {
     },
     { 
       id: 10, 
-      image: '/roofing-silhouette-construction-project.webp', 
+      images: [
+        '/roofing-silhouette-construction-project.webp'
+      ], 
       alt: 'Commercial Roof Project 4', 
       title: 'Shopping Center', 
       description: 'Comprehensive roofing solution with custom drainage system for this major retail development.', 
@@ -106,7 +144,9 @@ export default function Gallery() {
     },
     { 
       id: 11, 
-      image: '/Bros-roofing-hero-poster.jpg', 
+      images: [
+        '/Bros-roofing-hero-poster.jpg'
+      ], 
       alt: 'Commercial Roof Project 5', 
       title: 'Restaurant Building', 
       description: 'Custom metal accent details and high-performance roofing for this upscale dining establishment.', 
@@ -114,7 +154,9 @@ export default function Gallery() {
     },
     { 
       id: 12, 
-      image: '/roofing-exterior-home.webp', 
+      images: [
+        '/roofing-exterior-home.webp'
+      ], 
       alt: 'Commercial Roof Project 6', 
       title: 'Medical Office', 
       description: 'Premium EPDM roofing system installed for this healthcare facility in the Wasatch Front area.', 
@@ -122,47 +164,64 @@ export default function Gallery() {
     },
   ];
 
-  // Check if on mobile
+  // Check if on mobile - memoized with useCallback
+  const checkIfMobile = useCallback(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
+  
   useEffect(() => {
-    const checkIfMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
     checkIfMobile();
     window.addEventListener('resize', checkIfMobile);
     
     return () => {
       window.removeEventListener('resize', checkIfMobile);
     };
-  }, []);
+  }, [checkIfMobile]);
 
-  const openLightbox = (item: GalleryItem) => {
-    setCurrentImage(item);
+  const openLightbox = useCallback((item: GalleryItem, initialImageIndex: number = 0) => {
+    setCurrentItem(item);
+    setCurrentImageIndex(initialImageIndex);
     setLightboxOpen(true);
     document.body.style.overflow = 'hidden'; // Prevent scrolling when lightbox is open
-  };
+  }, []);
 
-  const closeLightbox = () => {
+  const closeLightbox = useCallback(() => {
     setLightboxOpen(false);
     document.body.style.overflow = 'auto'; // Re-enable scrolling
-  };
+  }, []);
 
-  const navigateLightbox = (direction: 'prev' | 'next') => {
-    if (!currentImage) return;
+  const navigateLightbox = useCallback((direction: 'prev' | 'next') => {
+    if (!currentItem) return;
+    
+    if (direction === 'prev') {
+      setCurrentImageIndex(prevIndex => 
+        prevIndex > 0 ? prevIndex - 1 : currentItem.images.length - 1
+      );
+    } else {
+      setCurrentImageIndex(prevIndex => 
+        prevIndex < currentItem.images.length - 1 ? prevIndex + 1 : 0
+      );
+    }
+  }, [currentItem]);
+
+  const navigateGalleryItems = useCallback((direction: 'prev' | 'next') => {
+    if (!currentItem) return;
     
     const filteredItems = galleryItems.filter(item => item.category === activeCategory);
-    const currentIndex = filteredItems.findIndex(item => item.id === currentImage.id);
+    const currentIndex = filteredItems.findIndex(item => item.id === currentItem.id);
     
     if (direction === 'prev') {
       const prevIndex = currentIndex > 0 ? currentIndex - 1 : filteredItems.length - 1;
-      setCurrentImage(filteredItems[prevIndex]);
+      setCurrentItem(filteredItems[prevIndex]);
+      setCurrentImageIndex(0); // Reset to first image of new item
     } else {
       const nextIndex = currentIndex < filteredItems.length - 1 ? currentIndex + 1 : 0;
-      setCurrentImage(filteredItems[nextIndex]);
+      setCurrentItem(filteredItems[nextIndex]);
+      setCurrentImageIndex(0); // Reset to first image of new item
     }
-  };
+  }, [currentItem, activeCategory]);
 
-  // Handle keyboard navigation - fixed missing dependency
+  // Handle keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!lightboxOpen) return;
@@ -170,15 +229,23 @@ export default function Gallery() {
       if (e.key === 'Escape') {
         closeLightbox();
       } else if (e.key === 'ArrowLeft') {
-        navigateLightbox('prev');
+        if (e.shiftKey) {
+          navigateGalleryItems('prev');
+        } else {
+          navigateLightbox('prev');
+        }
       } else if (e.key === 'ArrowRight') {
-        navigateLightbox('next');
+        if (e.shiftKey) {
+          navigateGalleryItems('next');
+        } else {
+          navigateLightbox('next');
+        }
       }
     };
     
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [lightboxOpen, currentImage, navigateLightbox]); // Added missing dependency
+  }, [lightboxOpen, navigateLightbox, navigateGalleryItems, closeLightbox]);
 
   return (
     <div className="overflowWrapper" style={{ width: '100%', minHeight: '100vh' }}>
@@ -187,7 +254,7 @@ export default function Gallery() {
         position: 'relative',
         width: '100%',
         background: 'linear-gradient(to bottom, #1e2761, #9ca4bf)',
-        padding: '2rem 0', // Added padding to show dark blue gradient at top
+        padding: '2rem 0',
         marginTop: 0,
         overflow: 'visible',
         minHeight: '100px'
@@ -204,7 +271,7 @@ export default function Gallery() {
           <div style={{
             content: '',
             position: 'absolute',
-            top: '2rem', // Adjusted to show dark blue gradient at top
+            top: '2rem',
             left: 0,
             right: 0,
             bottom: 0,
@@ -309,7 +376,7 @@ export default function Gallery() {
               </button>
             </div>
 
-            {/* Gallery Grid - Fixed yellow accent issue */}
+            {/* Gallery Grid - Optimized with Image component */}
             <div className="contentSection" style={{
               display: 'grid',
               gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fill, minmax(300px, 1fr))',
@@ -322,7 +389,7 @@ export default function Gallery() {
                   <div 
                     key={item.id} 
                     className="contentRow"
-                    onClick={() => openLightbox(item)}
+                    onClick={() => openLightbox(item, 0)}
                     style={{
                       cursor: 'pointer',
                       transition: 'transform 0.3s ease',
@@ -339,7 +406,7 @@ export default function Gallery() {
                       overflow: 'visible',
                       marginBottom: '1rem'
                     }}>
-                      {/* Yellow accent - fixed for desktop/mobile */}
+                      {/* Yellow accent */}
                       <div className="yellowAccent" style={{
                         position: 'absolute',
                         top: '1rem',
@@ -363,21 +430,41 @@ export default function Gallery() {
                         zIndex: 2,
                         boxShadow: '0 4px 15px rgba(0, 0, 0, 0.15)'
                       }}>
-                        {/* Replaced <img> with Next.js <Image> component */}
-                        <Image
-                          src={item.image}
-                          alt={item.alt}
-                          width={600}
-                          height={400}
-                          className="galleryImage"
-                          style={{
-                            display: 'block',
-                            width: '100%',
-                            height: 'auto',
-                            transition: 'transform 0.5s ease',
-                            objectFit: 'cover'
-                          }}
-                        />
+                        {/* Main thumbnail image - always show first image */}
+                        <div style={{ position: 'relative', width: '100%', height: 0, paddingBottom: '66.67%' }}>
+                          <Image
+                            src={item.images[0]}
+                            alt={item.alt}
+                            fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            priority={index < 6} // Prioritize loading first 6 images
+                            className="galleryImage"
+                            style={{
+                              objectFit: 'cover',
+                              transition: 'transform 0.5s ease',
+                            }}
+                          />
+                        </div>
+                        
+                        {/* Image count indicator */}
+                        {item.images.length > 1 && (
+                          <div style={{
+                            position: 'absolute',
+                            top: '0.75rem',
+                            right: '0.75rem',
+                            backgroundColor: 'rgba(30, 39, 97, 0.8)',
+                            color: 'white',
+                            padding: '0.25rem 0.5rem',
+                            borderRadius: '0.25rem',
+                            fontSize: '0.75rem',
+                            fontWeight: 600,
+                            zIndex: 4
+                          }}>
+                            +{item.images.length - 1} more
+                          </div>
+                        )}
+                        
+                        {/* Title overlay */}
                         <div style={{
                           position: 'absolute',
                           bottom: 0,
@@ -402,7 +489,7 @@ export default function Gallery() {
                 ))}
             </div>
 
-            {/* Call to action - Fixed margin issue */}
+            {/* Call to action */}
             <div 
               style={{
                 margin: '3rem auto',
@@ -425,13 +512,14 @@ export default function Gallery() {
                 fontSize: '1.1rem',
                 lineHeight: 1.7,
                 margin: '0 auto 1.5rem',
-                maxWidth: '100%', // Increased to 100% for better display
+                maxWidth: '100%',
                 color: 'white'
               }}>
                 Contact us today for a free consultation and estimate on your roofing or exterior project.
                 Let Bro's Construction bring out the best in your home or business with our quality craftsmanship.
               </p>
-              <button 
+              <a 
+                href="/contact"
                 style={{
                   backgroundColor: '#f5a623',
                   color: '#1e2761',
@@ -444,175 +532,27 @@ export default function Gallery() {
                   boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
                   textTransform: 'uppercase',
                   letterSpacing: '1px',
-                  display: 'inline-block'
+                  display: 'inline-block',
+                  textDecoration: 'none'
                 }}
               >
                 Request a Quote
-              </button>
+              </a>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Lightbox - Completely separate from the page flow */}
-      {lightboxOpen && currentImage && (
-        <div
-          id="lightbox"
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundColor: 'rgba(0, 0, 0, 0.9)',
-            zIndex: 9999999, // Ultra high z-index to ensure it's above everything
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            padding: '20px'
-          }}
-          onClick={closeLightbox}
-        >
-          {/* Close button - Fixed to top right */}
-          <button
-            onClick={closeLightbox}
-            style={{
-              position: 'fixed',
-              top: '20px',
-              right: '20px',
-              width: '45px',
-              height: '45px',
-              backgroundColor: '#f5a623',
-              color: 'white',
-              border: '3px solid white',
-              borderRadius: '50%',
-              fontSize: '24px',
-              fontWeight: 'bold',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              cursor: 'pointer',
-              zIndex: 10000000, // Extremely high z-index
-              boxShadow: '0 0 10px rgba(0,0,0,0.5)'
-            }}
-          >
-            X
-          </button>
-          
-          {/* Main image container */}
-          <div
-            style={{
-              position: 'relative',
-              maxWidth: '90%',
-              maxHeight: '70vh',
-              margin: '0 auto',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              width: '100%'
-            }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Navigation buttons */}
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                navigateLightbox('prev');
-              }}
-              style={{
-                position: 'absolute',
-                left: '-50px',
-                width: '45px',
-                height: '45px',
-                borderRadius: '50%',
-                backgroundColor: 'rgba(0,0,0,0.6)',
-                color: 'white',
-                border: '2px solid white',
-                fontSize: '24px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                cursor: 'pointer',
-                zIndex: 10000001
-              }}
-            >
-              ‹
-            </button>
-            
-            {/* Replaced <img> with Next.js <Image> component */}
-            <Image
-              src={currentImage.image}
-              alt={currentImage.alt}
-              width={800}
-              height={600}
-              style={{
-                maxWidth: '100%',
-                maxHeight: '70vh',
-                objectFit: 'contain'
-              }}
-            />
-            
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                navigateLightbox('next');
-              }}
-              style={{
-                position: 'absolute',
-                right: '-50px',
-                width: '45px',
-                height: '45px',
-                borderRadius: '50%',
-                backgroundColor: 'rgba(0,0,0,0.6)',
-                color: 'white',
-                border: '2px solid white',
-                fontSize: '24px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                cursor: 'pointer',
-                zIndex: 10000001
-              }}
-            >
-              ›
-            </button>
-          </div>
-          
-          {/* Caption */}
-          <div
-            style={{
-              marginTop: '20px',
-              backgroundColor: '#1e2761',
-              padding: '15px 20px',
-              borderRadius: '6px',
-              maxWidth: '800px',
-              border: '2px solid #f5a623'
-            }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <h3
-              style={{
-                margin: '0 0 10px 0',
-                color: '#f5a623',
-                textAlign: 'center',
-                fontSize: '22px'
-              }}
-            >
-              {currentImage.title}
-            </h3>
-            <p
-              style={{
-                margin: 0,
-                color: 'white',
-                textAlign: 'center',
-                fontSize: '16px'
-              }}
-            >
-              {currentImage.description}
-            </p>
-          </div>
-        </div>
+      {/* Use dynamically imported Lightbox Component when needed */}
+      {lightboxOpen && currentItem && (
+        <LightboxComponent
+          item={currentItem}
+          currentImageIndex={currentImageIndex}
+          setCurrentImageIndex={setCurrentImageIndex}
+          closeLightbox={closeLightbox}
+          navigateLightbox={navigateLightbox}
+          navigateGalleryItems={navigateGalleryItems}
+        />
       )}
     </div>
   );

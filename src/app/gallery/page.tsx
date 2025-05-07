@@ -41,7 +41,7 @@ export default function Gallery() {
       ], 
       alt: 'Residential Roof Project 1', 
       title: 'Mountain Modern Masterpiece', 
-      description: 'This striking residence showcases dramatic rooflines with precise angular geometry, highlighting our expert metal roofing craftsmanship. The sleek, contemporary design merges bold architectural statement with superior durability—providing both distinctive mountain aesthetic and exceptional protection against Park City elements for this luxury chalet.', 
+      description: 'This striking residence showcases dramatic rooflines with precise angular geometry, highlighting our expert metal roofing craftsmanship.', 
       category: 'residential' 
     },
     { 
@@ -51,7 +51,7 @@ export default function Gallery() {
       ], 
       alt: 'Mountain retreat cabin with standing seam metal roof', 
       title: 'Alpine Sanctuary', 
-      description: "This charming mountain cabin features a premium standing seam metal roof that combines rustic warmth with modern durability. The clean, vertical lines enhance the cabin's natural aesthetic while providing superior protection against heavy snow loads and harsh mountain conditions—a perfect blend of traditional charm and contemporary performance.", 
+      description: "This charming mountain cabin features a premium standing seam metal roof that combines rustic warmth with modern durability.", 
       category: 'residential' 
     },
     { 
@@ -66,7 +66,7 @@ export default function Gallery() {
       ], 
       alt: 'Residential Roof Project 3', 
       title: 'Mountain Estate', 
-      description: "This stunning Kamas property features a premium metal roofing system engineered to withstand harsh alpine conditions. The architectural metal installation complements the home's grand scale and natural surroundings, providing decades of protection against heavy snowfall, UV exposure, and dramatic temperature fluctuations while maintaining its elegant mountain aesthetic.", 
+      description: "This metal roof installation complements the home's grand scale and natural surroundings, providing decades of protection against heavy snowfall, UV exposure, and dramatic temperature fluctuations while maintaining its elegant aesthetic.", 
       category: 'residential' 
     },
     { 
@@ -84,8 +84,8 @@ export default function Gallery() {
         '/custom-metal-siding-patio10.webp'
       ], 
       alt: 'Residential Siding Project 4', 
-      title: 'Custom Metal Siding', 
-      description: 'Premium metal siding installation with complementary roofing materials for a cohesive look.', 
+      title: 'Architectural Metal Distinction', 
+      description: 'Perfect for accent walls, gable ends, entryway features, and full-façade applications—our custom metal installations create striking visual interest while providing superior weather resistance.', 
       category: 'residential' 
     },
     { 
@@ -99,7 +99,7 @@ export default function Gallery() {
       ], 
       alt: 'Distinctive Custom Metal Chimney Caps', 
       title: 'Distinctive Metal Chimney Caps', 
-      description: "Elegantly crafted custom metal crowns that protect your chimney while enhancing your home's architectural profile. Our premium fabrications combine superior weather resistance with artistic design elements tailored specifically for Wasatch Front homes.", 
+      description: "Elegantly crafted custom metal crowns that protect your chimney while enhancing your home's architectural profile.", 
       category: 'residential' 
     },
     { 
@@ -111,7 +111,7 @@ export default function Gallery() {
       ], 
       alt: 'Premium Asphalt New Roof & Reroof', 
       title: 'Premium Asphalt Craftsmanship', 
-      description: 'These homes feature architectural-grade asphalt shingles crafted from high-performance materials with enhanced UV resistance and impact protection. The dimensional profiles create sophisticated curb appeal with rich textures and shadow lines, delivering traditional aesthetics enhanced by modern engineering—the perfect investment in both timeless style and long-term performance.', 
+      description: 'These homes feature architectural-grade asphalt shingles crafted from high-performance materials with enhanced UV resistance and impact protection.', 
       category: 'residential' 
     },
     
@@ -206,7 +206,7 @@ export default function Gallery() {
   ], 
   alt: 'Flat Roof with Metal Accent', 
   title: 'Architectural Excellence', 
-  description: 'This commanding custom residence features a sophisticated multi-level flat roof design enhanced with premium metal accent elements. The dynamic terraced planes create visual intrigue while maintaining clean contemporary lines, with strategic metal details adding both distinctive character and superior weather protection to this luxury home.', 
+  description: 'This commanding custom residence features a sophisticated multi-level flat roof design enhanced with premium metal accent elements.', 
   category: 'residential' 
 },
 { 
@@ -215,8 +215,8 @@ export default function Gallery() {
     '/custom-metal-roof-new-home.webp'
   ], 
   alt: 'Modern Metal Design', 
-  title: 'Modern Metal Design', 
-  description: 'I need details on this roof.', 
+  title: 'Mountain Contemporary', 
+  description: 'This sophisticated residence showcases a premium standing seam metal roof with dynamic multi-level planes and clean architectural lines while providing superior protection against the elements.', 
   category: 'residential' 
 },
 { 
@@ -236,8 +236,8 @@ export default function Gallery() {
     '/modern-residential-home.webp'
   ], 
   alt: 'Contemporaty Metal Style', 
-  title: 'Contemporaty Style', 
-  description: 'I need details on this roof.', 
+  title: 'Modern Architectural Innovation', 
+  description: "This bold hillside residence features a contemporary design with dramatic geometric volumes and extensive glazing. The integrated metal roofing system complements the home's minimalist aesthetic while providing superior insulation and weather protection in challenging mountain conditions.", 
   category: 'residential' 
 },
 { 
@@ -249,8 +249,8 @@ export default function Gallery() {
   ], 
   alt: 'Cozy home with asphalt & metal roof', 
   title: 'Architectural Harmony', 
-  description: 'This inviting residence showcases the perfect blend of traditional asphalt shingles with modern metal roofing accents. The thoughtful combination creates visual interest while providing superior protection and longevity for a truly distinctive home design.', 
-  category: 'residential' 
+  description: 'This inviting residence showcases the perfect blend of traditional asphalt shingles with modern metal roofing accents. The thoughtful combination creates visual interest while providing superior protection and longevity.', 
+  category: 'residential'
 },
 { 
   id: 19, 

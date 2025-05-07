@@ -36,11 +36,12 @@ export default function Gallery() {
         '/roofing-exterior-home.webp',
         '/custom-metal-roof-project.webp',
         '/custom-metal-roof-project3.webp',
+        '/custom-metal-roof-project3a.webp',
         '/custom-metal-roof-project4.webp'
       ], 
       alt: 'Residential Roof Project 1', 
-      title: 'Custom Home Roof', 
-      description: 'Metal roofing installation for a modern family home in Salt Lake City with custom snow retention system.', 
+      title: 'Mountain Modern Masterpiece', 
+      description: 'This striking residence showcases dramatic rooflines with precise angular geometry, highlighting our expert metal roofing craftsmanship. The sleek, contemporary design merges bold architectural statement with superior durability—providing both distinctive mountain aesthetic and exceptional protection against Park City elements for this luxury chalet.', 
       category: 'residential' 
     },
     { 
@@ -48,9 +49,9 @@ export default function Gallery() {
       images: [
         '/Bros-home-kamas-metal-roof.webp'
       ], 
-      alt: 'Residential Roof Project 2', 
-      title: 'Mountain Retreat', 
-      description: 'Premium architectural shingles designed to withstand the harsh Utah winter conditions.', 
+      alt: 'Mountain retreat cabin with standing seam metal roof', 
+      title: 'Alpine Sanctuary', 
+      description: "This charming mountain cabin features a premium standing seam metal roof that combines rustic warmth with modern durability. The clean, vertical lines enhance the cabin's natural aesthetic while providing superior protection against heavy snow loads and harsh mountain conditions—a perfect blend of traditional charm and contemporary performance.", 
       category: 'residential' 
     },
     { 
@@ -64,39 +65,53 @@ export default function Gallery() {
         '/mountain-cabin-roof-project6.webp'
       ], 
       alt: 'Residential Roof Project 3', 
-      title: 'Mountain Cabin', 
-      description: 'Weather-resistant metal roofing solution for this beautiful vacation property in Kamas.', 
+      title: 'Mountain Estate', 
+      description: "This stunning Kamas property features a premium metal roofing system engineered to withstand harsh alpine conditions. The architectural metal installation complements the home's grand scale and natural surroundings, providing decades of protection against heavy snowfall, UV exposure, and dramatic temperature fluctuations while maintaining its elegant mountain aesthetic.", 
       category: 'residential' 
     },
     { 
       id: 4, 
       images: [
-        '/roofing-silhouette-construction-project.webp'
+        '/custom-metal-siding.webp',
+        '/custom-metal-siding-entry2.webp',
+        '/custom-metal-siding-entry3.webp',
+        '/custom-metal-siding-garage4.webp',
+        '/custom-metal-siding-garage5.webp',
+        '/custom-metal-siding-patio6.webp',
+        '/custom-metal-siding-exterior-home7.webp',
+        '/custom-corrugated-metal-siding8.webp',
+        '/custom-metal-siding-garage9.webp',
+        '/custom-metal-siding-patio10.webp'
       ], 
-      alt: 'Residential Roof Project 4', 
-      title: 'Custom Siding', 
+      alt: 'Residential Siding Project 4', 
+      title: 'Custom Metal Siding', 
       description: 'Premium metal siding installation with complementary roofing materials for a cohesive look.', 
       category: 'residential' 
     },
     { 
       id: 5, 
       images: [
-        '/Bros-roofing-hero-poster.jpg',
-        '/Bros-roofing-hero-poster-detail.jpg'
+        '/custom-metal-copper-roof-cap.webp',
+        '/custom-metal-black-roof-cap2.webp',
+        '/custom-metal-black-chimney-cap3.webp',
+        '/custom-metal-black-chimney-cap4.webp',
+        '/custom-metal-copper-chimney-cap5.webp'
       ], 
-      alt: 'Residential Roof Project 5', 
-      title: 'Complete Exterior', 
-      description: 'Full roofing and gutters upgrade with custom snow retention system for this Wasatch Front home.', 
+      alt: 'Distinctive Custom Metal Chimney Caps', 
+      title: 'Distinctive Metal Chimney Caps', 
+      description: "Elegantly crafted custom metal crowns that protect your chimney while enhancing your home's architectural profile. Our premium fabrications combine superior weather resistance with artistic design elements tailored specifically for Wasatch Front homes.", 
       category: 'residential' 
     },
     { 
       id: 6, 
       images: [
-        '/roofing-exterior-home.webp'
+        '/asphalt-shingle-reroof-home.webp',
+        '/asphalt-shingle-new-roof2.webp',
+        '/asphalt-shingle-new-roof3.webp'
       ], 
-      alt: 'Residential Roof Project 6', 
-      title: 'Classic Design', 
-      description: 'Traditional shingle roofing with modern materials for enhanced durability and curb appeal.', 
+      alt: 'Premium Asphalt New Roof & Reroof', 
+      title: 'Premium Asphalt Craftsmanship', 
+      description: 'These homes feature architectural-grade asphalt shingles crafted from high-performance materials with enhanced UV resistance and impact protection. The dimensional profiles create sophisticated curb appeal with rich textures and shadow lines, delivering traditional aesthetics enhanced by modern engineering—the perfect investment in both timeless style and long-term performance.', 
       category: 'residential' 
     },
     
@@ -104,7 +119,9 @@ export default function Gallery() {
     { 
       id: 7, 
       images: [
-        '/roofing-exterior-home.webp'
+        '/commercial-composite-shake-shingle-roof.webp',
+        '/commercial-composite-shake-shingle-roof2.webp',
+        '/commercial-composite-shake-shingle-roof3.webp'
       ], 
       alt: 'Commercial Roof Project 1', 
       title: 'Office Building', 
@@ -114,8 +131,8 @@ export default function Gallery() {
     { 
       id: 8, 
       images: [
-        '/Bros-home-kamas-metal-roof.webp',
-        '/Bros-home-kamas-metal-roof-side.webp'
+        '/apartment-flat-tpo-roof.webp',
+        '/apartment-flat-tpo-roof2.webp'
       ], 
       alt: 'Commercial Roof Project 2', 
       title: 'Retail Complex', 
@@ -125,21 +142,26 @@ export default function Gallery() {
     { 
       id: 9, 
       images: [
-        '/cabin-kamas-utah-metal-roof.webp'
+        '/commercial-roof-edpm.webp',
+        '/commercial-roof-edpm2.webp',
+        '/commercial-roof-edpm3.webp',
+        '/commercial-roof-edpm4.webp',
+        '/commercial-roof-edpm5.webp',
+        '/commercial-roof-edpm6.webp'
       ], 
       alt: 'Commercial Roof Project 3', 
-      title: 'Warehouse Facility', 
-      description: 'Industrial metal roofing solution designed for maximum durability and minimal maintenance.', 
+      title: 'Commercial Facility EDPM', 
+      description: 'Industrial EDPM roofing solution designed for maximum durability and minimal maintenance.', 
       category: 'commercial' 
     },
     { 
       id: 10, 
       images: [
-        '/roofing-silhouette-construction-project.webp'
+        '/commercial-metal-arch.webp'
       ], 
       alt: 'Commercial Roof Project 4', 
-      title: 'Shopping Center', 
-      description: 'Comprehensive roofing solution with custom drainage system for this major retail development.', 
+      title: 'Distinctive Metal Arch Accent', 
+      description: 'Elevate your commercial property with our premium architectural metal arches that combine form and function.', 
       category: 'commercial' 
     },
     { 
@@ -162,6 +184,101 @@ export default function Gallery() {
       description: 'Premium EPDM roofing system installed for this healthcare facility in the Wasatch Front area.', 
       category: 'commercial' 
     },
+    { 
+  id: 13, 
+  images: [
+    '/shake-wood-shingle.webp',
+    '/shake-wood-shingle2.webp',
+    '/shake-wood-shingle3.webp',
+    '/shake-wood-shingle4.webp'
+  ], 
+  alt: 'Cedar Roof with Metal Accents', 
+  title: 'Cedar & Metal Elegance', 
+  description: 'Cedar shake shingles paired with sleek metal accents radiate warmth and charm, blending timeless beauty with enduring durability. This stunning roof design elevates any home, ensuring lasting protection and a rustic yet modern appeal.', 
+  category: 'residential' 
+},
+{ 
+  id: 14, 
+  images: [
+    '/flat-roof-metal-accents.webp',
+    '/flat-roof-metal-accents2.webp',
+    '/flat-roof-metal-accents3.webp'
+  ], 
+  alt: 'Flat Roof with Metal Accent', 
+  title: 'Architectural Excellence', 
+  description: 'This commanding custom residence features a sophisticated multi-level flat roof design enhanced with premium metal accent elements. The dynamic terraced planes create visual intrigue while maintaining clean contemporary lines, with strategic metal details adding both distinctive character and superior weather protection to this luxury home.', 
+  category: 'residential' 
+},
+{ 
+  id: 15, 
+  images: [
+    '/custom-metal-roof-new-home.webp'
+  ], 
+  alt: 'Modern Metal Design', 
+  title: 'Modern Metal Design', 
+  description: 'I need details on this roof.', 
+  category: 'residential' 
+},
+{ 
+  id: 16, 
+  images: [
+    '/corrugated-metal-residential-roof.webp',
+    '/corrugated-metal-residential-roof2.webp'
+  ], 
+  alt: 'Modern Metal Design', 
+  title: 'Energy-efficient Corrugated Metal', 
+  description: 'Engineered for exceptional durability, our corrugated metal roofing withstands decades of harsh weather while requiring minimal maintenance.', 
+  category: 'residential' 
+},
+{ 
+  id: 17, 
+  images: [
+    '/modern-residential-home.webp'
+  ], 
+  alt: 'Contemporaty Metal Style', 
+  title: 'Contemporaty Style', 
+  description: 'I need details on this roof.', 
+  category: 'residential' 
+},
+{ 
+  id: 18, 
+  images: [
+    '/asphalt-roof-metal-accent.webp',
+    '/asphalt-roof-metal-accent2.webp',
+    '/asphalt-roof-metal-accent3.webp'
+  ], 
+  alt: 'Cozy home with asphalt & metal roof', 
+  title: 'Architectural Harmony', 
+  description: 'This inviting residence showcases the perfect blend of traditional asphalt shingles with modern metal roofing accents. The thoughtful combination creates visual interest while providing superior protection and longevity for a truly distinctive home design.', 
+  category: 'residential' 
+},
+{ 
+  id: 19, 
+  images: [
+    '/IPE-wood-pavers-pedestal.webp',
+    '/IPE-wood-pavers-pedestal2.webp',
+    '/asphalt-roof-metal-accent3.webp'
+  ], 
+  alt: 'Roofing in Progress - construction photos', 
+  title: 'Elevated Rooftop Surfaces', 
+  description: 'Premium IPE hardwood decking and concrete pavers installed on adjustable pedestals, creating elegant, durable outdoor living spaces with perfect drainage and simplified maintenance. Ideal for rooftop terraces and accessible flat roof areas.', 
+  category: 'residential' 
+},
+{ 
+  id: 20, 
+  images: [
+    '/roofing-in-progress.webp',
+    '/roofing-in-progress2.webp',
+    '/roofing-in-progress3.webp',
+    '/roofing-in-progress4.webp',
+    '/roofing-in-progress5.webp',
+    '/roofing-in-progress6.webp'
+  ], 
+  alt: 'Roofing in Progress - construction photos', 
+  title: 'Roofing in Progress', 
+  description: 'Behind-the-scenes glimpses of our skilled craftsmen transforming structures with precision techniques and quality materials. These select construction photos showcase the attention to detail that ensures lasting protection for your home.', 
+  category: 'residential' 
+},
   ];
 
   // Check if on mobile - memoized with useCallback

@@ -31,20 +31,40 @@ export default function LightboxComponent({
   navigateGalleryItems
 }: LightboxProps) {
   const [isMobile, setIsMobile] = useState<boolean>(false);
+  const [isLargeScreen, setIsLargeScreen] = useState<boolean>(false);
   
-  // Check if on mobile
+  // Check if on mobile or large screen
   useEffect(() => {
-    const checkIfMobile = () => {
+    const checkScreenSize = () => {
       setIsMobile(window.innerWidth < 768);
+      setIsLargeScreen(window.innerWidth > 1600);
     };
     
-    checkIfMobile();
-    window.addEventListener('resize', checkIfMobile);
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
     
     return () => {
-      window.removeEventListener('resize', checkIfMobile);
+      window.removeEventListener('resize', checkScreenSize);
     };
   }, []);
+  
+  // Function to handle navigation with automatic project navigation
+  const handleImageNavigation = (direction: 'prev' | 'next') => {
+    // If we're at the first image and going prev, go to previous project
+    if (direction === 'prev' && currentImageIndex === 0) {
+      navigateGalleryItems('prev');
+      return;
+    }
+    
+    // If we're at the last image and going next, go to next project
+    if (direction === 'next' && currentImageIndex === item.images.length - 1) {
+      navigateGalleryItems('next');
+      return;
+    }
+    
+    // Otherwise, navigate normally within the current item's images
+    navigateLightbox(direction);
+  };
 
   return (
     <div
@@ -125,7 +145,7 @@ export default function LightboxComponent({
             <div
               style={{
                 position: 'absolute',
-                top: '15px',
+                top: '1px',
                 left: '50%',
                 transform: 'translateX(-50%)',
                 display: 'inline-block',
@@ -223,26 +243,25 @@ export default function LightboxComponent({
           <button
             onClick={(e) => {
               e.stopPropagation();
-              navigateLightbox('prev');
+              handleImageNavigation('prev');
             }}
-            disabled={item.images.length <= 1}
             style={{
               position: 'absolute',
               left: '10px',
               width: isMobile ? '35px' : '45px',
               height: isMobile ? '35px' : '45px',
               borderRadius: isMobile ? '4px' : '50%',
-              backgroundColor: item.images.length > 1 ? 'rgba(0,0,0,0.6)' : 'rgba(0,0,0,0.3)',
+              backgroundColor: 'rgba(0,0,0,0.6)',
               color: 'white',
               border: '2px solid white',
               fontSize: isMobile ? '20px' : '24px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              cursor: item.images.length > 1 ? 'pointer' : 'not-allowed',
+              cursor: 'pointer',
               zIndex: 10000001
             }}
-            title="Previous Image (←)"
+            title={currentImageIndex === 0 ? "Previous Project" : "Previous Image (←)"}
           >
             ‹
           </button>
@@ -271,26 +290,25 @@ export default function LightboxComponent({
           <button
             onClick={(e) => {
               e.stopPropagation();
-              navigateLightbox('next');
+              handleImageNavigation('next');
             }}
-            disabled={item.images.length <= 1}
             style={{
               position: 'absolute',
               right: '10px',
               width: isMobile ? '35px' : '45px',
               height: isMobile ? '35px' : '45px',
               borderRadius: isMobile ? '4px' : '50%',
-              backgroundColor: item.images.length > 1 ? 'rgba(0,0,0,0.6)' : 'rgba(0,0,0,0.3)',
+              backgroundColor: 'rgba(0,0,0,0.6)',
               color: 'white',
               border: '2px solid white',
               fontSize: isMobile ? '20px' : '24px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              cursor: item.images.length > 1 ? 'pointer' : 'not-allowed',
+              cursor: 'pointer',
               zIndex: 10000001
             }}
-            title="Next Image (→)"
+            title={currentImageIndex === item.images.length - 1 ? "Next Project" : "Next Image (→)"}
           >
             ›
           </button>
@@ -302,7 +320,7 @@ export default function LightboxComponent({
             style={{
               position: 'fixed',
               top: '50%',
-              left: '20px',
+              left: isLargeScreen ? '10%' : '20px',
               transform: 'translateY(-50%)',
               zIndex: 10000001,
               display: 'flex',
@@ -346,7 +364,7 @@ export default function LightboxComponent({
             style={{
               position: 'fixed',
               top: '50%',
-              right: '20px',
+              right: isLargeScreen ? '10%' : '20px',
               transform: 'translateY(-50%)',
               zIndex: 10000001,
               display: 'flex',
@@ -395,7 +413,7 @@ export default function LightboxComponent({
               overflowX: 'auto',
               padding: isMobile ? '0.25rem' : '0.5rem',
               position: 'relative',
-              marginTop: isMobile ? '-55px' : '-50px', // Negative margin to overlap with main image
+              marginTop: isMobile ? '-85px' : '-70px', // Negative margin to overlap with main image
               marginBottom: isMobile ? '25px' : '15px',
               zIndex: 10000001
             }}
@@ -480,7 +498,7 @@ export default function LightboxComponent({
               color: 'white',
               textAlign: 'center',
               fontSize: isMobile ? '14px' : '16px',
-              paddingBottom: '5px' // Added padding for better readability when scrolling
+              paddingBottom: '1px' // Added padding for better readability when scrolling
             }}
           >
             {item.description}

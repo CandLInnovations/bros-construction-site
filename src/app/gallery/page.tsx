@@ -41,7 +41,7 @@ export default function Gallery() {
       ], 
       alt: 'Residential Roof Project 1', 
       title: 'Mountain Modern Masterpiece', 
-      description: 'This striking residence showcases dramatic rooflines with precise angular geometry, highlighting our expert metal roofing craftsmanship.', 
+      description: 'This striking residence showcases dramatic rooflines with precise angular geometry, highlighting our expert metal roofing craftsmanship. The sleek, contemporary design merges bold architectural statement with superior durability—providing both distinctive mountain aesthetic and exceptional protection against alpine elements for this luxury chalet.', 
       category: 'residential' 
     },
     { 
@@ -51,7 +51,7 @@ export default function Gallery() {
       ], 
       alt: 'Mountain retreat cabin with standing seam metal roof', 
       title: 'Alpine Sanctuary', 
-      description: "This charming mountain cabin features a premium standing seam metal roof that combines rustic warmth with modern durability.", 
+      description: "This charming mountain cabin features a premium standing seam metal roof that combines rustic warmth with modern durability. The clean, vertical lines enhance the cabin's natural aesthetic while providing superior protection against heavy snow loads and harsh mountain conditions—a perfect blend of traditional charm and contemporary performance.", 
       category: 'residential' 
     },
     { 
@@ -66,7 +66,7 @@ export default function Gallery() {
       ], 
       alt: 'Residential Roof Project 3', 
       title: 'Mountain Estate', 
-      description: "This metal roof installation complements the home's grand scale and natural surroundings, providing decades of protection against heavy snowfall, UV exposure, and dramatic temperature fluctuations while maintaining its elegant aesthetic.", 
+      description: "This stunning Kamas vacation property features a premium metal roofing system engineered to withstand harsh alpine conditions. The architectural metal installation complements the home's grand scale and natural surroundings, providing decades of protection against heavy snowfall, UV exposure, and dramatic temperature fluctuations while maintaining its elegant mountain aesthetic.", 
       category: 'residential' 
     },
     { 
@@ -85,7 +85,7 @@ export default function Gallery() {
       ], 
       alt: 'Residential Siding Project 4', 
       title: 'Architectural Metal Distinction', 
-      description: 'Perfect for accent walls, gable ends, entryway features, and full-façade applications—our custom metal installations create striking visual interest while providing superior weather resistance.', 
+      description: 'Transform your home with premium metal siding that delivers sophisticated modern appeal and lasting durability. Perfect for accent walls, gable ends, entryway features, and full-façade applications—our custom metal installations create striking visual interest while providing superior weather resistance. These versatile systems can be integrated with traditional materials for contemporary contrast or used throughout for a bold architectural statement, all while requiring minimal maintenance for discerning homeowners.', 
       category: 'residential' 
     },
     { 
@@ -99,7 +99,7 @@ export default function Gallery() {
       ], 
       alt: 'Distinctive Custom Metal Chimney Caps', 
       title: 'Distinctive Metal Chimney Caps', 
-      description: "Elegantly crafted custom metal crowns that protect your chimney while enhancing your home's architectural profile.", 
+      description: "Elegantly crafted custom metal crowns that protect your chimney while enhancing your home's architectural profile. Our premium fabrications combine superior weather resistance with artistic design elements tailored specifically for Wasatch Front homes.", 
       category: 'residential' 
     },
     { 
@@ -111,11 +111,9 @@ export default function Gallery() {
       ], 
       alt: 'Premium Asphalt New Roof & Reroof', 
       title: 'Premium Asphalt Craftsmanship', 
-      description: 'These homes feature architectural-grade asphalt shingles crafted from high-performance materials with enhanced UV resistance and impact protection.', 
+      description: 'These homes feature architectural-grade asphalt shingles crafted from high-performance materials with enhanced UV resistance and impact protection. These homes feature architectural-grade asphalt shingles crafted from high-performance materials with enhanced UV resistance and impact protection. The dimensional profiles create sophisticated curb appeal with rich textures and shadow lines, delivering traditional aesthetics enhanced by modern engineering—the perfect investment in both timeless style and long-term performance.', 
       category: 'residential' 
     },
-    
-    // Commercial Projects
     { 
       id: 7, 
       images: [
@@ -123,9 +121,9 @@ export default function Gallery() {
         '/commercial-composite-shake-shingle-roof2.webp',
         '/commercial-composite-shake-shingle-roof3.webp'
       ], 
-      alt: 'Commercial Roof Project 1', 
-      title: 'Office Building', 
-      description: 'Flat TPO roofing system installed for this commercial property in downtown Salt Lake City.', 
+      alt: 'Medical office bulding with composite shake shingles in Lehi UT', 
+      title: 'Medial Office Building', 
+      description: "The Flash Pointe Medical Center in Lehi features distinctive composite shake shingles that blend traditional aesthetic appeal with modern durability. These engineered shingles mimic the rustic charm of cedar shake roofing while offering enhanced fire resistance, impact protection, and color retention. The multi-dimensional texture creates a sophisticated play of light and shadow across the building's exterior, complementing its contemporary architectural lines. Unlike natural wood shingles, these composite alternatives require minimal maintenance while delivering superior performance against harsh weather conditions. The earth-toned color palette integrates seamlessly with the surrounding landscape, creating a professional yet inviting atmosphere for clients and employees alike.",
       category: 'commercial' 
     },
     { 
@@ -135,8 +133,8 @@ export default function Gallery() {
         '/apartment-flat-tpo-roof2.webp'
       ], 
       alt: 'Commercial Roof Project 2', 
-      title: 'Retail Complex', 
-      description: 'Large-scale commercial roofing project featuring our premium EPDM membrane system.', 
+      title: 'Apartment Complex', 
+      description: 'This apartment complex projext showcases our TPO roofing system across this multi-building apartment complex. The bright white reflective membrane provides superior energy efficiency in this desert climate while offering exceptional durability against UV exposure and temperature fluctuations. Expertly installed on flat roof sections with precise detailing around HVAC units and drainage systems, this commercial application demonstrates our capability to deliver large-scale roofing solutions that combine performance, aesthetics, and sustainability in challenging environments.', 
       category: 'commercial' 
     },
     { 
@@ -150,8 +148,8 @@ export default function Gallery() {
         '/commercial-roof-edpm6.webp'
       ], 
       alt: 'Commercial Roof Project 3', 
-      title: 'Commercial Facility EDPM', 
-      description: 'Industrial EDPM roofing solution designed for maximum durability and minimal maintenance.', 
+      title: 'High-Performance Commercial Membrane Roofing', 
+      description: "Mountain View Business Park features our premium single-ply membrane roofing system, delivering exceptional performance in this challenging alpine environment. The bright white reflective surface significantly reduces cooling costs while withstanding extreme temperature fluctuations and UV exposure. This commercial installation includes custom parapet detailing and integrated drainage solutions, ensuring watertight protection for the modern glass façade below. The clean, minimalist aesthetic complements the building's contemporary design while providing superior protection against the region's heavy snowfall and dramatic seasonal weather patterns. Completed on schedule despite high-elevation challenges, this project demonstrates our expertise in commercial roofing applications where both performance and visual appeal are paramount.", 
       category: 'commercial' 
     },
     { 
@@ -161,7 +159,7 @@ export default function Gallery() {
       ], 
       alt: 'Commercial Roof Project 4', 
       title: 'Distinctive Metal Arch Accent', 
-      description: 'Elevate your commercial property with our premium architectural metal arches that combine form and function.', 
+      description: "Elevate your commercial property with our premium architectural metal arches that combine form and function. These elegant structural elements create a striking visual focal point while providing exceptional durability against the elements. Our custom-fabricated metal arches seamlessly integrate with your building's design, adding sophisticated dimension and contemporary appeal. Available in a variety of finishes and profiles to complement any architectural style—from sleek modern minimalism to classic industrial aesthetics. Backed by our comprehensive warranty and professional installation, these low-maintenance architectural features will enhance your building's value and curb appeal for decades to come.", 
       category: 'commercial' 
     },
     { 
@@ -206,7 +204,7 @@ export default function Gallery() {
   ], 
   alt: 'Flat Roof with Metal Accent', 
   title: 'Architectural Excellence', 
-  description: 'This commanding custom residence features a sophisticated multi-level flat roof design enhanced with premium metal accent elements.', 
+  description: 'This commanding custom residence features a sophisticated multi-level flat roof design enhanced with premium metal accent elements. The dynamic terraced planes create visual intrigue while maintaining clean contemporary lines, with strategic metal details adding both distinctive character and superior weather protection to this luxury home.', 
   category: 'residential' 
 },
 { 
@@ -216,7 +214,7 @@ export default function Gallery() {
   ], 
   alt: 'Modern Metal Design', 
   title: 'Mountain Contemporary', 
-  description: 'This sophisticated residence showcases a premium standing seam metal roof with dynamic multi-level planes and clean architectural lines while providing superior protection against the elements.', 
+  description: 'This sophisticated residence showcases a premium standing seam metal roof with dynamic multi-level planes and clean architectural lines. The thoughtful integration of metal, wood, and stone creates a harmonious modern design that complements its dramatic mountain setting while providing superior protection against the elements.', 
   category: 'residential' 
 },
 { 
@@ -227,7 +225,7 @@ export default function Gallery() {
   ], 
   alt: 'Modern Metal Design', 
   title: 'Energy-efficient Corrugated Metal', 
-  description: 'Engineered for exceptional durability, our corrugated metal roofing withstands decades of harsh weather while requiring minimal maintenance.', 
+  description: "Transform your custom home with our premium corrugated metal roofing, blending timeless architectural character with modern performance. These striking roofs feature rhythmic wave patterns that create dynamic shadow lines and visual texture across your home's silhouette. Engineered for exceptional durability, our corrugated metal roofing withstands decades of harsh weather while requiring minimal maintenance. Energy-efficient by nature, these roofs reflect solar heat, potentially reducing cooling costs by up to 25%. Available in a spectrum of designer colors and finishes—from weathered copper patinas to sleek contemporary matte blacks—to complement any architectural style. Environmentally conscious homeowners appreciate that our metal roofing contains recycled content and is 100% recyclable at the end of its remarkably long lifespan.", 
   category: 'residential' 
 },
 { 
@@ -249,7 +247,7 @@ export default function Gallery() {
   ], 
   alt: 'Cozy home with asphalt & metal roof', 
   title: 'Architectural Harmony', 
-  description: 'This inviting residence showcases the perfect blend of traditional asphalt shingles with modern metal roofing accents. The thoughtful combination creates visual interest while providing superior protection and longevity.', 
+  description: 'This inviting residence showcases the perfect blend of traditional asphalt shingles with modern metal roofing accents. The thoughtful combination creates visual interest while providing superior protection and longevity for a truly distinctive home design.', 
   category: 'residential'
 },
 { 
@@ -261,14 +259,14 @@ export default function Gallery() {
   ], 
   alt: 'Roofing in Progress - construction photos', 
   title: 'Elevated Rooftop Surfaces', 
-  description: 'Premium IPE hardwood decking and concrete pavers installed on adjustable pedestals, creating elegant, durable outdoor living spaces with perfect drainage and simplified maintenance. Ideal for rooftop terraces and accessible flat roof areas.', 
-  category: 'residential' 
+  description: 'Premium IPE hardwood decking and concrete pavers installed on adjustable pedestals, creating elegant, durable outdoor living spaces with perfect drainage and simplified maintenance. Ideal for rooftop terraces and accessible flat roof areas.',
+  category: 'residential'
 },
 { 
   id: 20, 
   images: [
-    '/roofing-in-progress.webp',
     '/roofing-in-progress2.webp',
+    '/roofing-in-progress.webp',
     '/roofing-in-progress3.webp',
     '/roofing-in-progress4.webp',
     '/roofing-in-progress5.webp',
@@ -276,7 +274,7 @@ export default function Gallery() {
   ], 
   alt: 'Roofing in Progress - construction photos', 
   title: 'Roofing in Progress', 
-  description: 'Behind-the-scenes glimpses of our skilled craftsmen transforming structures with precision techniques and quality materials. These select construction photos showcase the attention to detail that ensures lasting protection for your home.', 
+  description: 'A visual journey through our expert installation process, featuring precision detailing, skilled craftsmanship, and architectural transformations. This collection showcases our team navigating complex rooflines, installing premium materials, and implementing advanced weatherproofing techniques. From initial framework to finished masterpieces, these images highlight the meticulous attention to detail that ensures lasting protection and visual appeal for every project. Witness the evolution of structures as our skilled professionals bring architectural visions to life through expert roofing solutions.', 
   category: 'residential' 
 },
   ];

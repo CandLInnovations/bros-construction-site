@@ -12,6 +12,11 @@ export default function Navbar() {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+  
+  // Add a function to close the menu
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
 
   // Only add scroll detection on the client side
   useEffect(() => {
@@ -36,7 +41,10 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
+    <header 
+      className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}
+      data-scrolled={isScrolled}
+    >
       <Link href="/">
         <div className={styles.navbarLogo}>
           <Image
@@ -61,25 +69,25 @@ export default function Navbar() {
           </button>
           <ul className={`${styles.navbarMenu} ${isOpen ? styles.active : ''}`}>
             <li className={styles.navbarItem}>
-              <Link href="/" className={styles.navbarLink}>Home</Link>
+              <Link href="/" className={styles.navbarLink} onClick={closeMenu}>Home</Link>
             </li>
             <li className={styles.navbarItem}>
-              <Link href="/about" className={styles.navbarLink}>About</Link>
+              <Link href="/about" className={styles.navbarLink} onClick={closeMenu}>About</Link>
             </li>
             <li className={styles.navbarItem}>
-              <Link href="/services" className={styles.navbarLink}>Services</Link>
+              <Link href="/services" className={styles.navbarLink} onClick={closeMenu}>Services</Link>
             </li>
             <li className={styles.navbarItem}>
-              <Link href="/gallery" className={styles.navbarLink}>Gallery</Link>
+              <Link href="/gallery" className={styles.navbarLink} onClick={closeMenu}>Gallery</Link>
             </li>
             <li className={styles.navbarItem}>
-              <Link href="/contact" className={styles.navbarLink}>Contact</Link>
+              <Link href="/contact" className={styles.navbarLink} onClick={closeMenu}>Contact</Link>
             </li>
             <li className={styles.navbarItem}>
-              <Link href="/contact" className={styles.navbarCta}>Get a Quote</Link>
+              <Link href="/contact" className={styles.navbarCta} onClick={closeMenu}>Get a Quote</Link>
             </li>
             <li className={`${styles.navbarItem} ${styles.phoneItem}`}>
-              <a href="tel:+8018670576" className={styles.phoneLink}>(801) 867-0576</a>
+              <a href="tel:+8018670576" className={styles.phoneLink} onClick={closeMenu}>(801) 867-0576</a>
             </li>
           </ul>
         </div>

@@ -664,3 +664,122 @@
       right: auto;
     }
   }
+  .lightbox {
+    z-index: 99999 !important; /* Extremely high z-index */
+    padding: 1rem !important; /* Reduced padding on mobile */
+  }
+  
+  @media (min-width: 768px) {
+    .lightbox {
+      padding: 2rem !important; /* Restore larger padding on desktop */
+    }
+  }
+  
+  /* Process items adjustments */
+  .processItem {
+    padding: 1.25rem 0.5rem !important; /* Reduced horizontal padding */
+  }
+  
+  .processItem p {
+    max-width: 100% !important; /* Ensure full width */
+    padding: 0 !important; /* Remove padding */
+  }
+  
+  /* Wider guarantee items on mobile - with stronger specificity */
+  @media (max-width: 767px) {
+    .guaranteeSection .guaranteeContent .guaranteeFeatures .guaranteeItem {
+      margin-left: -0.75rem !important;
+      margin-right: -0.75rem !important;
+      width: calc(100% + 1.5rem) !important;
+      border-radius: 0.3rem !important;
+    }
+  }
+  .lightbox {
+    align-items: flex-start !important; /* Align to top instead of center */
+    padding-top: 4rem !important; /* Add more padding at top to clear navbar */
+    overflow-y: auto !important; /* Enable scrolling */
+  }
+  
+  .lightboxContent {
+    max-height: 85vh !important; /* Slightly reduce max height */
+    overflow: auto !important; /* Make content scrollable */
+    margin-bottom: 1rem !important; /* Add space at bottom */
+  }
+  
+  .lightboxDetails {
+    overflow-y: auto !important; /* Make details section scrollable */
+    max-height: 50vh !important; /* Set max height for mobile */
+  }
+  
+  /* 2. Shining text word-wrap for mobile */
+  @media (max-width: 767px) {
+    .heroTitle {
+      height: auto !important; /* Allow height to adjust */
+      min-height: 4rem !important; /* Minimum height to fit text */
+    }
+    
+    .shineText {
+      white-space: normal !important; /* Allow text to wrap */
+      line-height: 1.2 !important; /* Tighter line height */
+      font-size: 1.75rem !important; /* Slightly smaller font */
+      width: 90% !important; /* Slightly narrower to allow margin */
+    }
+  }
+  
+  /* 3. Better scrolling for mobile lightbox */
+  @media (max-width: 767px) {
+    .lightboxContent {
+      height: auto !important;
+      max-height: 80vh !important;
+    }
+    
+    .lightboxImageContainer {
+      max-height: 40vh !important; /* Limit image height on mobile */
+    }
+    
+    .lightboxDetails {
+      max-height: 40vh !important; /* Set max height for details on mobile */
+      padding-bottom: 2rem !important; /* Add more padding at bottom */
+    }
+    
+    /* Fix for navbar overlap */
+    .lightbox {
+      padding-top: 5rem !important; /* Even more top padding on small screens */
+    }
+  }
+  @media (min-width: 1024px) {
+    .lightbox {
+      align-items: center !important; /* Reset to center on desktop */
+      padding: 2rem !important; /* Proper padding for desktop */
+      overflow: hidden !important; /* No scroll on desktop container */
+    }
+    
+    .lightboxContent {
+      max-height: 85vh !important;
+      overflow: hidden !important; /* No scroll on container */
+      margin-bottom: 0 !important; /* Reset margin */
+      display: flex !important;
+      flex-direction: row !important;
+    }
+    
+    .lightboxImageContainer {
+      width: 60% !important;
+      max-height: 80vh !important;
+      overflow: hidden !important;
+    }
+    
+    .lightboxDetails {
+      width: 40% !important;
+      max-height: none !important; /* Reset max height */
+      overflow-y: auto !important; /* Only details section scrolls if needed */
+      padding: 2rem !important;
+    }
+  }
+  
+  /* Yellow close button on mobile */
+  @media (max-width: 767px) {
+    .closeButton {
+      background-color: #f5a623 !important;
+      color: #1e2761 !important;
+    }
+  }

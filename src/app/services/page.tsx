@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './page.module.css';
@@ -195,6 +195,25 @@ export default function ServicesPage() {
   const [selectedService, setSelectedService] = useState<Service | null>(null);
   const [lightboxOpen, setLightboxOpen] = useState<boolean>(false);
 
+  // Add ESC key functionality
+  useEffect(() => {
+    const handleEscKeyPress = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && lightboxOpen) {
+        closeLightbox();
+      }
+    };
+
+    // Add event listener when lightbox is open
+    if (lightboxOpen) {
+      document.addEventListener('keydown', handleEscKeyPress);
+    }
+
+    // Clean up event listener when component unmounts or lightbox closes
+    return () => {
+      document.removeEventListener('keydown', handleEscKeyPress);
+    };
+  }, [lightboxOpen]); // Re-run effect when lightboxOpen changes
+
   // Filter services based on active category
   const filteredServices = activeCategory === 'all' 
     ? services 
@@ -223,7 +242,7 @@ export default function ServicesPage() {
       <section className={styles.servicesHero}>
         <div className={styles.heroOverlay}>
           <h1 className={styles.heroTitle}>
-            <span className={styles.shineText}>Premium Roofing & Siding Services</span>
+            <span className={styles.shineText}>Premium Roofing Services</span>
           </h1>
         </div>
       </section>
@@ -252,34 +271,34 @@ export default function ServicesPage() {
         </div>
 
         <div className={styles.servicesGrid}>
-  {filteredServices.map((service, index) => (
-    <div 
-      key={service.id} 
-      className={styles.serviceItem}
-      onClick={() => openLightbox(service)}
-    >
-      <div className={styles.imageContainer}>
-        {/* On mobile, we'll keep alternating the accent position */}
-        {/* On desktop, the CSS will override and keep them all on the left */}
-        <YellowAccent position={index % 2 === 0 ? 'left' : 'right'} />
-        <div className={styles.imageWrapper}>
-          <Image
-            src={service.image}
-            alt={service.title}
-            width={400}
-            height={300}
-            className={styles.serviceImage}
-          />
-          <div className={styles.overlay}>
-            <h3 className={styles.itemTitle}>{service.title}</h3>
-          </div>
+          {filteredServices.map((service, index) => (
+            <div 
+              key={service.id} 
+              className={styles.serviceItem}
+              onClick={() => openLightbox(service)}
+            >
+              <div className={styles.imageContainer}>
+                {/* On mobile, we'll keep alternating the accent position */}
+                {/* On desktop, the CSS will override and keep them all on the left */}
+                <YellowAccent position={index % 2 === 0 ? 'left' : 'right'} />
+                <div className={styles.imageWrapper}>
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    width={400}
+                    height={300}
+                    className={styles.serviceImage}
+                  />
+                  <div className={styles.overlay}>
+                    <h3 className={styles.itemTitle}>{service.title}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-      </div>
-    </div>
-  ))}
-</div>
 
-        {/* Lightbox for Service Details */}
+        {/* Lightbox for Service Details - Updated version */}
         {lightboxOpen && selectedService && (
           <div className={styles.lightbox} onClick={closeLightbox}>
             <div className={styles.lightboxContent} onClick={(e) => e.stopPropagation()}>
@@ -293,6 +312,7 @@ export default function ServicesPage() {
                     width={600}
                     height={450}
                     className={styles.lightboxImage}
+                    priority
                   />
                 </div>
               </div>

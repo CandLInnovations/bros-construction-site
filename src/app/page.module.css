@@ -1002,3 +1002,175 @@
     padding: 0.2rem 0.6rem;
   }
 }
+.videoSection {
+  margin: 4rem auto 3rem;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.videoContentRow {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  align-items: flex-start;
+}
+
+.videoContainer {
+  position: relative;
+  width: 100%;
+  display: block;
+  flex-direction: column;
+  overflow: visible !important;
+}
+
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  aspect-ratio: 418 / 749;
+  max-height: 550px;
+}
+
+.contentVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background-color: #000;
+}
+
+.soundToggle {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  font-size: 1.2rem;
+}
+
+.soundToggle:hover {
+  background-color: rgba(245, 166, 35, 0.8);
+  transform: scale(1.1);
+}
+
+.soundOn {
+  background-color: rgba(245, 166, 35, 0.8);
+}
+
+.soundOff {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.videoText {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.videoText h2 {
+  font-size: 1.5rem;
+  color: #1e2761;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.videoText p {
+  font-size: 1rem;
+  color: #111827;
+  text-align: left;
+  margin: 0 0 1rem 0;
+  max-width: 100%;
+  padding: 0;
+}
+
+.machineFeatures {
+  list-style: none;
+  margin: 1.5rem 0 0.5rem 0;
+  padding: 0;
+}
+
+.machineFeatures li {
+  position: relative;
+  padding-left: 1.75rem;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  color: #111827;
+}
+
+.machineFeatures li::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+  color: #f5a623;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 1023px) {
+  .videoContentRow {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .videoContainer,
+  .videoText {
+    width: 100%;
+  }
+  
+  .videoText {
+    padding: 0;
+  }
+
+  .videoWrapper {
+    max-height: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .videoSection {
+    margin: 2.5rem auto 2rem;
+  }
+  
+  .videoContentRow {
+    margin-top: 1.5rem;
+    gap: 1.5rem;
+  }
+  
+  .videoWrapper {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    max-height: 350px;
+  }
+  
+  .soundToggle {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+    bottom: 0.75rem;
+    left: 0.75rem;
+  }
+  
+  .videoText h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .machineFeatures li {
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+}

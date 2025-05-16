@@ -121,7 +121,7 @@ export default function ServicesPage() {
       id: 'custom-metal-siding',
       title: 'Custom Metal Siding',
       description: 'Premium metal siding solutions that provide durability, low maintenance, and a distinctive modern appearance for your home or commercial building.',
-      image: '/placeholder.webp',
+      image: '/custom-metal-siding-exterior-home7.webp',
       categoryId: 'siding',
       features: [
         'Multiple profile and pattern options',
@@ -135,8 +135,8 @@ export default function ServicesPage() {
       id: 'standing-seam',
       title: 'Standing Seam Panels',
       description: 'Sleek, modern standing seam metal panels that create clean lines for distinctive architectural expression on both roofs and walls.',
-      image: '/placeholder.webp',
-      categoryId: 'siding',
+      image: '/standing-seam-metal-roof.webp',
+      categoryId: 'roofing',
       features: [
         'Clean, contemporary appearance',
         'Hidden fastener system',

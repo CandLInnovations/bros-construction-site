@@ -123,7 +123,7 @@ export default function Gallery() {
       ], 
       alt: 'Medical office bulding with composite shake shingles in Lehi UT', 
       title: 'Medial Office Building', 
-      description: "The Flash Pointe Medical Center in Lehi features distinctive composite shake shingles that blend traditional aesthetic appeal with modern durability. These engineered shingles mimic the rustic charm of cedar shake roofing while offering enhanced fire resistance, impact protection, and color retention. The multi-dimensional texture creates a sophisticated play of light and shadow across the building's exterior, complementing its contemporary architectural lines. Unlike natural wood shingles, these composite alternatives require minimal maintenance while delivering superior performance against harsh weather conditions. The earth-toned color palette integrates seamlessly with the surrounding landscape, creating a professional yet inviting atmosphere for clients and employees alike.",
+      description: "The Flash Pointe Medical Center in Lehi features distinctive architectural tile roofing that blends traditional aesthetic appeal with modern durability. These engineered tiles offer the timeless elegance of Mediterranean design while providing enhanced fire resistance, impact protection, and color retention. The dimensional profile creates a sophisticated play of light and shadow across the building's exterior, complementing its contemporary architectural lines. These clay or concrete tiles require minimal maintenance while delivering superior performance against harsh weather conditions. The earth-toned color palette integrates seamlessly with the surrounding landscape, creating a professional yet inviting atmosphere for clients and employees alike.",
       category: 'commercial' 
     },
     { 
@@ -132,9 +132,9 @@ export default function Gallery() {
         '/apartment-flat-tpo-roof.webp',
         '/apartment-flat-tpo-roof2.webp'
       ], 
-      alt: 'Commercial Roof Project 2', 
-      title: 'Apartment Complex', 
-      description: 'This apartment complex projext showcases our TPO roofing system across this multi-building apartment complex. The bright white reflective membrane provides superior energy efficiency in this desert climate while offering exceptional durability against UV exposure and temperature fluctuations. Expertly installed on flat roof sections with precise detailing around HVAC units and drainage systems, this commercial application demonstrates our capability to deliver large-scale roofing solutions that combine performance, aesthetics, and sustainability in challenging environments.', 
+      alt: 'Commercial office park in Park City UT', 
+      title: 'Office Park', 
+      description: 'This Park City office park project showcases our TPO roofing system across this multi-building business complex. The bright white reflective membrane provides superior energy efficiency in this desert climate while offering exceptional durability against UV exposure and temperature fluctuations. Expertly installed on flat roof sections with precise detailing around HVAC units and drainage systems, this commercial application demonstrates our capability to deliver large-scale roofing solutions that combine performance, aesthetics, and sustainability in challenging environments.', 
       category: 'commercial' 
     },
     { 
@@ -147,9 +147,9 @@ export default function Gallery() {
         '/commercial-roof-edpm5.webp',
         '/commercial-roof-edpm6.webp'
       ], 
-      alt: 'Commercial Roof Project 3', 
+      alt: 'Commercial business complex in Lehi UT', 
       title: 'High-Performance Commercial Membrane Roofing', 
-      description: "Mountain View Business Park features our premium single-ply membrane roofing system, delivering exceptional performance in this challenging alpine environment. The bright white reflective surface significantly reduces cooling costs while withstanding extreme temperature fluctuations and UV exposure. This commercial installation includes custom parapet detailing and integrated drainage solutions, ensuring watertight protection for the modern glass façade below. The clean, minimalist aesthetic complements the building's contemporary design while providing superior protection against the region's heavy snowfall and dramatic seasonal weather patterns. Completed on schedule despite high-elevation challenges, this project demonstrates our expertise in commercial roofing applications where both performance and visual appeal are paramount.", 
+      description: "Mountain View Business Park in Lehi features our premium single-ply membrane roofing system, delivering exceptional performance in this challenging alpine environment. The bright white reflective surface significantly reduces cooling costs while withstanding extreme temperature fluctuations and UV exposure. This commercial installation includes custom parapet detailing and integrated drainage solutions, ensuring watertight protection for the modern glass façade below. The clean, minimalist aesthetic complements the building's contemporary design while providing superior protection against the region's heavy snowfall and dramatic seasonal weather patterns. Completed on schedule despite high-elevation challenges, this project demonstrates our expertise in commercial roofing applications where both performance and visual appeal are paramount.", 
       category: 'commercial' 
     },
     { 
@@ -165,7 +165,7 @@ export default function Gallery() {
     { 
       id: 11, 
       images: [
-        '/Bros-roofing-hero-poster.jpg'
+        '/placeholder.webp'
       ], 
       alt: 'Commercial Roof Project 5', 
       title: 'Restaurant Building', 
@@ -175,7 +175,7 @@ export default function Gallery() {
     { 
       id: 12, 
       images: [
-        '/roofing-exterior-home.webp'
+        '/placeholder.webp'
       ], 
       alt: 'Commercial Roof Project 6', 
       title: 'Medical Office', 

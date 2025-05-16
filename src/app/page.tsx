@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import styles from './page.module.css';
 import ContentLayout from '../components/ContentLayout';
@@ -8,6 +8,50 @@ import YellowAccent from '../components/YellowAccent';
 import RoofTypes from '../components/RoofTypes';
 
 export default function Home() {
+  // Reference for the video section
+  const videoSectionRef = useRef<HTMLDivElement>(null);
+  // State to track if video section is visible - initialize to false for SSR consistency
+  const [isVideoVisible, setIsVideoVisible] = useState(false);
+  // State to track if sound is enabled
+  const [isSoundEnabled, setIsSoundEnabled] = useState(false);
+
+  // Effect for intersection observer to detect when video is visible
+  useEffect(() => {
+    // Skip running this effect during SSR
+    if (typeof window === 'undefined') return;
+    
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setIsVideoVisible(true);
+        } else {
+          setIsVideoVisible(false);
+        }
+      });
+    }, options);
+
+    if (videoSectionRef.current) {
+      observer.observe(videoSectionRef.current);
+    }
+
+    return () => {
+      if (videoSectionRef.current) {
+        observer.unobserve(videoSectionRef.current);
+      }
+    };
+  }, []);
+
+  // Toggle sound handler
+  const toggleSound = () => {
+    setIsSoundEnabled(!isSoundEnabled);
+  };
+
   return (
     <div className={styles.overflowWrapper}>
       {/* Hero section with 80vh height */}
@@ -125,6 +169,68 @@ export default function Home() {
         </div>
           
         <RoofTypes />
+        
+        {/* New Video Section */}
+        <div ref={videoSectionRef} className={styles.videoSection}>
+          <h2 className={styles.sectionTitle} style={{ fontSize: 'clamp(1.1rem, 4vw, 1.75rem)' }}>Our Custom Metal Roofing Technology</h2>
+          
+          <div className={styles.videoContentRow}>
+            <div className={styles.videoContainer}>
+              {/* Video with lazy loading and controls */}
+              <div className={styles.videoWrapper}>
+                <video
+                  className={styles.contentVideo}
+                  // Use ref to control play/pause instead of conditional rendering
+                  ref={(el) => {
+                    if (el && isVideoVisible && typeof window !== 'undefined') {
+                      el.play().catch(error => {
+                        console.error("Auto-play failed:", error);
+                      });
+                    }
+                  }}
+                  muted={!isSoundEnabled}
+                  controls
+                  loop
+                  playsInline
+                  preload="none" // Change to "none" to prevent loading until needed
+                  poster="/multipro-roof-wall-panel-machine-still.webp"
+                >
+                  <source src="/multipro-roof-wall-panel-machine.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                
+                {/* Sound toggle button */}
+                <button 
+                  className={`${styles.soundToggle} ${isSoundEnabled ? styles.soundOn : styles.soundOff}`}
+                  onClick={toggleSound}
+                  aria-label={isSoundEnabled ? "Mute sound" : "Enable sound"}
+                >
+                  {isSoundEnabled ? "🔊" : "🔇"}
+                </button>
+              </div>
+            </div>
+            
+            <div className={styles.videoText}>
+              <h2 style={{ fontSize: 'clamp(1rem, 3vw, 1.5rem)' }}>SSQ II MultiPro Roof and Wall Panel Machine</h2>
+              <p>
+                Our state-of-the-art SSQ II MultiPro Panel Machine represents the pinnacle of metal roofing technology. This advanced equipment allows us to create custom metal panels on-site, ensuring precise measurements and seamless installation for your project.
+              </p>
+              <p>
+                The MultiPro system produces architectural standing seam panels with exceptional durability and weather resistance. These panels feature a concealed fastener system that eliminates penetrations through the metal, providing superior protection against leaks and weather damage in Utah's challenging climate.
+              </p>
+              <p>
+                By manufacturing panels right at your location, we minimize transportation damage, reduce waste, and create panels of exact length needed for your specific roof design. This precision ensures a perfect fit every time, enhancing both aesthetics and functionality.
+              </p>
+              <ul className={styles.machineFeatures}>
+                <li>On-site custom panel fabrication</li>
+                <li>Seamless panels up to 40 feet in length</li>
+                <li>Multiple profile options for architectural versatility</li>
+                <li>Weather-tight seam technology</li>
+                <li>Superior wind and impact resistance</li>
+              </ul>
+            </div>
+          </div>
+        </div>
         
       </ContentLayout>
     </div>

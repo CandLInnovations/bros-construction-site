@@ -180,7 +180,6 @@ export default function Home() {
               <div className={styles.videoWrapper}>
                 <video
                   className={styles.contentVideo}
-                  // Use ref to control play/pause instead of conditional rendering
                   ref={(el) => {
                     if (el && isVideoVisible && typeof window !== 'undefined') {
                       el.play().catch(error => {
@@ -192,7 +191,7 @@ export default function Home() {
                   controls
                   loop
                   playsInline
-                  preload="none" // Change to "none" to prevent loading until needed
+                  preload="none"
                   poster="/multipro-roof-wall-panel-machine-still.webp"
                 >
                   <source src="/multipro-roof-wall-panel-machine.mp4" type="video/mp4" />
@@ -213,7 +212,7 @@ export default function Home() {
             <div className={styles.videoText}>
               <h2 style={{ fontSize: 'clamp(1rem, 3vw, 1.5rem)' }}>SSQ II MultiPro Roof and Wall Panel Machine</h2>
               <p>
-                Our state-of-the-art SSQ II MultiPro Panel Machine represents the pinnacle of metal roofing technology. This advanced equipment allows us to create custom metal panels on-site, ensuring precise measurements and seamless installation for your project.
+                Bro's state-of-the-art SSQ II MultiPro Panel Machine represents the pinnacle of metal roofing technology. This advanced equipment allows us to create custom metal panels on-site, ensuring precise measurements and seamless installation for your project.
               </p>
               <p>
                 The MultiPro system produces architectural standing seam panels with exceptional durability and weather resistance. These panels feature a concealed fastener system that eliminates penetrations through the metal, providing superior protection against leaks and weather damage in Utah's challenging climate.

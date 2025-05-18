@@ -81,6 +81,9 @@ export default function Navbar() {
               <Link href="/gallery" className={styles.navbarLink} onClick={closeMenu}>Gallery</Link>
             </li>
             <li className={styles.navbarItem}>
+              <Link href="/faq" className={styles.navbarLink} onClick={closeMenu}>FAQ</Link>
+            </li>
+            <li className={styles.navbarItem}>
               <Link href="/contact" className={styles.navbarLink} onClick={closeMenu}>Contact</Link>
             </li>
             <li className={styles.navbarItem}>

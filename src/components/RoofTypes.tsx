@@ -164,7 +164,9 @@ const RoofTypes: React.FC = () => {
                 <li key={index}>{feature}</li>
               ))}
             </ul>
-            <button className={styles.btnPrimary}>Explore {featuredRoof.name}</button>
+            <button className="btn-primary" style={{ marginTop: '1.5rem' }}>
+          Get a Quote
+        </button>
           </div>
         </div>
         

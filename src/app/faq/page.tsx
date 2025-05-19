@@ -3,9 +3,8 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import styles from './FAQ.module.css';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import faqData, { FAQItem } from './faqData';
-
-const initialItems: FAQItem[] = faqData;
 
 export default function FAQ() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);

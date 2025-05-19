@@ -5,6 +5,8 @@ import Image from 'next/image';
 import styles from './FAQ.module.css';
 import faqData, { FAQItem } from './faqData';
 
+const initialItems: FAQItem[] = faqData;
+
 export default function FAQ() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [activeCategory, setActiveCategory] = useState<string>("all");

@@ -227,14 +227,15 @@ export async function POST(request: NextRequest) {
       { status: 200 }
     );
 
-  } catch (error: any) {
+  } catch (error) {
     console.error('=== CRITICAL ERROR ===');
-    console.error('Error type:', error.constructor?.name || 'Unknown');
-    console.error('Error message:', error.message || 'No message');
-    console.error('Error stack:', error.stack || 'No stack trace');
+    console.error('Error type:', error instanceof Error ? error.constructor.name : 'Unknown');
+    console.error('Error message:', error instanceof Error ? error.message : String(error));
+    console.error('Error stack:', error instanceof Error ? error.stack : 'No stack trace');
     
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
     return NextResponse.json(
-      { error: `Server error: ${error.message || 'Unknown error'}` },
+      { error: `Server error: ${errorMessage}` },
       { status: 500 }
     );
   }

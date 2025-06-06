@@ -96,7 +96,7 @@ export default function ServicesPage() {
       image: '/placeholder.webp',
       categoryId: 'roofing',
       features: [
-        'TPO, EPDM, & PVC systems available',
+        'TPO & EPDM systems available',
         'Energy-efficient white membrane options',
         'Excellent waterproofing capabilities',
         'Specialized for commercial properties',

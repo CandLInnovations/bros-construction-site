@@ -87,7 +87,7 @@ export default function Navbar() {
               <Link href="/contact" className={styles.navbarLink} onClick={closeMenu}>Contact</Link>
             </li>
             <li className={styles.navbarItem}>
-              <Link href="/contact" className={styles.navbarCta} onClick={closeMenu}>Get a Quote</Link>
+              <Link href="/quote" className={styles.navbarCta} onClick={closeMenu}>Get a Quote</Link>
             </li>
             <li className={`${styles.navbarItem} ${styles.phoneItem}`}>
               <a href="tel:+8018670576" className={styles.phoneLink} onClick={closeMenu}>(801) 867-0576</a>

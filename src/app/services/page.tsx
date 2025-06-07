@@ -37,7 +37,7 @@ export default function ServicesPage() {
       id: 'asphalt-shingles',
       title: 'Asphalt Shingles',
       description: 'Premium asphalt shingle roofing that combines durability, aesthetic appeal, and cost-effectiveness. Ideal for most residential homes and available in a wide range of colors and styles.',
-      image: '/placeholder.webp',
+      image: '/asphalt-roof-metal-accent.webp',
       categoryId: 'roofing',
       features: [
         'Versatile design options',
@@ -51,7 +51,7 @@ export default function ServicesPage() {
       id: 'metal-roofing',
       title: 'Metal & Steel Roofing',
       description: 'Long-lasting metal roof systems designed to withstand Utah\'s harsh weather conditions. Our metal roofing offers superior durability, energy efficiency, and a modern aesthetic.',
-      image: '/placeholder.webp',
+      image: '/metal-steel-roofing-services.webp',
       categoryId: 'roofing',
       features: [
         'Longevity of 50+ years',
@@ -63,9 +63,9 @@ export default function ServicesPage() {
     },
     {
       id: 'shake-roofing',
-      title: 'Shake & Composite Shake',
+      title: 'Composite Shake',
       description: 'Classic shake roofing that brings natural beauty and character to your home, with both traditional wood and modern composite options available.',
-      image: '/placeholder.webp',
+      image: '/shake-wood-shingle.webp',
       categoryId: 'roofing',
       features: [
         'Natural, rustic appearance',
@@ -93,7 +93,7 @@ export default function ServicesPage() {
       id: 'flat-roofing',
       title: 'Flat Roofing Systems',
       description: 'Specialized flat roofing solutions using TPO, EPDM, and other modern materials designed for commercial buildings and specific residential applications.',
-      image: '/placeholder.webp',
+      image: '/apartment-flat-tpo-roof.webp',
       categoryId: 'roofing',
       features: [
         'TPO & EPDM systems available',
@@ -107,7 +107,7 @@ export default function ServicesPage() {
       id: 'roof-decks',
       title: 'Roof Deck Systems',
       description: 'Transform your flat roof into a usable outdoor space with our roof deck systems featuring wood Ipe or concrete pavers with pedestals for proper drainage.',
-      image: '/placeholder.webp',
+      image: '/IPE-wood-pavers-pedestal.webp',
       categoryId: 'roofing',
       features: [
         'Wood Ipe or concrete paver options',
@@ -149,7 +149,7 @@ export default function ServicesPage() {
       id: 'roof-repairs',
       title: 'Roof Repairs & Maintenance',
       description: 'Professional roof repair services addressing leaks, storm damage, and general wear to extend the life of your existing roof system.',
-      image: '/placeholder.webp',
+      image: '/roofing-in-progress3.webp',
       categoryId: 'other',
       features: [
         'Leak detection and repair',

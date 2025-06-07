@@ -121,7 +121,7 @@ export default function Gallery() {
         '/commercial-composite-shake-shingle-roof2.webp',
         '/commercial-composite-shake-shingle-roof3.webp'
       ], 
-      alt: 'Medical office bulding with composite shake shingles in Lehi UT', 
+      alt: 'Medical office bulding with tile shingles in Lehi UT', 
       title: 'Medial Office Building', 
       description: "The Flash Pointe Medical Center in Lehi features distinctive architectural tile roofing that blends traditional aesthetic appeal with modern durability. These engineered tiles offer the timeless elegance of Mediterranean design while providing enhanced fire resistance, impact protection, and color retention. The dimensional profile creates a sophisticated play of light and shadow across the building's exterior, complementing its contemporary architectural lines. These clay or concrete tiles require minimal maintenance while delivering superior performance against harsh weather conditions. The earth-toned color palette integrates seamlessly with the surrounding landscape, creating a professional yet inviting atmosphere for clients and employees alike.",
       category: 'commercial' 
@@ -634,7 +634,7 @@ export default function Gallery() {
                 Let Bro's Construction bring out the best in your home or business with our quality craftsmanship.
               </p>
               <a 
-                href="/contact"
+                href="/quote"
                 style={{
                   backgroundColor: '#f5a623',
                   color: '#1e2761',

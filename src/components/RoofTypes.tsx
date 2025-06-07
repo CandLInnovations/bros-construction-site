@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from '../app/page.module.css';
 import YellowAccent from './YellowAccent';
 
@@ -164,9 +165,9 @@ const RoofTypes: React.FC = () => {
                 <li key={index}>{feature}</li>
               ))}
             </ul>
-            <button className="btn-primary" style={{ marginTop: '1.5rem' }}>
-          Get a Quote
-        </button>
+            <Link href="/quote" className="btn-primary" style={{ marginTop: '1.5rem' }}>
+              Get a Quote
+            </Link>
           </div>
         </div>
         
@@ -197,7 +198,7 @@ const RoofTypes: React.FC = () => {
           
           <div className={styles.compareText}>
             <p>Compare our premium roofing solutions to find the perfect match for your property&apos;s style and requirements.</p>
-            <a href="/roofing-options" className={styles.compareLink}>Visit Our Photo Gallery</a>
+            <a href="/gallery" className={styles.compareLink}>Visit Our Photo Gallery</a>
           </div>
         </div>
       </div>

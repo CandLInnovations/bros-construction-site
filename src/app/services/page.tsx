@@ -65,7 +65,7 @@ export default function ServicesPage() {
       id: 'shake-roofing',
       title: 'Composite Shake',
       description: 'Classic shake roofing that brings natural beauty and character to your home, with both traditional wood and modern composite options available.',
-      image: '/shake-wood-shingle.webp',
+      image: '/shake-shingle-services.webp',
       categoryId: 'roofing',
       features: [
         'Natural, rustic appearance',
@@ -79,7 +79,7 @@ export default function ServicesPage() {
       id: 'tile-roofing',
       title: 'Tile Roofing',
       description: 'Elegant and durable tile roofing solutions that add distinctive character to your home. Our tile roofing options are designed for longevity and minimal maintenance.',
-      image: '/placeholder.webp',
+      image: '/bros-coming-soon.webp',
       categoryId: 'roofing',
       features: [
         'Exceptional durability (50+ years)',
@@ -163,7 +163,7 @@ export default function ServicesPage() {
       id: 'gutter-systems',
       title: 'Gutter Systems',
       description: 'Complete gutter installation and replacement services featuring seamless gutters, downspouts, and gutter guards to protect your property from water damage.',
-      image: '/placeholder.webp',
+      image: '/bros-coming-soon.webp',
       categoryId: 'other',
       features: [
         'Seamless gutter installation',
@@ -177,7 +177,7 @@ export default function ServicesPage() {
       id: 'heated-roofing',
       title: 'Heated Roofing & Snow Retention',
       description: "Specialized solutions for Utah's snowy winters, including heated roof elements and snow retention systems to prevent dangerous snow slides.",
-      image: '/placeholder.webp',
+      image: '/bros-coming-soon.webp',
       categoryId: 'other',
       features: [
         'Electric heating cable installation',
@@ -338,7 +338,7 @@ export default function ServicesPage() {
         <div className={styles.ctaSection}>
           <h2>Ready to Transform Your Property?</h2>
           <p>Contact us today for a free consultation and estimate on your roofing or siding project. Our team is ready to help you choose the right materials and solutions for your specific needs.</p>
-          <Link href="/contact" className={styles.btnPrimary}>
+          <Link href="/quote" className={styles.btnPrimary}>
             Get a Free Estimate
           </Link>
         </div>

@@ -71,18 +71,6 @@ const faqData: FAQItem[] = [
     category: "services"
   },
   
-  {
-    question: "Do you offer emergency roof repairs?",
-    answer: "Yes, we understand that roof damage can happen at any time and requires immediate attention. We offer emergency roof repair services for situations like storm damage, leaks, and other urgent issues to prevent further damage to your property.",
-    category: "services"
-  },
-  
-  {
-    question: "Can you work with my insurance company for storm damage?",
-    answer: "Absolutely. We have extensive experience working with insurance companies on storm damage claims. Our team can help document the damage, provide detailed estimates, and work directly with your insurance adjuster to ensure you receive the coverage you're entitled to under your policy.",
-    category: "services"
-  },
-  
   // Materials Questions
   {
     question: "What roofing materials do you work with?",
@@ -139,12 +127,6 @@ const faqData: FAQItem[] = [
   {
     question: "How much does a new roof cost in Utah?",
     answer: "Roofing costs vary based on multiple factors including material type, roof size, pitch, complexity, removal of existing materials, and your specific location. As a general range, asphalt shingle roofs typically cost $5-8 per square foot installed, while metal roofing ranges from $9-15 per square foot. Premium materials like slate, tile, or synthetic products may cost more. We provide detailed, transparent estimates during our consultation process.",
-    category: "cost"
-  },
-  
-  {
-    question: "Do you offer financing options?",
-    answer: "Yes, we understand that a new roof is a significant investment. We offer several financing options with competitive rates and terms to fit different budgets. Our team can help you explore these options during your consultation to find the best solution for your financial situation.",
     category: "cost"
   },
   

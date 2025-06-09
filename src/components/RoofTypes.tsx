@@ -29,7 +29,7 @@ const roofTypes: RoofType[] = [
       'Wide variety of colors and styles',
       'Cost-effective quality'
     ],
-    imageSrc: '/asphalt-shingle-new-roof.webp',
+    imageSrc: '/asphalt-shingle-new-roof2.webp',
     badge: 'Most Popular'
   },
   {
@@ -44,7 +44,7 @@ const roofTypes: RoofType[] = [
       'Custom color options',
       'Superior snow shedding'
     ],
-    imageSrc: '/coated-metals-group-standing-seam-roof.webp',
+    imageSrc: '/custom-metal-roof-new-home.webp',
     badge: 'Premium Choice'
   },
   {
@@ -59,7 +59,7 @@ const roofTypes: RoofType[] = [
       'Impervious to insects and rot',
       'Enhanced UV stability'
     ],
-    imageSrc: '/davinci-shake-shingle-roof.webp',
+    imageSrc: '/shake-shingle-gallery.webp',
     badge: 'Mountain Favorite'
   },
   {

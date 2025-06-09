@@ -224,8 +224,8 @@ export default function Gallery() {
     '/corrugated-metal-residential-roof2.webp'
   ], 
   alt: 'Modern Metal Design', 
-  title: 'Energy-efficient Corrugated Metal', 
-  description: "Transform your custom home with our premium corrugated metal roofing, blending timeless architectural character with modern performance. These striking roofs feature rhythmic wave patterns that create dynamic shadow lines and visual texture across your home's silhouette. Engineered for exceptional durability, our corrugated metal roofing withstands decades of harsh weather while requiring minimal maintenance. Energy-efficient by nature, these roofs reflect solar heat, potentially reducing cooling costs by up to 25%. Available in a spectrum of designer colors and finishes—from weathered copper patinas to sleek contemporary matte blacks—to complement any architectural style. Environmentally conscious homeowners appreciate that our metal roofing contains recycled content and is 100% recyclable at the end of its remarkably long lifespan.", 
+  title: 'Corrugated Metal', 
+  description: "Transform your custom home with our premium corrugated metal roofing, blending timeless architectural character with modern performance. These striking roofs feature rhythmic wave patterns that create dynamic shadow lines and visual texture across your home's silhouette. Engineered for exceptional durability, our corrugated metal roofing withstands decades of harsh weather while requiring minimal maintenance. Built for longevity and cost-effectiveness, these roofs offer reliable protection that can help reduce long-term maintenance expenses. Available in a spectrum of designer colors and finishes—from weathered copper patinas to sleek contemporary matte blacks—to complement any architectural style. Environmentally conscious homeowners appreciate that our metal roofing contains recycled content and is 100% recyclable at the end of its remarkably long lifespan.", 
   category: 'residential' 
 },
 { 
@@ -275,6 +275,18 @@ export default function Gallery() {
   alt: 'Roofing in Progress - construction photos', 
   title: 'Roofing in Progress', 
   description: 'A visual journey through our expert installation process, featuring precision detailing, skilled craftsmanship, and architectural transformations. This collection showcases our team navigating complex rooflines, installing premium materials, and implementing advanced weatherproofing techniques. From initial framework to finished masterpieces, these images highlight the meticulous attention to detail that ensures lasting protection and visual appeal for every project. Witness the evolution of structures as our skilled professionals bring architectural visions to life through expert roofing solutions.', 
+  category: 'residential' 
+},
+{ 
+  id: 21, 
+  images: [
+    '/shake-shingle-gallery.webp',
+    '/shake-shingle-home.webp',
+    '/shake-shingle-services.webp'
+  ], 
+  alt: 'Roofing in Progress - construction photos', 
+  title: 'Shake Legacy', 
+  description: "Elevate your custom home with our premium composite shake shingles, capturing the authentic beauty of natural cedar with advanced engineered performance. These meticulously crafted shingles replicate the organic texture and dimensional depth of traditional wood shake, creating rich shadow lines and rustic charm that ages gracefully over time. Engineered for superior durability, our composite shake shingles resist fire, impact, and moisture while eliminating the maintenance demands of natural wood—no splitting, warping, or regular treatments required. Built for energy efficiency, these shingles provide excellent insulation properties that can help regulate your home's temperature year-round. Available in an array of natural wood tones and weathered finishes—from warm cedar browns to silvered driftwood grays—to complement both traditional and contemporary architectural styles. Environmentally conscious homeowners value that our composite shingles offer the classic aesthetic of wood shake without contributing to deforestation, while providing decades of reliable performance.", 
   category: 'residential' 
 },
   ];

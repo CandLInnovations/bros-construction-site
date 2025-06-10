@@ -1,0 +1,463 @@
+/* About Page Styles */
+.overflowWrapper {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* About Hero Section */
+.aboutHero {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+  margin-top: 0;
+  z-index: 0;
+  background-image: url('/roofing-silhouette-construction-project.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  text-align: center;
+  z-index: 2;
+  padding: 1rem;
+  padding-top: calc(30px + 2.5rem + 2rem);
+}
+
+.textContainer {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.heroTitle {
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.shineText {
+  color: #f5a623;
+  background: linear-gradient(to right, #ffffff 0, #f5a623 50%, #ffffff 100%);
+  background-size: 200% 100%;
+  background-position: 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shineFade 6s infinite;
+}
+
+.heroSubtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  margin: 0;
+  opacity: 0.9;
+}
+
+@keyframes shineFade {
+  0% {
+    opacity: 0.7;
+    background-position: 0;
+  }
+  50% {
+    opacity: 1;
+    background-position: 200%;
+  }
+  100% {
+    opacity: 0.7;
+    background-position: 0;
+  }
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e2761;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.contentSection {
+  margin-bottom: 3rem;
+  position: relative;
+  overflow: visible !important;
+  z-index: 1;
+}
+
+.contentRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  gap: 2rem;
+  overflow: visible !important;
+  position: relative;
+}
+
+.contentRow:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  display: block;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+  overflow: visible !important;
+}
+
+.contentRow:nth-child(even) .imageContainer {
+  align-items: flex-end;
+}
+
+.imageWrapper {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  display: block;
+  flex-direction: column;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.contentImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
+  object-fit: cover;
+}
+
+.imageWrapper:hover .contentImage {
+  transform: scale(1.05);
+}
+
+.contentText {
+  width: 100%;
+  padding: 1rem;
+  margin: 0 auto;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1280px;
+}
+
+.contentText h3 {
+  font-size: 1.25rem;
+  color: #1e2761;
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
+
+.contentText p {
+  font-size: 1rem;
+  color: #111827;
+  text-align: left;
+  margin: 0 auto 1rem auto;
+  max-width: 90%;
+  padding-left: 0;
+  padding-right: 0;
+  line-height: 1.6;
+}
+
+/* Leadership Section */
+.leadershipSection {
+  margin: 4rem 0;
+  padding: 2rem 0;
+}
+
+.leadershipGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.leaderCard {
+  background: linear-gradient(to bottom right, #f8f9fb, #ffffff);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #f5a623;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.leaderCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.leaderImageContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.leaderImagePlaceholder {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom right, #1e2761, #f5a623);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.leaderInitials {
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.leaderInfo {
+  text-align: center;
+}
+
+.leaderInfo h3 {
+  color: #1e2761;
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+}
+
+.leaderTitle {
+  color: #f5a623;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.leaderDescription {
+  color: #111827;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  text-align: left;
+}
+
+/* Background Image Section */
+.bgImageSection {
+  position: relative;
+  padding: 3rem 1.5rem;
+  margin: 2rem -1.5rem;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.bgImageSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/roofing-silhouette-construction-project.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: rgba(30, 39, 97, 0.85);
+  z-index: -1;
+}
+
+.bgImageSection .sectionTitle {
+  color: #f5a623;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+  position: relative;
+  z-index: 2;
+}
+
+.bgImageSection .contentText {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  margin: 1rem auto;
+  max-width: 800px;
+  position: relative;
+  z-index: 2;
+  border: 2px solid #f5a623;
+}
+
+.bgImageSection .contentText p {
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* CTA Section */
+.ctaSection {
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background: linear-gradient(to bottom, #1e2761, #2a3578);
+  border-radius: 0.5rem;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  border-left: 5px solid #f5a623;
+}
+
+.ctaSection h2 {
+  color: #f5a623;
+  font-size: 1.75rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.ctaSection p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin: 0 auto 1.5rem;
+  max-width: 80%;
+  color: white;
+}
+
+.btnPrimary {
+  background-color: #f5a623;
+  color: #1e2761;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+}
+
+.btnPrimary:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  background-color: #ffb340;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .leadershipGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .aboutHero {
+    height: 40vh;
+  }
+  
+  .heroTitle {
+    font-size: 2rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+  
+  .contentRow {
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .contentRow:nth-child(even) {
+    flex-direction: column;
+  }
+
+  .imageContainer {
+    margin-bottom: 2rem;
+    position: relative;
+    min-height: auto;
+  }
+
+  .imageWrapper,
+  .contentText {
+    width: 100%;
+  }
+
+  .contentSection {
+    margin-bottom: 2rem;
+  }
+
+  .contentText {
+    padding: 0;
+    margin-top: 0;
+  }
+
+  .contentText p {
+    max-width: 95%;
+  }
+
+  .sectionTitle {
+    font-size: 1.75rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .bgImageSection {
+    padding: 2rem 1rem;
+    margin: 1.5rem -1rem;
+  }
+  
+  .bgImageSection::before {
+    background-attachment: scroll;
+  }
+  
+  .bgImageSection .contentText p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .ctaSection p {
+    max-width: 100%;
+  }
+  
+  .leadershipGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .leaderCard {
+    padding: 1.5rem;
+  }
+}

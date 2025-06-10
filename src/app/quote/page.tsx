@@ -413,7 +413,7 @@ export default function QuotePage() {
                   className={styles.select}
                 >
                   <option value="">Select option</option>
-                  <option value="google">Google Search</option>
+                  <option value="google">Search Engine</option>
                   <option value="referral">Referral from Friend/Family</option>
                   <option value="social-media">Social Media</option>
                   <option value="website">Company Website</option>

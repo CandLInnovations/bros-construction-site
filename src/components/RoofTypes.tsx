@@ -74,7 +74,7 @@ const roofTypes: RoofType[] = [
       'Puncture-resistant membrane',
       'Low maintenance requirements'
     ],
-    imageSrc: '/roofers-installing-commercial-flat-roof.webp',
+    imageSrc: '/commercial-roof-edpm2.webp',
     badge: 'Commercial Grade'
   },
   {
@@ -89,7 +89,7 @@ const roofTypes: RoofType[] = [
       'Enhanced curb appeal',
       'Excellent insulation properties'
     ],
-    imageSrc: '/bartile-roof.webp',
+    imageSrc: '/tile-roofing-commercial-project-home.webp',
     badge: 'Luxury Choice'
   }
 ];

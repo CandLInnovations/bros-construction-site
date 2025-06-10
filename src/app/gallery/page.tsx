@@ -162,6 +162,7 @@ export default function Gallery() {
       description: "Elevate your commercial property with our premium architectural metal arches that combine form and function. These elegant structural elements create a striking visual focal point while providing exceptional durability against the elements. Our custom-fabricated metal arches seamlessly integrate with your building's design, adding sophisticated dimension and contemporary appeal. Available in a variety of finishes and profiles to complement any architectural style—from sleek modern minimalism to classic industrial aesthetics. Backed by our comprehensive warranty and professional installation, these low-maintenance architectural features will enhance your building's value and curb appeal for decades to come.", 
       category: 'commercial' 
     },
+    /* PENDING CLIENT: Image section commented out waiting for final image assets from client
     { 
       id: 11, 
       images: [
@@ -182,6 +183,7 @@ export default function Gallery() {
       description: 'Premium EPDM roofing system installed for this healthcare facility in the Wasatch Front area.', 
       category: 'commercial' 
     },
+    */
     { 
   id: 13, 
   images: [

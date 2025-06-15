@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
             </a>
           </p>
         </div>
-        <a href="#" className="footer-cta">Get a Quote</a>
+        <a href="/quote" className="footer-cta">Get a Quote</a>
       </div>
     </footer>
   );

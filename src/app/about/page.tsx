@@ -5,12 +5,25 @@ import Image from 'next/image';
 import styles from './about.module.css';
 import ContentLayout from '../../components/ContentLayout';
 import YellowAccent from '../../components/YellowAccent';
+import Link from 'next/link';
 
 export default function About() {
   return (
     <div className={styles.overflowWrapper}>
-      {/* Hero Section */}
+      {/* Hero Section with Video */}
       <section className={styles.aboutHero}>
+        <video 
+          className={styles.heroVideo}
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+          preload="metadata"
+          poster="/Bros-construction-roof-poster.webp"
+        >
+          <source src="/bros-construction-roof.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         <div className={styles.heroOverlay}>
           <div className={styles.textContainer}>
             <h1 className={styles.heroTitle}>
@@ -136,7 +149,7 @@ export default function About() {
           <h2 className={styles.sectionTitle}>Our Values</h2>
           <div className={styles.contentText}>
             <p>
-              For over four decades, the principles that Kent and Mike established continue to guide everything we do. We believe in honest communication, superior craftsmanship, and treating every customer like family. These aren't just words to us—they're the foundation upon which three generations of the Mangum family have built their legacy.
+              For over four decades, the principles that Kent and Mike established continue to guide everything we do. We believe in straightforward communication, superior craftsmanship, and treating every customer like family. These aren't just words to us—they're the foundation upon which three generations of the Mangum family have built their legacy.
             </p>
           </div>
         </div>
@@ -174,9 +187,9 @@ export default function About() {
           <p>
             Experience the difference that four decades of family craftsmanship makes. From initial consultation to project completion, we treat your home like our own.
           </p>
-          <button className={styles.btnPrimary}>
-            Get Your Free Estimate
-          </button>
+          <Link href="/quote" className={styles.btnPrimary}>
+            Get a Free Estimate
+          </Link>
         </section>
       </ContentLayout>
     </div>

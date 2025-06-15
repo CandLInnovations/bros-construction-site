@@ -156,7 +156,26 @@ export default function FAQ() {
       <div className={styles.faqCta}>
         <h3>Still have questions?</h3>
         <p>Contact our expert team for answers to your specific roofing needs.</p>
-        <button className={styles.ctaButton}>Contact Us Today</button>
+        <a 
+                href="/contact"
+                style={{
+                  backgroundColor: '#f5a623',
+                  color: '#1e2761',
+                  fontWeight: 700,
+                  padding: '0.75rem 1.5rem',
+                  border: 'none',
+                  borderRadius: '0.25rem',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease',
+                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '1px',
+                  display: 'inline-block',
+                  textDecoration: 'none'
+                }}
+              >
+                Contact Us Today
+              </a>
       </div>
     </div>
   );

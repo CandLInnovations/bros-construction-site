@@ -165,9 +165,9 @@ const RoofTypes: React.FC = () => {
                 <li key={index}>{feature}</li>
               ))}
             </ul>
-            <Link href="/quote" className="btn-primary" style={{ marginTop: '1.5rem' }}>
-              Get a Quote
-            </Link>
+            <Link href="/quote" className={styles.btnPrimary}>
+            Get a Free Estimate
+          </Link>
           </div>
         </div>
         

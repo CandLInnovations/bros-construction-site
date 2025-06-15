@@ -7,11 +7,14 @@
   .servicesHero {
     position: relative;
     width: 100%;
-    height: 50vh;
+    height: 80vh;
+    display: flex;
+  align-items: center;
+  justify-content: center;
     overflow: hidden;
-    margin-top: 0;
+    margin-top: 60;
     z-index: 0;
-    background-image: url('/Bros-roofing-hero-poster.jpg');
+    background-image: url('/bros-construction-roof-poster.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

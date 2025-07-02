@@ -630,7 +630,7 @@
   line-height: 1.2;
 }
 
-/* Hero Section Styles */
+/* Hero Section Styles - FIXED VERSION */
 .hero {
   position: relative;
   width: 100%;
@@ -639,16 +639,16 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  margin-top: 60px;
+  margin-top: 0; /* Remove negative margin that was causing issues */
   z-index: 0;
 }
 
 .heroVideo {
   width: 100%;
-  height: calc(100% + 30px + 2.2rem);
+  height: 100%; /* Simplified - just fill the hero container */
   object-fit: cover;
   position: absolute;
-  top: calc(-30px - 2.2rem);
+  top: 0; /* Start at the top of the hero container */
   left: 0;
   z-index: 0;
 }
@@ -668,7 +668,7 @@
   text-align: center;
   z-index: 2;
   padding: 1rem;
-  padding-top: calc(30px + 2.5rem + 2rem);
+  padding-top: calc(30px + 2.5rem + 2rem); /* Account for navbar height */
 }
 
 .textContainer {
@@ -748,11 +748,6 @@
 
 /* Media Queries - Desktop First Approach */
 @media (min-width: 1200px) {
-  .hero {
-    /* For very large screens, you might need even more adjustment */
-    margin-top: calc(-30px - 2.8rem);
-  }
-  
   .heroOverlay {
     padding-top: calc(30px + 2.8rem + 2rem);
   }
@@ -879,10 +874,6 @@
   .overflowWrapper {
     padding-top: 80px; /* Smaller padding for mobile */
   }
-  
-  .hero {
-    margin-top: calc(-30px - 1.1rem);
-  }
 
   .heroVideo {
     filter: brightness(1.5);
@@ -1005,6 +996,7 @@
     padding: 0.2rem 0.6rem;
   }
 }
+
 .videoSection {
   margin: 4rem auto 3rem;
   position: relative;

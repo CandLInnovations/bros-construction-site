@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './contact.module.css';
 import ContentLayout from '../../components/ContentLayout';
 
@@ -17,6 +17,66 @@ interface ContactFormData {
 interface FormErrors {
   [key: string]: string;
 }
+
+interface ObfuscatedEmailProps {
+  className?: string;
+  children?: React.ReactNode;
+}
+
+const ObfuscatedEmail: React.FC<ObfuscatedEmailProps> = ({ className, children }) => {
+  const [email, setEmail] = useState<string>('');
+  const [href, setHref] = useState<string>('#');
+
+  useEffect(() => {
+    // Decode the email on client side
+    const user = 'jordan';
+    const domain = 'bros-construction.com';
+    const fullEmail = `${user}@${domain}`;
+    setEmail(fullEmail);
+    setHref(`mailto:${fullEmail}`);
+  }, []);
+
+  return (
+    <a 
+      href={href}
+      className={className}
+      data-email-obfuscated="true"
+    >
+      {children || email || 'Loading...'}
+    </a>
+  );
+};
+
+interface ObfuscatedPhoneProps {
+  className?: string;
+  children?: React.ReactNode;
+}
+
+const ObfuscatedPhone: React.FC<ObfuscatedPhoneProps> = ({ className, children }) => {
+  const [phone, setPhone] = useState<string>('');
+  const [displayPhone, setDisplayPhone] = useState<string>('');
+  const [href, setHref] = useState<string>('#');
+
+  useEffect(() => {
+    // Decode the phone number on client side
+    const phoneDigits = '8018670576';
+    const formatted = `(${phoneDigits.slice(0,3)}) ${phoneDigits.slice(3,6)}-${phoneDigits.slice(6)}`;
+    const telLink = `+1${phoneDigits}`;
+    setPhone(telLink);
+    setDisplayPhone(formatted);
+    setHref(`tel:${telLink}`);
+  }, []);
+
+  return (
+    <a 
+      href={href}
+      className={className}
+      data-phone-obfuscated="true"
+    >
+      {children || displayPhone || 'Loading...'}
+    </a>
+  );
+};
 
 export default function ContactPage() {
   const [formData, setFormData] = useState<ContactFormData>({
@@ -133,14 +193,22 @@ export default function ContactPage() {
             <div className={styles.contactCard}>
               <div className={styles.contactIcon}>📞</div>
               <h3>Call Us</h3>
-              <p><a href="tel:+8018670576" className={styles.contactLink}>(801) 867-0576</a></p>
+              <p>
+                <ObfuscatedPhone className={styles.contactLink}>
+                  (801) 867-0576
+                </ObfuscatedPhone>
+              </p>
               <span className={styles.contactNote}>Monday - Friday: 7AM - 6PM</span>
             </div>
             
             <div className={styles.contactCard}>
               <div className={styles.contactIcon}>📧</div>
               <h3>Email Us</h3>
-              <p><a href="mailto:info@bros-construction.com" className={styles.contactLink}>info@bros-construction.com</a></p>
+              <p>
+                <ObfuscatedEmail className={styles.contactLink}>
+                  jordan@bros-construction.com
+                </ObfuscatedEmail>
+              </p>
               <span className={styles.contactNote}>We respond within 24 hours</span>
             </div>
             
@@ -155,7 +223,7 @@ export default function ContactPage() {
           {submitStatus === 'error' && (
             <div className={styles.errorMessage}>
               <h3>Something went wrong</h3>
-              <p>We're sorry, but there was an error submitting your message. Please try again or call us directly at <a href="tel:+8018670576">(801) 867-0576</a>.</p>
+              <p>We're sorry, but there was an error submitting your message. Please try again or call us directly at <ObfuscatedPhone>(801) 867-0576</ObfuscatedPhone>.</p>
             </div>
           )}
 
@@ -285,7 +353,7 @@ export default function ContactPage() {
               {submitStatus === 'success' && (
                 <div className={styles.successMessage}>
                   <h3>Thank you for contacting us!</h3>
-                  <p>We've received your message and will get back to you within 24 hours. For urgent matters, please call us at (801) 867-0576.</p>
+                  <p>We've received your message and will get back to you within 24 hours. For urgent matters, please call us at <ObfuscatedPhone>(801) 867-0576</ObfuscatedPhone>.</p>
                 </div>
               )}
               

@@ -53,7 +53,6 @@ interface ObfuscatedPhoneProps {
 }
 
 const ObfuscatedPhone: React.FC<ObfuscatedPhoneProps> = ({ className, children }) => {
-  const [phone, setPhone] = useState<string>('');
   const [displayPhone, setDisplayPhone] = useState<string>('');
   const [href, setHref] = useState<string>('#');
 
@@ -62,7 +61,6 @@ const ObfuscatedPhone: React.FC<ObfuscatedPhoneProps> = ({ className, children }
     const phoneDigits = '8018670576';
     const formatted = `(${phoneDigits.slice(0,3)}) ${phoneDigits.slice(3,6)}-${phoneDigits.slice(6)}`;
     const telLink = `+1${phoneDigits}`;
-    setPhone(telLink);
     setDisplayPhone(formatted);
     setHref(`tel:${telLink}`);
   }, []);

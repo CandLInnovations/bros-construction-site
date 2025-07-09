@@ -5,6 +5,37 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Navbar.module.css';
 
+// Obfuscated Phone Component
+interface ObfuscatedPhoneProps {
+  className?: string;
+  onClick?: () => void;
+}
+
+const ObfuscatedPhone: React.FC<ObfuscatedPhoneProps> = ({ className, onClick }) => {
+  const [displayPhone, setDisplayPhone] = useState<string>('');
+  const [href, setHref] = useState<string>('#');
+
+  useEffect(() => {
+    // Decode the phone number on client side
+    const phoneDigits = '8018670576';
+    const formatted = `(${phoneDigits.slice(0,3)}) ${phoneDigits.slice(3,6)}-${phoneDigits.slice(6)}`;
+    const telLink = `+1${phoneDigits}`;
+    setDisplayPhone(formatted);
+    setHref(`tel:${telLink}`);
+  }, []);
+
+  return (
+    <a 
+      href={href}
+      className={className}
+      onClick={onClick}
+      data-phone-obfuscated="true"
+    >
+      {displayPhone || '(801) 867-0576'}
+    </a>
+  );
+};
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -59,7 +90,7 @@ export default function Navbar() {
       </Link>
       <div className={styles.phoneArea}>
         <p>
-          <a href="tel:+8018670576" className={styles.phoneLink}>(801) 867-0576</a>
+          <ObfuscatedPhone className={styles.phoneLink} />
         </p>
       </div>
       <nav className={styles.navbar}>
@@ -90,7 +121,7 @@ export default function Navbar() {
               <Link href="/quote" className={styles.navbarCta} onClick={closeMenu}>Get a Quote</Link>
             </li>
             <li className={`${styles.navbarItem} ${styles.phoneItem}`}>
-              <a href="tel:+8018670576" className={styles.phoneLink} onClick={closeMenu}>(801) 867-0576</a>
+              <ObfuscatedPhone className={styles.phoneLink} onClick={closeMenu} />
             </li>
           </ul>
         </div>

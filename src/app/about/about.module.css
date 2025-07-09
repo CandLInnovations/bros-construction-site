@@ -213,6 +213,15 @@
   margin-top: 2rem;
 }
 
+.leadershipGrid.twoCards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  max-width: 800px; /* Adjust as needed */
+  margin: 0 auto;
+  gap: 2rem;
+}
+
 .leaderCard {
   background: linear-gradient(to bottom right, #f8f9fb, #ffffff);
   border-radius: 0.5rem;

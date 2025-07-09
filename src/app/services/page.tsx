@@ -177,7 +177,7 @@ export default function ServicesPage() {
       id: 'heated-roofing',
       title: 'Heated Roofing & Snow Retention',
       description: "Specialized solutions for Utah's snowy winters, including heated roof elements and snow retention systems to prevent dangerous snow slides.",
-      image: '/bros-coming-soon.webp',
+      image: '/davinci-new-home-snow-retention.webp',
       categoryId: 'other',
       features: [
         'Electric heating cable installation',

@@ -291,6 +291,19 @@ export default function Gallery() {
   description: "Elevate your custom home with our premium composite shake shingles, capturing the authentic beauty of natural cedar with advanced engineered performance. These meticulously crafted shingles replicate the organic texture and dimensional depth of traditional wood shake, creating rich shadow lines and rustic charm that ages gracefully over time. Engineered for superior durability, our composite shake shingles resist fire, impact, and moisture while eliminating the maintenance demands of natural wood—no splitting, warping, or regular treatments required. Built for energy efficiency, these shingles provide excellent insulation properties that can help regulate your home's temperature year-round. Available in an array of natural wood tones and weathered finishes—from warm cedar browns to silvered driftwood grays—to complement both traditional and contemporary architectural styles. Environmentally conscious homeowners value that our composite shingles offer the classic aesthetic of wood shake without contributing to deforestation, while providing decades of reliable performance.", 
   category: 'residential' 
 },
+{ 
+  id: 22, 
+  images: [
+    '/davinci-new-home-roof.webp',
+    '/davinci-new-home-snow-retention.webp',
+    '/davinci-shake-roof-garage.webp',
+    '/composite-shake-mountain-home.webp'
+  ], 
+  alt: 'Roofing in Progress - construction photos', 
+  title: 'Mountain Shake', 
+  description: "This stunning Utah mountain home showcases the perfect blend of rustic elegance and modern protection with DaVinci composite shake shingles. The rich, natural wood-like texture complements the home's stone and timber architecture while providing superior durability against harsh mountain weather. Notice the strategically placed snow retention system along the rooflines—essential for Utah's heavy snowfall, these guards prevent dangerous snow slides while maintaining the roof's clean aesthetic. DaVinci's composite technology delivers the timeless beauty of cedar shake with none of the maintenance, giving this luxury retreat both curb appeal and peace of mind for years to come.", 
+  category: 'residential' 
+},
   ];
 
   // Check if on mobile - memoized with useCallback

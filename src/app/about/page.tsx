@@ -96,7 +96,7 @@ export default function About() {
         <section className={styles.leadershipSection}>
           <h2 className={styles.sectionTitle}>Today's Leadership Team</h2>
           
-          <div className={styles.leadershipGrid}>
+          <div className={`${styles.leadershipGrid} ${styles.twoCards}`}>
             <div className={styles.leaderCard}>
               <div className={styles.leaderImageContainer}>
                 <div className={styles.leaderImagePlaceholder}>
@@ -126,33 +126,8 @@ export default function About() {
                 </p>
               </div>
             </div>
-
-            <div className={styles.leaderCard}>
-              <div className={styles.leaderImageContainer}>
-                <div className={styles.leaderImagePlaceholder}>
-                  <span className={styles.leaderInitials}>CM</span>
-                </div>
-              </div>
-              <div className={styles.leaderInfo}>
-                <h3>Cody Mangum</h3>
-                <p className={styles.leaderTitle}>Production Manager</p>
-                <p className={styles.leaderDescription}>
-                  Cody, another of Kent's sons, serves as Production Manager, overseeing the day-to-day execution of projects. His hands-on approach and attention to detail ensure that every roof installation and repair meets Bro's exacting standards for craftsmanship and durability.
-                </p>
-              </div>
-            </div>
           </div>
         </section>
-
-        {/* Values & Mission Section */}
-        <div className={styles.bgImageSection}>
-          <h2 className={styles.sectionTitle}>Our Values</h2>
-          <div className={styles.contentText}>
-            <p>
-              For over four decades, the principles that Kent and Mike established continue to guide everything we do. We believe in straightforward communication, superior craftsmanship, and treating every customer like family. These aren't just words to us—they're the foundation upon which three generations of the Mangum family have built their legacy.
-            </p>
-          </div>
-        </div>
 
         {/* Experience & Expertise Section */}
         <section className={styles.contentSection}>

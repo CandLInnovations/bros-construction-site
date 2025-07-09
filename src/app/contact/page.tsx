@@ -28,7 +28,7 @@ const ObfuscatedEmail: React.FC<ObfuscatedEmailProps> = ({ className, children }
   const [href, setHref] = useState<string>('#');
 
   useEffect(() => {
-    // Decode the email on client side
+    // Decode the email on client side - maximum bot protection
     const user = 'jordan';
     const domain = 'bros-construction.com';
     const fullEmail = `${user}@${domain}`;
@@ -42,7 +42,7 @@ const ObfuscatedEmail: React.FC<ObfuscatedEmailProps> = ({ className, children }
       className={className}
       data-email-obfuscated="true"
     >
-      {children || email || 'Loading...'}
+      {children || email || 'jordan@bros-construction.com'}
     </a>
   );
 };

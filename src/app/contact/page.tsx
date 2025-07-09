@@ -324,7 +324,6 @@ export default function ContactPage() {
                   <option value="estimate-request">Estimate Request</option>
                   <option value="existing-project">Existing Project</option>
                   <option value="warranty-claim">Warranty Claim</option>
-                  <option value="emergency-repair">Emergency Repair</option>
                   <option value="partnership">Partnership/Business</option>
                   <option value="other">Other</option>
                 </select>

@@ -470,9 +470,12 @@
     max-width: 100%;
   }
   
-  .leadershipGrid {
-    grid-template-columns: 1fr;
+  .leadershipGrid,
+  .leadershipGrid.twoCards {
+    grid-template-columns: 1fr !important;
     gap: 1.5rem;
+    max-width: 100% !important;
+    margin: 0 auto !important;
   }
   
   .leaderCard {

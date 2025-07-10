@@ -872,7 +872,7 @@
 
 @media (max-width: 768px) {
   .overflowWrapper {
-    padding-top: 80px; /* Smaller padding for mobile */
+    padding-top: 55px; /* Smaller padding for mobile */
   }
 
   .heroVideo {

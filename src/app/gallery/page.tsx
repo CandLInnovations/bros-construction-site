@@ -304,6 +304,47 @@ export default function Gallery() {
   description: "This stunning Utah mountain home showcases the perfect blend of rustic elegance and modern protection with DaVinci composite shake shingles. The rich, natural wood-like texture complements the home's stone and timber architecture while providing superior durability against harsh mountain weather. Notice the strategically placed snow retention system along the rooflines—essential for Utah's heavy snowfall, these guards prevent dangerous snow slides while maintaining the roof's clean aesthetic. DaVinci's composite technology delivers the timeless beauty of cedar shake with none of the maintenance, giving this luxury retreat both curb appeal and peace of mind for years to come.", 
   category: 'residential' 
 },
+{ 
+  id: 23, 
+  images: [
+    '/new-home-metal-ashphalt-roof.webp'
+  ], 
+  alt: 'Metal and asphalt shingle roof on a luxury home', 
+  title: 'Contemporary Design', 
+  description: "This beautiful modern home showcases the perfect blend of contemporary design and quality craftsmanship. The multi-level structure features sleek metal roofing that complements the stone and glass exterior, creating clean lines against the natural hillside setting. Large windows flood the interior with warm light, while the wraparound deck and outdoor living spaces take full advantage of the scenic views. The metal roofing system not only provides superior durability and weather protection but also enhances the home's architectural appeal with its crisp, linear profile. This project demonstrates how premium roofing materials can elevate both the functionality and aesthetic impact of modern residential construction.", 
+  category: 'residential' 
+},
+{ 
+  id: 24, 
+  images: [
+    '/shake-roof-copper-gutters.webp',
+    '/shake-roof-copper-gutters2.webp'
+  ], 
+  alt: 'Shake roof with copper gutters and accents', 
+  title: 'Elegant Shake & Copper', 
+  description: "This elegant stone residence exemplifies timeless architectural design with its beautiful natural stone facade and expertly crafted roof system. The home features classic cedar shake roofing that provides both durability and rich texture, perfectly complementing the limestone exterior. Multiple dormers and varied rooflines create visual interest while maximizing interior space and natural light. The warm cedar shake shingles create a stunning contrast against the natural surroundings, while the clean lines and expert installation demonstrate superior workmanship. The roofing extends seamlessly across multiple levels and angles, showcasing the skill required for complex residential projects. This installation highlights how quality roofing materials and professional craftsmanship can enhance both the beauty and long-term performance of your home.", 
+  category: 'residential' 
+},
+{ 
+  id: 25, 
+  images: [
+    '/asphalt-roof-project.webp'
+  ], 
+  alt: 'Luxury custom home with asphalt shingles', 
+  title: 'Custom Architectural Shingle', 
+  description: "This impressive custom home showcases the perfect harmony between traditional design and modern luxury living. The expansive residence features premium architectural shingle roofing that delivers both outstanding durability and classic curb appeal. Multiple gable sections and varied rooflines create dynamic visual interest while demonstrating the precision required for complex residential roofing projects. The high-quality roofing system seamlessly integrates with the stone and siding exterior, providing reliable weather protection across the home's generous footprint. Set against a dramatic evening sky, this project exemplifies how expert roofing installation and premium materials can enhance both the architectural beauty and long-term value of your home investment.", 
+  category: 'residential' 
+},
+{ 
+  id: 26, 
+  images: [
+    '/farmhouse-metal-roof.webp'
+  ], 
+  alt: 'Contemporary farmhouse with metal roof', 
+  title: 'Contemporary Farmhouse', 
+  description: "This impressive contemporary farmhouse demonstrates how modern roofing excellence can elevate classic architectural styles. The crisp white exterior is crowned with a sophisticated metal roofing system that combines sleek aesthetics with superior performance. Multiple roof planes and varying pitches create compelling visual depth while showcasing the precision installation required for complex residential projects. The metal roofing's clean lines and durable finish provide long-lasting weather protection while maintaining the home's fresh, timeless appeal. Framed by mature landscaping and set under a brilliant blue sky, this project illustrates how quality roofing materials and expert craftsmanship can transform architectural vision into lasting beauty and reliable protection for your home.", 
+  category: 'residential' 
+},
   ];
 
   // Check if on mobile - memoized with useCallback

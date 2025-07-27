@@ -91,9 +91,12 @@ export default function Gallery() {
     { 
       id: 5, 
       images: [
+        '/custom-chimney-cap3.webp',
         '/custom-metal-copper-roof-cap.webp',
         '/custom-metal-black-roof-cap2.webp',
         '/custom-metal-black-chimney-cap3.webp',
+        '/custom-chimney-cap1.webp',
+        '/custom-chimney-cap2.webp',
         '/custom-metal-black-chimney-cap4.webp',
         '/custom-metal-copper-chimney-cap5.webp'
       ], 

@@ -19,7 +19,7 @@ export default function About() {
           loop 
           playsInline
           preload="metadata"
-          poster="/Bros-construction-roof-poster.webp"
+          poster="/bros-construction-roof-poster.webp"
         >
           <source src="/bros-construction-roof.mp4" type="video/mp4" />
           Your browser does not support the video tag.

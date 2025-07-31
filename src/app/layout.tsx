@@ -4,6 +4,7 @@ import './globals.css';
 import ScrollNavbarWrapper from '../components/ScrollNavbarWrapper';
 import Footer from '../components/Footer';
 import { Montserrat } from 'next/font/google';
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const montserrat = Montserrat({
   subsets: ['latin'],

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 
@@ -28,7 +28,7 @@ export default function Gallery() {
   const [isMobile, setIsMobile] = useState<boolean>(false);
 
   // Sample gallery items with multiple images per property
-  const galleryItems: GalleryItem[] = [
+  const galleryItems: GalleryItem[] = useMemo(() => [
     // Residential Projects
     { 
       id: 1, 
@@ -348,7 +348,7 @@ export default function Gallery() {
   description: "This impressive contemporary farmhouse demonstrates how modern roofing excellence can elevate classic architectural styles. The crisp white exterior is crowned with a sophisticated metal roofing system that combines sleek aesthetics with superior performance. Multiple roof planes and varying pitches create compelling visual depth while showcasing the precision installation required for complex residential projects. The metal roofing's clean lines and durable finish provide long-lasting weather protection while maintaining the home's fresh, timeless appeal. Framed by mature landscaping and set under a brilliant blue sky, this project illustrates how quality roofing materials and expert craftsmanship can transform architectural vision into lasting beauty and reliable protection for your home.", 
   category: 'residential' 
 },
-  ];
+  ], []);
 
   // Check if on mobile - memoized with useCallback
   const checkIfMobile = useCallback(() => {

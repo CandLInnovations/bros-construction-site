@@ -36,12 +36,12 @@ export default function Home() {
       });
     }, options);
 
-    if (videoSectionRef.current) {
-      observer.observe(videoSectionRef.current);
+    const currentRef = videoSectionRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      const currentRef = videoSectionRef.current;
       if (currentRef) {
         observer.unobserve(currentRef);
       }

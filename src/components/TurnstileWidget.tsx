@@ -1,6 +1,6 @@
 "use client";
 
-import { Turnstile } from '@marsidev/react-turnstile';
+import { Turnstile, type TurnstileInstance } from '@marsidev/react-turnstile';
 import { useRef } from 'react';
 
 interface TurnstileWidgetProps {
@@ -18,7 +18,7 @@ export default function TurnstileWidget({
   onLoad,
   className
 }: TurnstileWidgetProps) {
-  const ref = useRef<any>(null);
+  const ref = useRef<TurnstileInstance>(null);
 
   const handleError = () => {
     console.error('Turnstile verification failed');
@@ -41,10 +41,7 @@ export default function TurnstileWidget({
         onLoad={onLoad}
         options={{
           theme: 'light',
-          size: 'normal',
-          retry: 'auto',
-          'refresh-expired': 'auto',
-          'response-field-name': 'cf-turnstile-response'
+          size: 'normal'
         }}
       />
     </div>

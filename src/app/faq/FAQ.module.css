@@ -204,11 +204,12 @@
 }
 
 .supplierLogo {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 60px;
-  width: auto;
+  width: 120px;
   filter: grayscale(100%);
   opacity: 0.7;
   transition: all 0.3s ease;

@@ -12,6 +12,9 @@ body {
   height: 100%;
   width: 100%;
   overflow: visible;
+}
+
+html[data-scroll-behavior="smooth"] {
   scroll-behavior: smooth;
 }
 

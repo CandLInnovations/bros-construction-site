@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import styles from './quote.module.css';
 import ContentLayout from '../../components/ContentLayout';
+import TurnstileWidget from '../../components/TurnstileWidget';
 
 interface FormData {
   firstName: string;
@@ -46,6 +47,8 @@ export default function QuotePage() {
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [turnstileToken, setTurnstileToken] = useState<string>('');
+  const [turnstileError, setTurnstileError] = useState<boolean>(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -96,6 +99,12 @@ export default function QuotePage() {
       newErrors.zipCode = 'Please enter a valid ZIP code';
     }
 
+    // Turnstile validation
+    if (!turnstileToken) {
+      newErrors.turnstile = 'Please complete the security verification';
+      setTurnstileError(true);
+    }
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -116,7 +125,10 @@ export default function QuotePage() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          turnstileToken
+        }),
       });
 
       if (response.ok) {
@@ -138,6 +150,8 @@ export default function QuotePage() {
           budget: '',
           hearAboutUs: ''
         });
+        setTurnstileToken('');
+        setTurnstileError(false);
       } else {
         throw new Error('Failed to submit quote request');
       }
@@ -421,6 +435,32 @@ export default function QuotePage() {
                   <option value="previous-customer">Previous Customer</option>
                   <option value="other">Other</option>
                 </select>
+              </div>
+            </div>
+
+            {/* Bot Protection */}
+            <div className={styles.formSection}>
+              <h2 className={styles.sectionTitle}>Security Verification</h2>
+              <div className={styles.formGroup}>
+                <TurnstileWidget
+                  onVerify={(token) => {
+                    setTurnstileToken(token);
+                    setTurnstileError(false);
+                    if (errors.turnstile) {
+                      setErrors(prev => ({ ...prev, turnstile: '' }));
+                    }
+                  }}
+                  onError={() => {
+                    setTurnstileToken('');
+                    setTurnstileError(true);
+                  }}
+                  onExpire={() => {
+                    setTurnstileToken('');
+                    setTurnstileError(true);
+                  }}
+                  className={turnstileError ? styles.turnstileError : ''}
+                />
+                {errors.turnstile && <span className={styles.errorText}>{errors.turnstile}</span>}
               </div>
             </div>
 

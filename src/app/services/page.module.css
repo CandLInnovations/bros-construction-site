@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: center;
     overflow: hidden;
-    margin-top: 60;
+    margin-top: 0;
     z-index: 0;
     background-image: url('/bros-construction-roof-poster.webp');
     background-size: cover;
@@ -30,7 +30,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: rgba(15, 14, 14, 0.6);
+    background: rgba(15, 14, 14, 0.25);
     color: white;
     text-align: center;
     z-index: 2;
@@ -52,9 +52,9 @@
   
   .shineText {
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     opacity: 1;
     width: 100%;
     text-align: center;

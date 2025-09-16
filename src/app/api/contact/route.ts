@@ -9,6 +9,7 @@ interface ContactFormData {
   subject: string;
   message: string;
   preferredContact?: string;
+  turnstileToken?: string;
 }
 
 export async function POST(request: NextRequest) {
@@ -25,7 +26,49 @@ export async function POST(request: NextRequest) {
 
     const data: ContactFormData = await request.json();
     console.log('Form data received:', Object.keys(data));
-    console.log('Received contact form data:', { ...data, email: '***' });
+    console.log('Received contact form data:', { ...data, email: '***', turnstileToken: data.turnstileToken ? 'PROVIDED' : 'MISSING' });
+
+    // Verify Turnstile token
+    if (!data.turnstileToken) {
+      console.log('Turnstile validation failed: No token provided');
+      return NextResponse.json(
+        { error: 'Security verification failed' },
+        { status: 400 }
+      );
+    }
+
+    console.log('Verifying Turnstile token...');
+    try {
+      const turnstileResponse = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams({
+          secret: process.env.TURNSTILE_SECRET_KEY || '',
+          response: data.turnstileToken,
+        }),
+      });
+
+      const turnstileResult = await turnstileResponse.json();
+      console.log('Turnstile verification result:', { success: turnstileResult.success });
+
+      if (!turnstileResult.success) {
+        console.log('Turnstile validation failed:', turnstileResult['error-codes']);
+        return NextResponse.json(
+          { error: 'Security verification failed' },
+          { status: 400 }
+        );
+      }
+
+      console.log('Turnstile verification passed');
+    } catch (turnstileError) {
+      console.error('Turnstile verification error:', turnstileError);
+      return NextResponse.json(
+        { error: 'Security verification failed' },
+        { status: 500 }
+      );
+    }
 
     // Basic validation
     const requiredFields = ['firstName', 'lastName', 'email', 'subject', 'message'];
@@ -53,7 +96,7 @@ export async function POST(request: NextRequest) {
     console.log('Form validation passed');
 
     // Check environment variables
-    const requiredEnvVars = ['SMTP_HOST', 'SMTP_PORT', 'SMTP_USER', 'SMTP_PASS', 'COMPANY_EMAIL'];
+    const requiredEnvVars = ['SMTP_HOST', 'SMTP_PORT', 'SMTP_USER', 'SMTP_PASS', 'COMPANY_EMAIL', 'TURNSTILE_SECRET_KEY'];
     for (const envVar of requiredEnvVars) {
       if (!process.env[envVar]) {
         console.error(`Missing environment variable: ${envVar}`);

@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './contact.module.css';
 import ContentLayout from '../../components/ContentLayout';
+import TurnstileWidget from '../../components/TurnstileWidget';
 
 interface ContactFormData {
   firstName: string;
@@ -90,6 +91,8 @@ export default function ContactPage() {
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [turnstileToken, setTurnstileToken] = useState<string>('');
+  const [turnstileError, setTurnstileError] = useState<boolean>(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -116,6 +119,12 @@ export default function ContactPage() {
     if (!formData.email.trim()) newErrors.email = 'Email is required';
     if (!formData.subject.trim()) newErrors.subject = 'Subject is required';
     if (!formData.message.trim()) newErrors.message = 'Message is required';
+
+    // Turnstile validation
+    if (!turnstileToken) {
+      newErrors.turnstile = 'Please complete the security verification';
+      setTurnstileError(true);
+    }
 
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -151,7 +160,10 @@ export default function ContactPage() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          turnstileToken
+        }),
       });
 
       if (response.ok) {
@@ -166,6 +178,8 @@ export default function ContactPage() {
           message: '',
           preferredContact: ''
         });
+        setTurnstileToken('');
+        setTurnstileError(false);
       } else {
         throw new Error('Failed to submit contact form');
       }
@@ -343,6 +357,32 @@ export default function ContactPage() {
                   required
                 />
                 {errors.message && <span className={styles.errorText}>{errors.message}</span>}
+              </div>
+            </div>
+
+            {/* Bot Protection */}
+            <div className={styles.formSection}>
+              <h2 className={styles.sectionTitle}>Security Verification</h2>
+              <div className={styles.formGroup}>
+                <TurnstileWidget
+                  onVerify={(token) => {
+                    setTurnstileToken(token);
+                    setTurnstileError(false);
+                    if (errors.turnstile) {
+                      setErrors(prev => ({ ...prev, turnstile: '' }));
+                    }
+                  }}
+                  onError={() => {
+                    setTurnstileToken('');
+                    setTurnstileError(true);
+                  }}
+                  onExpire={() => {
+                    setTurnstileToken('');
+                    setTurnstileError(true);
+                  }}
+                  className={turnstileError ? styles.turnstileError : ''}
+                />
+                {errors.turnstile && <span className={styles.errorText}>{errors.turnstile}</span>}
               </div>
             </div>
 

@@ -405,7 +405,7 @@ export default function Gallery() {
       setCurrentItem(filteredItems[nextIndex]);
       setCurrentImageIndex(0); // Reset to first image of new item
     }
-  }, [currentItem, activeCategory]);
+  }, [currentItem, activeCategory, galleryItems]);
 
   // Handle keyboard navigation
   useEffect(() => {
@@ -482,14 +482,15 @@ export default function Gallery() {
               Our Project Gallery
             </h1>
             
-            <h2 className="sectionTitle" style={{ 
-              fontSize: 'clamp(1.1rem, 4vw, 1.75rem)',
+            <h2 className="sectionTitle" style={{
+              fontSize: 'clamp(1rem, 3.5vw, 1.75rem)',
               fontWeight: 700,
               color: '#1e2761',
               textAlign: 'center',
               marginTop: '2rem',
               marginBottom: '1rem',
-              lineHeight: 1.2
+              lineHeight: 1.2,
+              padding: '0 1rem'
             }}>
               Explore Our Quality Craftsmanship
             </h2>
@@ -596,10 +597,10 @@ export default function Gallery() {
                       <div className="yellowAccent" style={{
                         position: 'absolute',
                         top: '1rem',
-                        left: isMobile ? (index % 2 === 0 ? '-1.5rem' : 'auto') : '-1.5rem',
-                        right: isMobile ? (index % 2 === 1 ? '-1.5rem' : 'auto') : 'auto',
-                        width: '100%',
-                        paddingBottom: '58.74%',
+                        left: isMobile ? (index % 2 === 0 ? '-1rem' : 'auto') : '-1rem',
+                        right: isMobile ? (index % 2 === 1 ? '-1rem' : 'auto') : 'auto',
+                        width: 'calc(100% - 1rem)',
+                        paddingBottom: '56%',
                         height: 0,
                         backgroundColor: '#f5a623',
                         borderRadius: '0.5rem',
@@ -623,7 +624,7 @@ export default function Gallery() {
                             alt={item.alt}
                             fill
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                            priority={index < 6} // Prioritize loading first 6 images
+                            priority={index < 3} // Only prioritize first 3 images above fold
                             className="galleryImage"
                             style={{
                               objectFit: 'cover',

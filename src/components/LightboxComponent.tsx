@@ -278,8 +278,7 @@ export default function LightboxComponent({
               alt={`${item.alt} - Image ${currentImageIndex + 1}`}
               fill
               sizes="(max-width: 768px) 100vw, 800px"
-              priority
-              quality={85}
+              priority={false}
               style={{
                 objectFit: 'contain'
               }}

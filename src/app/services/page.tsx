@@ -288,6 +288,10 @@ export default function ServicesPage() {
                     width={400}
                     height={300}
                     className={styles.serviceImage}
+                    priority={index < 3}
+                    loading={index < 3 ? undefined : "lazy"}
+                    placeholder="blur"
+                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkrHh8P/EABUBAQEAAAAAAAAAAAAAAAAAAAAAAAAB/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAECEf/aAAwDAQACEQMRAD8A0XGARp4P8AgA8AHwDz8gA8AH8AgA8AH8A8AH8A8A8A8A8A8A8A8A8A8A8A8A"
                   />
                   <div className={styles.overlay}>
                     <h3 className={styles.itemTitle}>{service.title}</h3>
@@ -312,7 +316,7 @@ export default function ServicesPage() {
                     width={600}
                     height={450}
                     className={styles.lightboxImage}
-                    priority
+                    priority={false}
                   />
                 </div>
               </div>

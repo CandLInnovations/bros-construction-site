@@ -109,42 +109,47 @@ export default function FAQ() {
         <div className={styles.supplierLogos}>
           <div className={styles.supplierLogo}>
             <Image
-              src="/certainteed-logo.webp" 
+              src="/certainteed-logo.webp"
               alt="CertainTeed"
-              width={120}
-              height={60}
+              fill
+              sizes="120px"
+              style={{ objectFit: 'contain' }}
             />
           </div>
           <div className={styles.supplierLogo}>
             <Image
-              src="/cmg-logo.png" 
+              src="/cmg-logo.png"
               alt="CMG"
-              width={120}
-              height={60}
+              fill
+              sizes="120px"
+              style={{ objectFit: 'contain' }}
             />
           </div>
           <div className={styles.supplierLogo}>
             <Image
-              src="/davinci-logo.png" 
+              src="/davinci-logo.png"
               alt="DaVinci"
-              width={120}
-              height={60}
+              fill
+              sizes="120px"
+              style={{ objectFit: 'contain' }}
             />
           </div>
           <div className={styles.supplierLogo}>
             <Image
-              src="/carlisle-logo.webp" 
+              src="/carlisle-logo.webp"
               alt="Carlisle"
-              width={120}
-              height={60}
+              fill
+              sizes="120px"
+              style={{ objectFit: 'contain' }}
             />
           </div>
           <div className={styles.supplierLogo}>
             <Image
-              src="/bartile-logo.webp" 
+              src="/bartile-logo.webp"
               alt="Bartile"
-              width={120}
-              height={60}
+              fill
+              sizes="120px"
+              style={{ objectFit: 'contain' }}
             />
           </div>
         </div>

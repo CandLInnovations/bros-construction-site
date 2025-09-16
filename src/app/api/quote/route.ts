@@ -236,7 +236,6 @@ export async function POST(request: NextRequest) {
     const customerEmailHTML = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #f9f9f9; padding: 20px;">
         <div style="background: linear-gradient(to right, #1e2761, #4f4f4f); color: white; padding: 20px; text-align: center;">
-          <img src="https://bros-construction.com/bros-logo-orig-small-white.webp" alt="Bro's Construction Logo" style="max-width: 150px; height: auto; margin-bottom: 10px;" />
           <h1 style="margin: 0; font-size: 24px;">Thank You for Your Quote Request!</h1>
           <p style="margin: 10px 0 0 0; opacity: 0.9;">Premium Roofing & Custom Metal Siding</p>
         </div>

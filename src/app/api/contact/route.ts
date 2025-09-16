@@ -125,7 +125,6 @@ export async function POST(request: NextRequest) {
     const companyEmailHTML = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #f9f9f9; padding: 20px;">
         <div style="background: linear-gradient(to right, #1e2761, #4f4f4f); color: white; padding: 20px; text-align: center;">
-          <img src="https://bros-construction.com/bros-logo-orig-small-white.webp" alt="Bro's Construction Logo" style="max-width: 150px; height: auto; margin-bottom: 10px;" />
           <h1 style="margin: 0; font-size: 24px;">New Contact Form Message</h1>
           <p style="margin: 10px 0 0 0; opacity: 0.9;">From Bro's Construction Website</p>
         </div>
@@ -184,7 +183,6 @@ export async function POST(request: NextRequest) {
         </div>
         
         <div style="background: white; padding: 30px; border-radius: 0 0 8px 8px;">
-        <img src="https://bros-construction.com/bros-logo-orig-small.webp" alt="Bro's Construction Logo" style="max-width: 150px; height: auto; margin-bottom: 10px;" />
           <h2 style="color: #1e2761; margin-top: 0;">Hi ${data.firstName},</h2>
           
           <p style="line-height: 1.6; margin-bottom: 20px;">

@@ -12,13 +12,13 @@ export default function About() {
     <div className={styles.overflowWrapper}>
       {/* Hero Section with Video */}
       <section className={styles.aboutHero}>
-        <video 
+        <video
           className={styles.heroVideo}
-          autoPlay 
-          muted 
-          loop 
+          autoPlay
+          muted
+          loop
           playsInline
-          preload="metadata"
+          preload="none"
           poster="/bros-construction-roof-poster.webp"
         >
           <source src="/bros-construction-roof.mp4" type="video/mp4" />

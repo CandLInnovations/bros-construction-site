@@ -479,7 +479,7 @@ export default function Gallery() {
               lineHeight: 1.2,
               textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)'
             }}>
-              Our Project Gallery
+              Roofing Projects Gallery
             </h1>
             
             <h2 className="sectionTitle" style={{

@@ -93,20 +93,24 @@ export function LocalBusinessSchema() {
     "@context": "https://schema.org",
     "@type": "RoofingContractor",
     "name": "Bro's Construction",
+    "legalName": "Bro's Construction Corporation",
+    "alternateName": "Bros Construction",
     "image": "https://bros-construction.com/Bros-roofing-hero-poster.jpg",
     "url": "https://bros-construction.com",
     "telephone": "+1-801-867-0576",
     "email": "jordan@bros-construction.com",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Salt Lake City",
+      "streetAddress": "5731 W 12900 S",
+      "addressLocality": "Herriman",
       "addressRegion": "UT",
+      "postalCode": "84096",
       "addressCountry": "US"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 40.7608,
-      "longitude": -111.8910
+      "latitude": 40.5141,
+      "longitude": -112.0327
     },
     "areaServed": [
       {
@@ -143,6 +147,21 @@ export function LocalBusinessSchema() {
         "closes": "18:00"
       }
     ],
+    "hasCredential": {
+  "@type": "EducationalOccupationalCredential",
+  "credentialCategory": "Professional License",
+  "name": "Roofing Contractor License",
+  "identifier": "5274895-5501",
+  "issuedBy": {
+    "@type": "GovernmentOrganization",
+    "name": "Utah Division of Occupational and Professional Licensing",
+    "url": "https://dopl.utah.gov/"
+  },
+  "recognizedBy": {
+    "@type": "GovernmentOrganization",
+    "name": "State of Utah"
+  }
+},
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Roofing Services",
@@ -197,11 +216,7 @@ export function LocalBusinessSchema() {
         }
       ]
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5",
-      "reviewCount": "50"
-    },
+    
     "founder": [
       {
         "@type": "Person",
@@ -216,12 +231,12 @@ export function LocalBusinessSchema() {
       {
         "@type": "Person",
         "name": "Jordan Mangum",
-        "jobTitle": "President"
+        "jobTitle": "Owner & President"
       },
       {
         "@type": "Person",
         "name": "Savannah Mangum",
-        "jobTitle": "Vice President"
+        "jobTitle": "Owner & Vice President"
       }
     ],
     "foundingDate": "2001",

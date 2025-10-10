@@ -6,6 +6,7 @@ import Link from 'next/link';
 import styles from './page.module.css';
 import ContentLayout from '../../components/ContentLayout';
 import YellowAccent from '../../components/YellowAccent';
+import { RoofingServicesSchema } from '@/components/StructuredData';
 
 // Define types for services
 interface ServiceCategory {
@@ -237,9 +238,11 @@ export default function ServicesPage() {
   };
 
   return (
-    <div className={styles.overflowWrapper}>
-      {/* Hero Section */}
-      <section className={styles.servicesHero}>
+    <>
+      <RoofingServicesSchema />
+      <div className={styles.overflowWrapper}>
+        {/* Hero Section */}
+        <section className={styles.servicesHero}>
         <div className={styles.heroOverlay}>
           <h1 className={styles.heroTitle}>
             <span className={styles.shineText}>Premium Roofing Services</span>
@@ -410,5 +413,6 @@ export default function ServicesPage() {
         </section>
       </ContentLayout>
     </div>
+    </>
   );
 }

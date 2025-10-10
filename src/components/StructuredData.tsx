@@ -237,7 +237,12 @@ export function LocalBusinessSchema() {
         "@type": "Person",
         "name": "Savannah Mangum",
         "jobTitle": "Owner & Vice President"
-      }
+      },
+    {
+      "@type": "Person",
+      "name": "Kent Mangum",
+      "jobTitle": "Estimator"
+    }
     ],
     "foundingDate": "2001",
     "description": "Expert roofing and custom metal siding services in Salt Lake City and the Wasatch Front. 24+ years experience in residential and commercial roofing, repairs, and installations.",
@@ -249,5 +254,280 @@ export function LocalBusinessSchema() {
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
     />
+  );
+}
+
+export function RoofingServicesSchema() {
+  const areaServed = [
+    {
+      "@type": "City",
+      "name": "Salt Lake City",
+      "containedIn": {
+        "@type": "State",
+        "name": "Utah"
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Herriman",
+      "containedIn": {
+        "@type": "State",
+        "name": "Utah"
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Wasatch Front"
+    },
+    {
+      "@type": "City",
+      "name": "Park City"
+    },
+    {
+      "@type": "City",
+      "name": "Provo"
+    },
+    {
+      "@type": "City",
+      "name": "Ogden"
+    },
+    {
+      "@type": "City",
+      "name": "Lehi"
+    },
+    {
+      "@type": "City",
+      "name": "West Jordan",
+      "containedIn": "Utah"
+    },
+    {
+      "@type": "City",
+      "name": "Sandy",
+      "containedIn": "Utah"
+    },
+    {
+      "@type": "City",
+      "name": "Murray",
+      "containedIn": "Utah"
+    },
+    {
+      "@type": "City",
+      "name": "South Jordan",
+      "containedIn": "Utah"
+    },
+    {
+      "@type": "City",
+      "name": "Draper"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Salt Lake County"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Utah County"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Davis County"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Weber County"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Summit County"
+    }
+  ];
+
+  const provider = {
+    "@type": "RoofingContractor",
+    "name": "Bro's Construction",
+    "url": "https://bros-construction.com",
+    "telephone": "+1-801-867-0576",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "5731 W 12900 S",
+      "addressLocality": "Herriman",
+      "addressRegion": "UT",
+      "postalCode": "84096",
+      "addressCountry": "US"
+    }
+  };
+
+  const services = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://bros-construction.com/services#metal-roofing",
+      "serviceType": "Metal Roofing Installation",
+      "name": "Metal & Steel Roofing",
+      "description": "Long-lasting metal roof systems designed to withstand Utah's harsh weather conditions. Our metal roofing offers superior durability, energy efficiency, and a modern aesthetic with 40-70 year lifespan.",
+      "provider": provider,
+      "areaServed": areaServed,
+      "offers": {
+        "@type": "Offer",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "9-15",
+          "priceCurrency": "USD",
+          "unitText": "per square foot"
+        }
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Metal Roofing Types",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Standing Seam Metal Roof",
+              "description": "Premium standing seam panels with hidden fastener system"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Corrugated Metal Roofing",
+              "description": "Durable corrugated metal panels with classic profile"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://bros-construction.com/services#asphalt-shingles",
+      "serviceType": "Asphalt Shingle Roofing",
+      "name": "Asphalt Shingles",
+      "description": "Premium asphalt shingle roofing that combines durability, aesthetic appeal, and cost-effectiveness. Ideal for most residential homes with 25-30 year warranty options.",
+      "provider": provider,
+      "areaServed": areaServed,
+      "offers": {
+        "@type": "Offer",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "5-8",
+          "priceCurrency": "USD",
+          "unitText": "per square foot"
+        }
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://bros-construction.com/services#composite-shake",
+      "serviceType": "Composite Shake Roofing",
+      "name": "Composite Shake",
+      "description": "Classic shake roofing that brings natural beauty and character to your home with both traditional wood and modern composite options available. Superior durability with authentic appearance.",
+      "provider": provider,
+      "areaServed": areaServed
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://bros-construction.com/services#flat-roofing",
+      "serviceType": "Commercial Flat Roofing",
+      "name": "Flat Roofing Systems",
+      "description": "Specialized flat roofing solutions using TPO, EPDM, and PVC materials designed for commercial buildings and specific residential applications.",
+      "provider": provider,
+      "areaServed": areaServed,
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Flat Roofing Materials",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "TPO Roofing",
+              "description": "Energy-efficient white membrane TPO roofing systems"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "EPDM Roofing",
+              "description": "Durable EPDM rubber roofing systems"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "PVC Roofing",
+              "description": "Premium PVC membrane roofing systems"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://bros-construction.com/services#tile-roofing",
+      "serviceType": "Tile Roofing Installation",
+      "name": "Tile Roofing",
+      "description": "Elegant and durable tile roofing solutions that add distinctive character to your home. Our tile roofing options are designed for longevity (50+ years) and minimal maintenance.",
+      "provider": provider,
+      "areaServed": areaServed
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://bros-construction.com/services#custom-metal-siding",
+      "serviceType": "Metal Siding Installation",
+      "name": "Custom Metal Siding",
+      "description": "Premium metal siding solutions that provide durability, low maintenance, and a distinctive modern appearance for your home or commercial building.",
+      "provider": provider,
+      "areaServed": areaServed
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://bros-construction.com/services#roof-repairs",
+      "serviceType": "Roof Repair Service",
+      "name": "Roof Repairs & Maintenance",
+      "description": "Professional roof repair services addressing leaks, storm damage, and general wear to extend the life of your existing roof system.",
+      "provider": provider,
+      "areaServed": areaServed
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://bros-construction.com/services#heated-roofing",
+      "serviceType": "Heated Roofing & Snow Retention",
+      "name": "Heated Roofing & Snow Retention",
+      "description": "Specialized solutions for Utah's snowy winters, including heated roof elements and snow retention systems to prevent dangerous snow slides and ice dams.",
+      "provider": provider,
+      "areaServed": areaServed
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://bros-construction.com/services#roof-deck-systems",
+      "serviceType": "Roof Deck Installation",
+      "name": "Roof Deck Systems",
+      "description": "Transform your flat roof into a usable outdoor space with our roof deck systems featuring wood Ipe or concrete pavers with pedestals for proper drainage.",
+      "provider": provider,
+      "areaServed": areaServed
+    }
+  ];
+
+  return (
+    <>
+      {services.map((service, index) => (
+        <script
+          key={index}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(service) }}
+        />
+      ))}
+    </>
   );
 }

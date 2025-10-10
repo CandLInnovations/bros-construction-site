@@ -5,6 +5,7 @@ import Image from 'next/image';
 import styles from './FAQ.module.css';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import faqData, { FAQItem } from './faqData';
+import { FAQPageSchema } from '@/components/StructuredData';
 
 export default function FAQ() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -27,8 +28,10 @@ export default function FAQ() {
   };
 
   return (
-    <div className={styles.faqSection}>
-      <h2 className={styles.sectionTitle}>Frequently Asked Questions</h2>
+    <>
+      <FAQPageSchema />
+      <div className={styles.faqSection}>
+        <h2 className={styles.sectionTitle}>Frequently Asked Questions</h2>
       
       {/* Category navigation */}
       <div className={styles.categoryNav}>
@@ -183,5 +186,6 @@ export default function FAQ() {
               </a>
       </div>
     </div>
+    </>
   );
 }

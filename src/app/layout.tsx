@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import { Montserrat } from 'next/font/google';
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
+import { LocalBusinessSchema } from '../components/StructuredData';
 import type { Metadata } from 'next';
 
 const montserrat = Montserrat({
@@ -62,6 +63,7 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <LocalBusinessSchema />
       </head>
       <body>
         <ScrollNavbarWrapper />

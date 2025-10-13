@@ -88,7 +88,7 @@ export default function Home() {
         <h2 className={styles.sectionTitle} style={{ fontSize: 'clamp(1.1rem, 4vw, 1.75rem)' }}>Premium Roofing & Custom Metal Siding</h2>
         
         <div className={styles.contentText}>
-          <p>Elevate your home's curb-appeal, whether you're looking for a new roof, re-roof, or repair, we can help you achieve the beautiful custom exterior you crave. Bro's specializes in high-quality roofing and custom metal siding for both residential and commercial properties. Based in the heart of Salt Lake City, we proudly serve homeowners and businesses throughout the Wasatch Front and beyond.</p>
+          <p>Elevate your home's curb-appeal, whether you're looking for a new roof, re-roof, or repair, we can help you achieve the beautiful custom exterior you crave. Bro's specializes in high-quality roofing and custom metal siding for both residential and commercial properties. Based in Herriman, we proudly serve homeowners and businesses throughout the Wasatch Front and beyond.</p>
         </div>
             
         <h2 className={styles.sectionTitle} style={{ fontSize: 'clamp(1.1rem, 4vw, 1.75rem)' }}>Why Choose Us?</h2>

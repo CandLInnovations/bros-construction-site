@@ -126,6 +126,10 @@ export function LocalBusinessSchema() {
         "name": "Wasatch Front"
       },
       {
+        "@type": "Place",
+        "name": "Wasatch Back"
+      },
+      {
         "@type": "City",
         "name": "Park City"
       },
@@ -318,6 +322,18 @@ export function RoofingServicesSchema() {
     {
       "@type": "City",
       "name": "Draper"
+    },
+    {
+      "@type": "City",
+      "name": "Midvale"
+    },
+    {
+      "@type": "City",
+      "name": "Taylorsville"
+    },
+    {
+      "@type": "City",
+      "name": "Layton"
     },
     {
       "@type": "AdministrativeArea",
@@ -529,5 +545,312 @@ export function RoofingServicesSchema() {
         />
       ))}
     </>
+  );
+}
+
+export function GallerySchema() {
+  const galleryItems = [
+    {
+      "@type": "ImageObject",
+      "name": "Mountain Modern Masterpiece - Metal Roofing",
+      "description": "Striking residence with dramatic rooflines and expert metal roofing craftsmanship in Salt Lake City. Premium metal roofing installation showcasing angular geometry and superior durability for alpine conditions.",
+      "contentUrl": "https://bros-construction.com/roofing-exterior-home.webp",
+      "thumbnailUrl": "https://bros-construction.com/roofing-exterior-home.webp",
+      "author": {
+        "@type": "Organization",
+        "name": "Bro's Construction"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "Bro's Construction"
+      },
+      "copyrightHolder": {
+        "@type": "Organization",
+        "name": "Bro's Construction"
+      },
+      "locationCreated": {
+        "@type": "Place",
+        "name": "Salt Lake City, Utah"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "name": "Alpine Sanctuary - Standing Seam Metal Roof",
+      "description": "Mountain cabin with premium standing seam metal roof in Kamas, Utah. Superior protection against heavy snow loads and harsh mountain conditions with modern metal roofing.",
+      "contentUrl": "https://bros-construction.com/Bros-home-kamas-metal-roof.webp",
+      "thumbnailUrl": "https://bros-construction.com/Bros-home-kamas-metal-roof.webp",
+      "author": {
+        "@type": "Organization",
+        "name": "Bro's Construction"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "Bro's Construction"
+      },
+      "copyrightHolder": {
+        "@type": "Organization",
+        "name": "Bro's Construction"
+      },
+      "locationCreated": {
+        "@type": "Place",
+        "name": "Kamas, Utah"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "name": "Mountain Estate - Architectural Metal Roofing",
+      "description": "Stunning Kamas vacation property with premium metal roofing engineered for harsh alpine conditions. Architectural metal installation providing decades of protection against heavy snowfall and UV exposure.",
+      "contentUrl": "https://bros-construction.com/cabin-kamas-utah-metal-roof.webp",
+      "thumbnailUrl": "https://bros-construction.com/cabin-kamas-utah-metal-roof.webp",
+      "author": {
+        "@type": "Organization",
+        "name": "Bro's Construction"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "Bro's Construction"
+      },
+      "copyrightHolder": {
+        "@type": "Organization",
+        "name": "Bro's Construction"
+      },
+      "locationCreated": {
+        "@type": "Place",
+        "name": "Kamas, Utah"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "name": "Architectural Metal Siding - Custom Installation",
+      "description": "Premium custom metal siding delivering sophisticated modern appeal. Expert metal siding installation for residential homes in Salt Lake City, providing superior weather resistance and minimal maintenance.",
+      "contentUrl": "https://bros-construction.com/custom-metal-siding.webp",
+      "thumbnailUrl": "https://bros-construction.com/custom-metal-siding.webp",
+      "author": {
+        "@type": "Organization",
+        "name": "Bro's Construction"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "Bro's Construction"
+      },
+      "copyrightHolder": {
+        "@type": "Organization",
+        "name": "Bro's Construction"
+      },
+      "locationCreated": {
+        "@type": "Place",
+        "name": "Salt Lake City, Utah"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "name": "Custom Metal Chimney Caps",
+      "description": "Elegantly crafted custom metal chimney caps protecting chimneys while enhancing home architecture. Premium metal fabrications with superior weather resistance for Wasatch Front homes.",
+      "contentUrl": "https://bros-construction.com/custom-chimney-cap3.webp",
+      "thumbnailUrl": "https://bros-construction.com/custom-chimney-cap3.webp",
+      "author": {
+        "@type": "Organization",
+        "name": "Bro's Construction"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "Bro's Construction"
+      },
+      "copyrightHolder": {
+        "@type": "Organization",
+        "name": "Bro's Construction"
+      },
+      "locationCreated": {
+        "@type": "Place",
+        "name": "Wasatch Front, Utah"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "name": "Premium Asphalt Shingle Roofing",
+      "description": "Architectural-grade asphalt shingles with enhanced UV resistance and impact protection. Premium asphalt roof installation in Salt Lake City creating sophisticated curb appeal with dimensional profiles.",
+      "contentUrl": "https://bros-construction.com/asphalt-shingle-reroof-home.webp",
+      "thumbnailUrl": "https://bros-construction.com/asphalt-shingle-reroof-home.webp",
+      "author": {
+        "@type": "Organization",
+        "name": "Bro's Construction"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "Bro's Construction"
+      },
+      "copyrightHolder": {
+        "@type": "Organization",
+        "name": "Bro's Construction"
+      },
+      "locationCreated": {
+        "@type": "Place",
+        "name": "Salt Lake City, Utah"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "name": "Commercial Medical Office Building - Tile Roofing",
+      "description": "Flash Pointe Medical Center in Lehi featuring architectural tile roofing. Commercial tile roof installation blending traditional aesthetic with modern durability and fire resistance.",
+      "contentUrl": "https://bros-construction.com/commercial-composite-shake-shingle-roof.webp",
+      "thumbnailUrl": "https://bros-construction.com/commercial-composite-shake-shingle-roof.webp",
+      "author": {
+        "@type": "Organization",
+        "name": "Bro's Construction"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "Bro's Construction"
+      },
+      "copyrightHolder": {
+        "@type": "Organization",
+        "name": "Bro's Construction"
+      },
+      "locationCreated": {
+        "@type": "Place",
+        "name": "Lehi, Utah"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "name": "Commercial Office Park - TPO Roofing System",
+      "description": "Park City office park with TPO roofing system across multi-building complex. Commercial flat roof installation with energy-efficient white membrane for superior UV resistance.",
+      "contentUrl": "https://bros-construction.com/apartment-flat-tpo-roof.webp",
+      "thumbnailUrl": "https://bros-construction.com/apartment-flat-tpo-roof.webp",
+      "author": {
+        "@type": "Organization",
+        "name": "Bro's Construction"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "Bro's Construction"
+      },
+      "copyrightHolder": {
+        "@type": "Organization",
+        "name": "Bro's Construction"
+      },
+      "locationCreated": {
+        "@type": "Place",
+        "name": "Park City, Utah"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "name": "Commercial Business Park - EPDM Membrane Roofing",
+      "description": "Mountain View Business Park in Lehi with premium single-ply EPDM membrane roofing. Commercial roofing installation with reflective surface reducing cooling costs and UV protection.",
+      "contentUrl": "https://bros-construction.com/commercial-roof-edpm.webp",
+      "thumbnailUrl": "https://bros-construction.com/commercial-roof-edpm.webp",
+      "author": {
+        "@type": "Organization",
+        "name": "Bro's Construction"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "Bro's Construction"
+      },
+      "copyrightHolder": {
+        "@type": "Organization",
+        "name": "Bro's Construction"
+      },
+      "locationCreated": {
+        "@type": "Place",
+        "name": "Lehi, Utah"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "name": "Cedar Shake Roofing with Metal Accents",
+      "description": "Cedar shake shingles paired with sleek metal accents in Salt Lake City. Premium wood shake roofing blending timeless beauty with modern durability and weather protection.",
+      "contentUrl": "https://bros-construction.com/shake-wood-shingle.webp",
+      "thumbnailUrl": "https://bros-construction.com/shake-wood-shingle.webp",
+      "author": {
+        "@type": "Organization",
+        "name": "Bro's Construction"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "Bro's Construction"
+      },
+      "copyrightHolder": {
+        "@type": "Organization",
+        "name": "Bro's Construction"
+      },
+      "locationCreated": {
+        "@type": "Place",
+        "name": "Salt Lake City, Utah"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "name": "Corrugated Metal Residential Roofing",
+      "description": "Premium corrugated metal roofing with rhythmic wave patterns creating dynamic shadow lines. Modern metal roof installation in Utah offering exceptional durability and minimal maintenance.",
+      "contentUrl": "https://bros-construction.com/corrugated-metal-residential-roof.webp",
+      "thumbnailUrl": "https://bros-construction.com/corrugated-metal-residential-roof.webp",
+      "author": {
+        "@type": "Organization",
+        "name": "Bro's Construction"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "Bro's Construction"
+      },
+      "copyrightHolder": {
+        "@type": "Organization",
+        "name": "Bro's Construction"
+      },
+      "locationCreated": {
+        "@type": "Place",
+        "name": "Utah"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "name": "DaVinci Composite Shake with Snow Retention",
+      "description": "Utah mountain home with DaVinci composite shake shingles and snow retention system. Premium composite roof installation preventing dangerous snow slides while maintaining authentic wood shake aesthetic.",
+      "contentUrl": "https://bros-construction.com/davinci-new-home-roof.webp",
+      "thumbnailUrl": "https://bros-construction.com/davinci-new-home-roof.webp",
+      "author": {
+        "@type": "Organization",
+        "name": "Bro's Construction"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "Bro's Construction"
+      },
+      "copyrightHolder": {
+        "@type": "Organization",
+        "name": "Bro's Construction"
+      },
+      "locationCreated": {
+        "@type": "Place",
+        "name": "Utah Mountains"
+      }
+    }
+  ];
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    "name": "Bro's Construction Roofing Projects Gallery",
+    "description": "Browse our portfolio of residential and commercial roofing projects throughout Salt Lake City and the Wasatch Front. Expert metal roofing, asphalt shingles, composite shake, and custom siding installations.",
+    "url": "https://bros-construction.com/gallery",
+    "about": {
+      "@type": "Service",
+      "name": "Professional Roofing Services",
+      "provider": {
+        "@type": "RoofingContractor",
+        "name": "Bro's Construction",
+        "telephone": "+1-801-867-0576",
+        "url": "https://bros-construction.com"
+      }
+    },
+    "associatedMedia": galleryItems
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
   );
 }

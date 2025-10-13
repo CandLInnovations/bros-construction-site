@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
+import { GallerySchema } from '@/components/StructuredData';
 
 // Define interfaces for gallery items
 interface GalleryItem {
@@ -434,8 +435,10 @@ export default function Gallery() {
   }, [lightboxOpen, navigateLightbox, navigateGalleryItems, closeLightbox]);
 
   return (
-    <div className="overflowWrapper" style={{ width: '100%', minHeight: '100vh' }}>
-      {/* Main content with gradient background */}
+    <>
+      <GallerySchema />
+      <div className="overflowWrapper" style={{ width: '100%', minHeight: '100vh' }}>
+        {/* Main content with gradient background */}
       <div className="mainWrapper" style={{
         position: 'relative',
         width: '100%',
@@ -742,5 +745,6 @@ export default function Gallery() {
         />
       )}
     </div>
+    </>
   );
 }

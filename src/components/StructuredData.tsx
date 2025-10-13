@@ -1,6 +1,7 @@
 import React from 'react';
 
 export function FAQPageSchema() {
+  const yearsInBusiness = new Date().getFullYear() - 2001;
   const schema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -10,7 +11,7 @@ export function FAQPageSchema() {
         "name": "How long has Bro's Construction been in business?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Bro's Construction has over 24 years of experience in commercial and residential roofing, siding, and gutters throughout Salt Lake City and the Wasatch Front."
+          "text": `Bro's Construction has over ${yearsInBusiness} years of experience in commercial and residential roofing, siding, and gutters throughout Salt Lake City and the Wasatch Front.`
         }
       },
       {
@@ -89,6 +90,7 @@ export function FAQPageSchema() {
 }
 
 export function LocalBusinessSchema() {
+  const yearsInBusiness = new Date().getFullYear() - 2001;
   const schema = {
     "@context": "https://schema.org",
     "@type": "RoofingContractor",
@@ -220,7 +222,7 @@ export function LocalBusinessSchema() {
         }
       ]
     },
-    
+
     "founder": [
       {
         "@type": "Person",
@@ -249,7 +251,7 @@ export function LocalBusinessSchema() {
     }
     ],
     "foundingDate": "2001",
-    "description": "Expert roofing and custom metal siding services in Salt Lake City and the Wasatch Front. 24+ years experience in residential and commercial roofing, repairs, and installations.",
+    "description": `Expert roofing and custom metal siding services in Salt Lake City and the Wasatch Front. ${yearsInBusiness}+ years experience in residential and commercial roofing, repairs, and installations.`,
     "slogan": "Premium Roofing & Custom Metal Siding"
   };
 

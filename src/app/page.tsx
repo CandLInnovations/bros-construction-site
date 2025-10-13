@@ -114,7 +114,7 @@ export default function Home() {
             <div className={styles.contentText}>
               <h2 style={{ fontSize: 'clamp(1rem, 3vw, 1.5rem)' }}>Roofing Materials Expertise</h2>
               <p>
-                24 years of commercial and residential roofing, siding, and gutters. Bro's Construction has installed and repaired it all; from flat roofing, TPO (Thermoplastic Polyolefin), EPDM (Ethylene Propylene Diene Monomer), and PVC, to metal roofing and traditional shingles or shake.
+                {new Date().getFullYear() - 2001} years of commercial and residential roofing, siding, and gutters. Bro's Construction has installed and repaired it all; from flat roofing, TPO (Thermoplastic Polyolefin), EPDM (Ethylene Propylene Diene Monomer), and PVC, to metal roofing and traditional shingles or shake.
               </p>
             </div>
           </div>

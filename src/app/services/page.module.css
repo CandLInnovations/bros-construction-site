@@ -378,6 +378,90 @@
     width: 1rem;
   }
   
+  /* Service Area Section */
+  .serviceAreaSection {
+    margin: 4rem auto 3rem;
+    padding: 2.5rem 2rem;
+    background: linear-gradient(to bottom right, #f8f9fb, #e6e9f0);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-top: 4px solid #f5a623;
+  }
+
+  .serviceAreaIntro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #4b5563;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .serviceAreaGrid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .serviceAreaItem {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-left: 3px solid #f5a623;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .serviceAreaItem:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .serviceAreaItem h3 {
+    color: #1e2761;
+    font-size: 1.2rem;
+    margin: 0 0 0.75rem 0;
+    font-weight: 700;
+  }
+
+  .serviceAreaItem p {
+    color: #4b5563;
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.6;
+    text-align: left;
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .serviceAreaFooter {
+    text-align: center;
+    font-size: 1rem;
+    color: #1e2761;
+    margin-top: 2rem;
+    font-weight: 500;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+  }
+
+  .consultationLink {
+    color: #f5a623;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+
+  .consultationLink:hover {
+    color: #1e2761;
+    border-bottom-color: #f5a623;
+  }
+
   /* CTA Section */
   .ctaSection {
     margin: 3rem auto;
@@ -549,18 +633,22 @@
     .servicesGrid {
       grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .processList {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
     }
-    
+
     .guaranteeFeatures {
       grid-template-columns: repeat(3, 1fr);
     }
-    
+
     .featuresList ul {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .serviceAreaGrid {
       grid-template-columns: repeat(2, 1fr);
     }
   }
@@ -569,7 +657,11 @@
     .servicesGrid {
       grid-template-columns: repeat(3, 1fr);
     }
-    
+
+    .serviceAreaGrid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
     .lightboxContent {
       flex-direction: row;
       max-height: 80vh;

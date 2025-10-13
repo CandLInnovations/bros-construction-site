@@ -341,6 +341,50 @@ export default function ServicesPage() {
           </div>
         )}
 
+        {/* Service Area Section */}
+        <section className={styles.serviceAreaSection}>
+          <h2 className={styles.sectionTitle}>PROUDLY SERVING THE WASATCH FRONT</h2>
+          <p className={styles.serviceAreaIntro}>
+            Bro's Construction provides expert roofing and metal siding services throughout Northern Utah. Our service area includes:
+          </p>
+
+          <div className={styles.serviceAreaGrid}>
+            <div className={styles.serviceAreaItem}>
+              <h3>Salt Lake County</h3>
+              <p>Salt Lake City • Herriman • West Jordan • Sandy • Draper • Murray • South Jordan • Midvale • Taylorsville</p>
+            </div>
+
+            <div className={styles.serviceAreaItem}>
+              <h3>Utah County</h3>
+              <p>Provo • Orem • Lehi • American Fork • Pleasant Grove</p>
+            </div>
+
+            <div className={styles.serviceAreaItem}>
+              <h3>Davis County</h3>
+              <p>Layton • Bountiful • Farmington • Kaysville</p>
+            </div>
+
+            <div className={styles.serviceAreaItem}>
+              <h3>Weber County</h3>
+              <p>Ogden • Roy • Clearfield</p>
+            </div>
+
+            <div className={styles.serviceAreaItem}>
+              <h3>Summit County</h3>
+              <p>Park City • Heber City</p>
+            </div>
+
+            <div className={styles.serviceAreaItem}>
+              <h3>Surrounding Areas</h3>
+              <p>And surrounding Wasatch Front communities</p>
+            </div>
+          </div>
+
+          <p className={styles.serviceAreaFooter}>
+            With {new Date().getFullYear() - 2001}+ years of local experience, we understand Utah's unique climate challenges and building requirements. Contact us for a <Link href="/quote" className={styles.consultationLink}>free consultation</Link> anywhere in our service area.
+          </p>
+        </section>
+
         {/* CTA Section */}
         <div className={styles.ctaSection}>
           <h2>Ready to Transform Your Property?</h2>
@@ -396,7 +440,7 @@ export default function ServicesPage() {
             <div className={styles.guaranteeFeatures}>
               <div className={styles.guaranteeItem}>
                 <h3>Expert Craftsmanship</h3>
-                <p>24 years of experience in the industry ensures your project is completed to the highest standards.</p>
+                <p>{new Date().getFullYear() - 2001} years of experience in the industry ensures your project is completed to the highest standards.</p>
               </div>
               
               <div className={styles.guaranteeItem}>

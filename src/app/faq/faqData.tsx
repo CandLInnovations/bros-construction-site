@@ -11,10 +11,11 @@ export interface FAQItem {
 // Component to automatically calculate and display years in business
 export function YearsInBusinessAnswer() {
   // Starting year of the business
-  const foundingYear = 2001; // Company started in 2001 (24 years before 2025)
-  
+  const foundingYear = 2001;
+
   // State to store the calculated years
-  const [yearsInBusiness, setYearsInBusiness] = useState<number>(24); // Default to 24 for SSR
+  const currentYear = new Date().getFullYear();
+  const [yearsInBusiness, setYearsInBusiness] = useState<number>(currentYear - foundingYear);
   
   // Calculate the years in business when the component mounts
   useEffect(() => {

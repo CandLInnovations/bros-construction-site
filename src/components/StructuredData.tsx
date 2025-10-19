@@ -150,7 +150,7 @@ export function LocalBusinessSchema() {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
         "opens": "07:00",
-        "closes": "18:00"
+        "closes": "17:00"
       }
     ],
     "hasCredential": {

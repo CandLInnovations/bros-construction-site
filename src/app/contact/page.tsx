@@ -210,7 +210,7 @@ export default function ContactPage() {
                   (801) 867-0576
                 </ObfuscatedPhone>
               </p>
-              <span className={styles.contactNote}>Monday - Friday: 7AM - 6PM</span>
+              <span className={styles.contactNote}>Monday - Friday: 7AM - 5PM</span>
             </div>
             
             <div className={styles.contactCard}>

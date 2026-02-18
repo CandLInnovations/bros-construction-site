@@ -12,7 +12,6 @@ updates:
       - "CandLInnovations"  # Your GitHub username or org
     labels:
       - "dependencies"
-      - "automated"
     commit-message:
       prefix: "chore"
       include: "scope"
@@ -41,6 +40,5 @@ updates:
       interval: "monthly"
     labels:
       - "dependencies"
-      - "github-actions"
     commit-message:
       prefix: "ci"

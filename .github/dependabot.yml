@@ -1,0 +1,46 @@
+version: 2
+updates:
+  # Next.js + npm dependencies
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "CandLInnovations"  # Your GitHub username or org
+    labels:
+      - "dependencies"
+      - "automated"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+    groups:
+      # Core Next.js ecosystem
+      next-ecosystem:
+        patterns:
+          - "next*"
+          - "react*"
+          - "eslint*"
+      # Lump dev tools together
+      dev-dependencies:
+        dependency-type: "development"
+        update-types:
+          - "minor"
+          - "patch"
+    ignore:
+      # Only alert on major Next.js versions
+      - dependency-name: "next"
+        update-types: ["version-update:semver-minor"]
+
+  # GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    labels:
+      - "dependencies"
+      - "github-actions"
+    commit-message:
+      prefix: "ci"

@@ -55,9 +55,7 @@ const nextConfig: NextConfig = {
   },
 
   // Build optimizations
-  experimental: {
-    optimizePackageImports: ['react', 'react-dom'],
-  },
+  experimental: {},
 
   // Production optimizations
   compiler: {

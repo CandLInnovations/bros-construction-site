@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
         <p className="footer-bottom-text">
           © {yearDisplay} Bro's Construction • Website by{' '}
           <a
-            href="https://www.candl-innovations.net"
+            href="https://www.candl-innovations.com"
             target="_blank"
             rel="noopener noreferrer"
             className="footer-credit-link"

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { escapeHtml } from '../../../lib/escapeHtml';
 
 interface QuoteRequestData {
   firstName: string;
@@ -166,24 +167,24 @@ export async function POST(request: NextRequest) {
       <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
         <tr>
           <td style="padding: 8px 0; font-weight: bold; color: #1e2761; width: 30%;">Name:</td>
-          <td style="padding: 8px 0;">${data.firstName} ${data.lastName}</td>
+          <td style="padding: 8px 0;">${escapeHtml(data.firstName)} ${escapeHtml(data.lastName)}</td>
         </tr>
         <tr>
           <td style="padding: 8px 0; font-weight: bold; color: #1e2761;">Email:</td>
-          <td style="padding: 8px 0;"><a href="mailto:${data.email}" style="color: #f5a623; text-decoration: none;">${data.email}</a></td>
+          <td style="padding: 8px 0;"><a href="mailto:${escapeHtml(data.email)}" style="color: #f5a623; text-decoration: none;">${escapeHtml(data.email)}</a></td>
         </tr>
         <tr>
           <td style="padding: 8px 0; font-weight: bold; color: #1e2761;">Phone:</td>
-          <td style="padding: 8px 0;"><a href="tel:${data.phone}" style="color: #f5a623; text-decoration: none;">${data.phone}</a></td>
+          <td style="padding: 8px 0;"><a href="tel:${escapeHtml(data.phone)}" style="color: #f5a623; text-decoration: none;">${escapeHtml(data.phone)}</a></td>
         </tr>
         <tr>
           <td style="padding: 8px 0; font-weight: bold; color: #1e2761;">Address:</td>
-          <td style="padding: 8px 0;">${data.address}<br>${data.city}, ${data.state} ${data.zipCode}</td>
+          <td style="padding: 8px 0;">${escapeHtml(data.address)}<br>${escapeHtml(data.city)}, ${escapeHtml(data.state)} ${escapeHtml(data.zipCode)}</td>
         </tr>
         ${data.preferredContact ? `
         <tr>
           <td style="padding: 8px 0; font-weight: bold; color: #1e2761;">Preferred Contact:</td>
-          <td style="padding: 8px 0;">${formatPreferredContact(data.preferredContact)}</td>
+          <td style="padding: 8px 0;">${escapeHtml(formatPreferredContact(data.preferredContact))}</td>
         </tr>
         ` : ''}
       </table>
@@ -192,28 +193,28 @@ export async function POST(request: NextRequest) {
       <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
         <tr>
           <td style="padding: 8px 0; font-weight: bold; color: #1e2761; width: 30%;">Service Type:</td>
-          <td style="padding: 8px 0;">${formatServiceType(data.serviceType)}</td>
+          <td style="padding: 8px 0;">${escapeHtml(formatServiceType(data.serviceType))}</td>
         </tr>
         <tr>
           <td style="padding: 8px 0; font-weight: bold; color: #1e2761;">Property Type:</td>
-          <td style="padding: 8px 0;">${formatPropertyType(data.propertyType)}</td>
+          <td style="padding: 8px 0;">${escapeHtml(formatPropertyType(data.propertyType))}</td>
         </tr>
         ${data.projectTimeline ? `
         <tr>
           <td style="padding: 8px 0; font-weight: bold; color: #1e2761;">Timeline:</td>
-          <td style="padding: 8px 0;">${formatTimeline(data.projectTimeline)}</td>
+          <td style="padding: 8px 0;">${escapeHtml(formatTimeline(data.projectTimeline))}</td>
         </tr>
         ` : ''}
         ${data.budget ? `
         <tr>
           <td style="padding: 8px 0; font-weight: bold; color: #1e2761;">Budget Range:</td>
-          <td style="padding: 8px 0;">${formatBudget(data.budget)}</td>
+          <td style="padding: 8px 0;">${escapeHtml(formatBudget(data.budget))}</td>
         </tr>
         ` : ''}
         ${data.currentIssues && data.currentIssues.length > 0 ? `
         <tr>
           <td style="padding: 8px 0; font-weight: bold; color: #1e2761;">Current Issues:</td>
-          <td style="padding: 8px 0;">${data.currentIssues.map(issue => formatCurrentIssue(issue)).join(', ')}</td>
+          <td style="padding: 8px 0;">${data.currentIssues.map(issue => escapeHtml(formatCurrentIssue(issue))).join(', ')}</td>
         </tr>
         ` : ''}
       </table>
@@ -221,7 +222,7 @@ export async function POST(request: NextRequest) {
       ${data.projectDescription ? `
       <h2 style="color: #1e2761; border-bottom: 2px solid #f5a623; padding-bottom: 10px;">Project Description</h2>
       <div style="background: #f8f9fa; padding: 15px; border-radius: 5px; border-left: 4px solid #f5a623; margin-bottom: 20px;">
-        <p style="margin: 0; line-height: 1.6; white-space: pre-wrap;">${data.projectDescription}</p>
+        <p style="margin: 0; line-height: 1.6; white-space: pre-wrap;">${escapeHtml(data.projectDescription)}</p>
       </div>
       ` : ''}
 
@@ -241,10 +242,10 @@ export async function POST(request: NextRequest) {
         </div>
         
         <div style="background: white; padding: 30px; border-radius: 0 0 8px 8px;">
-          <h2 style="color: #1e2761; margin-top: 0;">Hi ${data.firstName},</h2>
-          
+          <h2 style="color: #1e2761; margin-top: 0;">Hi ${escapeHtml(data.firstName)},</h2>
+
           <p style="line-height: 1.6; margin-bottom: 20px;">
-            Thank you for reaching out to Bro's Construction for your ${formatPropertyType(data.propertyType).toLowerCase()} project. We've received your quote request and are excited to help you with your roofing and siding needs.
+            Thank you for reaching out to Bro's Construction for your ${escapeHtml(formatPropertyType(data.propertyType).toLowerCase())} project. We've received your quote request and are excited to help you with your roofing and siding needs.
           </p>
 
           <div style="background: #e8f4f8; padding: 20px; border-radius: 5px; border-left: 4px solid #f5a623; margin: 20px 0;">
@@ -261,16 +262,16 @@ export async function POST(request: NextRequest) {
           <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
             <tr>
               <td style="padding: 8px 0; font-weight: bold; color: #1e2761; width: 30%;">Project Type:</td>
-              <td style="padding: 8px 0;">${formatPropertyType(data.propertyType)}</td>
+              <td style="padding: 8px 0;">${escapeHtml(formatPropertyType(data.propertyType))}</td>
             </tr>
             <tr>
               <td style="padding: 8px 0; font-weight: bold; color: #1e2761;">Property:</td>
-              <td style="padding: 8px 0;">${data.address}, ${data.city}, UT ${data.zipCode}</td>
+              <td style="padding: 8px 0;">${escapeHtml(data.address)}, ${escapeHtml(data.city)}, UT ${escapeHtml(data.zipCode)}</td>
             </tr>
             ${data.timeline ? `
             <tr>
               <td style="padding: 8px 0; font-weight: bold; color: #1e2761;">Timeline:</td>
-              <td style="padding: 8px 0;">${formatTimeline(data.timeline)}</td>
+              <td style="padding: 8px 0;">${escapeHtml(formatTimeline(data.timeline))}</td>
             </tr>
             ` : ''}
           </table>
